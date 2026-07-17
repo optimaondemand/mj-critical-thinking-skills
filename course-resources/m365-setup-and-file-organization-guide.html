@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>M365 Setup &amp; File Organization Guide</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .folder-tree { font-family: "Consolas", "Courier New", monospace; background: #0E1C42; color: #55C8E8; padding: 18px 22px; border-radius: 6px; font-size: 14px; line-height: 1.7; white-space: pre; overflow-x: auto; }
+    .file-anatomy { display: flex; flex-wrap: wrap; gap: 4px; font-family: "Consolas", monospace; font-size: 18px; margin: 12px 0; }
+    .file-anatomy span { padding: 6px 10px; border-radius: 4px; color: #fff; }
+    .anatomy-key { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin: 12px 0; font-size: 15px; align-items: center; }
+    .anatomy-key .swatch { padding: 4px 10px; border-radius: 3px; color: #fff; font-family: "Consolas", monospace; font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 32px; color: #ffffff; margin-bottom: 6px;">M365 Setup &amp; File Organization Guide</div>
+    <div style="font-size: 14px; color: #55C8E8;">M/J CRITICAL THINKING (MJCRT) &middot; Pinned to every module</div>
+</div>
+
+<div style="padding: 28px 34px;">
+
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 20px; margin-bottom: 22px;">
+        <div style="font-size: 14px; color: #6b4f1d; margin-bottom: 6px;">&#128205; <strong>Why this page exists</strong></div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Every assignment you turn in for this course will be a file you create &mdash; usually a Word document or PowerPoint, sometimes Excel. This page is your <strong>always-on cheat sheet</strong> for setting up your Microsoft 365 account, organizing your files in OneDrive, naming them correctly, and submitting them through Canvas. Come back here any time you're not sure how to do something with files.</div>
+    </div>
+
+    <!-- PART 1: M365 account -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">PART 1</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">Sign in to your Optima Microsoft 365 account</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Every Optima student has a free school Microsoft 365 account. Use this account &mdash; <strong>not</strong> a personal Microsoft, Google, or Apple account &mdash; for every assignment in this class.</p>
+        <ol style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Go to <strong>office.com</strong> (or open Word/PowerPoint/Excel on your computer).</li>
+            <li>Click <strong>Sign in</strong>.</li>
+            <li>Enter your school email address (the one your teacher set up for you with Optima).</li>
+            <li>Enter your password. If you don't know it or it isn't working, message your teacher in Canvas &mdash; <em>do not</em> create a personal Microsoft account as a workaround.</li>
+        </ol>
+        <p style="font-size: 15px; color: #555; font-style: italic; margin: 0;">Why this matters: your Optima account gives you free desktop and web versions of Word, PowerPoint, Excel, and OneDrive &mdash; PLUS your work is automatically backed up.</p>
+    </div>
+
+    <!-- PART 2: OneDrive folder -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">PART 2</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">Set up your OneDrive course folder (your "digital binder")</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Just like you'd use a physical binder for school, OneDrive is where you keep all your class files organized. You only need to set this up once.</p>
+        <ol style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 22px;">
+            <li>Sign in to OneDrive at <strong>onedrive.com</strong> (or open the OneDrive app).</li>
+            <li>Click <strong>+ New &rarr; Folder</strong>. Name it <code style="background:#EEF1F8; padding:1px 6px; border-radius:3px;">Optima</code></li>
+            <li>Inside the <code style="background:#EEF1F8; padding:1px 6px; border-radius:3px;">Optima</code> folder, create a subfolder named <code style="background:#EEF1F8; padding:1px 6px; border-radius:3px;">Critical Thinking</code></li>
+            <li>Inside that, create a subfolder named <code style="background:#EEF1F8; padding:1px 6px; border-radius:3px;">MJCRT_2025-26</code> (the course code + school year)</li>
+            <li>This last folder is where EVERY assignment for this class goes. That's it.</li>
+        </ol>
+
+        <div style="font-size: 13px; color: #888; margin-bottom: 6px;">Your folder structure should look like this:</div>
+        <div class="folder-tree">OneDrive (School Account)
+&#9492;&#9472;&#9472; Optima/
+    &#9500;&#9472;&#9472; Critical Thinking/
+    &#9474;   &#9492;&#9472;&#9472; MJCRT_2025-26/   &lt;-- all assignments go here
+    &#9500;&#9472;&#9472; ELA/
+    &#9500;&#9472;&#9472; Math/
+    &#9500;&#9472;&#9472; History/
+    &#9492;&#9472;&#9472; Science/</div>
+        <p style="font-size: 15px; color: #555; font-style: italic; margin: 14px 0 0 0;">Make a top-level subject folder for each of your other classes too. Once it's set up, you never have to think about it again.</p>
+    </div>
+
+    <!-- PART 3: File naming rule -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">PART 3</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">The Optima File Naming Rule</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Every file you turn in for any Optima class follows the same name pattern. This makes it easy for you AND your teacher to find your work later.</p>
+
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 14px 18px; border-radius: 4px; margin: 14px 0;">
+            <div style="font-size: 13px; color: #0E1C42; letter-spacing: 0.5px; margin-bottom: 8px;">THE PATTERN</div>
+            <div style="font-family: 'Consolas', monospace; font-size: 18px; color: #0E1C42;">LastName_FirstName_AssignmentName_CourseCode</div>
+        </div>
+
+        <div class="file-anatomy">
+            <span style="background:#0E1C42;">LastName</span>
+            <span style="background:#C7922C;">_</span>
+            <span style="background:#1B6A94;">FirstName</span>
+            <span style="background:#C7922C;">_</span>
+            <span style="background:#2A9D5C;">AssignmentName</span>
+            <span style="background:#C7922C;">_</span>
+            <span style="background:#7E3A8F;">MJCRT</span>
+        </div>
+
+        <div class="anatomy-key">
+            <span class="swatch" style="background:#0E1C42;">LastName</span><span>Your last name, capitalized, no spaces.</span>
+            <span class="swatch" style="background:#1B6A94;">FirstName</span><span>Your first name, capitalized, no spaces.</span>
+            <span class="swatch" style="background:#2A9D5C;">AssignmentName</span><span>A short name for the assignment (your teacher will give it in each assignment description).</span>
+            <span class="swatch" style="background:#7E3A8F;">MJCRT</span><span>The course code for this class. <strong>MJCRT</strong> = M/J Critical Thinking.</span>
+            <span class="swatch" style="background:#C7922C;">_</span><span>Underscores between each part. NO spaces, NO dashes.</span>
+        </div>
+
+        <div style="background: #D8F0DD; border-left: 4px solid #2A9D5C; padding: 12px 16px; border-radius: 4px; margin: 14px 0;">
+            <div style="font-size: 14px; color: #1A6B3D; margin-bottom: 6px;"><strong>&#10003; Good examples</strong></div>
+            <div style="font-family: 'Consolas', monospace; font-size: 14px; color: #0E1C42; line-height: 1.7;">Smith_Jane_TimeManagement_MJCRT.docx<br />Patel_Arjun_CookieJar_MJCRT.docx<br />Wong_Kai_FieldBiology_MJCRT.docx</div>
+        </div>
+        <div style="background: #FDECEC; border-left: 4px solid #C0392B; padding: 12px 16px; border-radius: 4px; margin: 14px 0;">
+            <div style="font-size: 14px; color: #8A1F16; margin-bottom: 6px;"><strong>&#10007; Don't do this</strong></div>
+            <div style="font-family: 'Consolas', monospace; font-size: 14px; color: #0E1C42; line-height: 1.7;">My homework.docx&nbsp;&nbsp; <span style="color:#8A1F16;">(no name, no course, no assignment)</span><br />jane smith time mgmt.docx&nbsp;&nbsp; <span style="color:#8A1F16;">(spaces, lowercase, abbreviation)</span><br />Untitled (3).docx&nbsp;&nbsp; <span style="color:#8A1F16;">(forgot to rename it)</span></div>
+        </div>
+
+        <div style="background: #FDF3E3; border-left: 4px solid #C7922C; padding: 12px 16px; border-radius: 4px; margin: 14px 0;">
+            <div style="font-size: 14px; color: #6b4f1d; margin-bottom: 6px;"><strong>&#9888;&#65039; For multi-draft assignments</strong></div>
+            <div style="font-size: 15px; color: #1a2340;">Add <code style="background:#FFF; padding:1px 5px; border-radius:3px;">_Draft1</code>, <code style="background:#FFF; padding:1px 5px; border-radius:3px;">_Draft2</code>, and <code style="background:#FFF; padding:1px 5px; border-radius:3px;">_Final</code> to your file name. <strong>Save each draft as a separate file</strong> (File &rarr; Save As). Never overwrite an old draft &mdash; your teacher needs to see your revision history.</div>
+            <div style="font-family: 'Consolas', monospace; font-size: 13px; color: #0E1C42; margin-top: 8px;">Smith_Jane_GoodLifeCapstone_MJCRT_Draft1.docx<br />Smith_Jane_GoodLifeCapstone_MJCRT_Draft2.docx<br />Smith_Jane_GoodLifeCapstone_MJCRT_Final.docx</div>
+        </div>
+    </div>
+
+    <!-- PART 4: Which tool when -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">PART 4</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">Which M365 tool for which kind of work?</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">All assignments in this class use Microsoft 365 tools &mdash; <strong>not</strong> Google Docs, Slides, or Sheets. If you're not sure which tool to use, this table will help.</p>
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0;">
+            <tr style="background: #0E1C42; color: #fff;">
+                <th style="padding: 10px 14px; text-align: left;">If the assignment asks for&hellip;</th>
+                <th style="padding: 10px 14px; text-align: left;">Use this M365 tool</th>
+                <th style="padding: 10px 14px; text-align: left;">File ends in</th>
+            </tr>
+            <tr style="background: #fff;">
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;">Essay, reflection, written response, notes</td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><strong>Word</strong></td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><code>.docx</code></td>
+            </tr>
+            <tr style="background: #F4F9FC;">
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;">Presentation, slide deck, infographic-style visual</td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><strong>PowerPoint</strong></td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><code>.pptx</code></td>
+            </tr>
+            <tr style="background: #fff;">
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;">Data log, table, calculations, tracker (e.g., the Good Life Project)</td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><strong>Excel</strong></td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><code>.xlsx</code></td>
+            </tr>
+            <tr style="background: #F4F9FC;">
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;">A photo, screenshot, or scanned drawing</td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;">Your phone camera or screenshot tool</td>
+                <td style="padding: 10px 14px; border: 1px solid #D0D9E8;"><code>.jpg</code> / <code>.png</code></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- PART 5: Submitting via Canvas -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">PART 5</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">Submitting via Canvas (the OneDrive tab)</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">When you've finished and named your file, here's how to turn it in.</p>
+        <ol style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Make sure your file is <strong>saved in OneDrive</strong> (it should auto-save if you signed in correctly).</li>
+            <li>In Canvas, open the assignment and click <strong>Start Assignment</strong> (or <strong>Submit Assignment</strong>).</li>
+            <li>Click the <strong>OneDrive</strong> or <strong>Office 365</strong> tab in the submission panel.</li>
+            <li>Find your file in the list, click it, and click <strong>Submit</strong>.</li>
+            <li>You'll see a confirmation that the file was submitted &mdash; if you don't, the submission didn't go through.</li>
+        </ol>
+        <p style="font-size: 15px; color: #555; font-style: italic; margin: 0;">If your file is somehow not in OneDrive (you typed it in Word offline, etc.), use the <strong>File Upload</strong> tab instead and choose the file from your computer.</p>
+    </div>
+
+    <!-- PART 6: Skill checklist -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #C7922C; margin-bottom: 8px;">CHECKLIST</div>
+        <div style="font-size: 22px; color: #0E1C42; margin-bottom: 12px;">Before every submission, ask yourself&hellip;</div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.9;">
+            &#9744;&nbsp; I signed in to my <strong>Optima Microsoft 365 account</strong> (not a personal one).<br />
+            &#9744;&nbsp; My file is in the <strong>right folder</strong>: <code style="background:#EEF1F8; padding:1px 5px;">Optima &rarr; Critical Thinking &rarr; MJCRT_2025-26</code>.<br />
+            &#9744;&nbsp; My file name follows the <strong>Optima File Naming Rule</strong>.<br />
+            &#9744;&nbsp; I used the <strong>right M365 tool</strong> for what was asked (Word, PowerPoint, or Excel).<br />
+            &#9744;&nbsp; I submitted through Canvas using the <strong>OneDrive tab</strong>.<br />
+            &#9744;&nbsp; I saw the <strong>confirmation</strong> that the submission went through.
+        </div>
+    </div>
+
+    <!-- Footer / mid-year note -->
+    <div style="background: #EEF1F8; border-left: 4px solid #55C8E8; border-radius: 4px; padding: 14px 18px; margin: 14px 0;">
+        <div style="font-size: 14px; color: #0E1C42;"><strong>Joining the class mid-year?</strong> You're in the right place. Read Parts 1&ndash;3 above to set up your account and OneDrive folder. The rest is reference &mdash; you'll come back to it whenever a new assignment asks you to do something you haven't done before.</div>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 16px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; M365 Setup &amp; File Organization Guide</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Pinned reference page &middot; Link in every module overview</div>
+</div>
+
+</div>
+</body>
+</html>

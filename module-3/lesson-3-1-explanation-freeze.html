@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 1: Explanation Freeze</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Explanation Freeze</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Pairs With</div>
+        <div style="font-size: 16px; color: #0e1c42;">Assignment 1</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Explanation Freeze</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">When your brain locks onto the first answer it finds</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Hey everyone! Have you ever been in a situation where something confusing happened, and you just <em>knew</em> what the cause was, even if you weren't 100% sure? It's like your brain quickly jumps to one answer, and then you're stuck thinking, "That must be it!" Well, this is a common thing called Explanation Freeze. (You may have heard the expression "jumping to conclusions"? This is that.)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">Explanation Freeze happens when we think of just one reason for something and stick to it, even though there might be lots of other explanations. Today, we're going to talk about how this freeze happens, why it can mess up your thinking, and how you can thaw it out so you make smarter decisions. Let's dive in!</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> recognize when I'm experiencing Explanation Freeze.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name three thinking traps that cause it (confirmation bias, emotion, mental shortcuts).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use the five-step thaw process to generate, weigh, and act on alternative explanations.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or document &mdash; you'll log three recent moments of jumping-to-conclusions for the paired <em>Assignment 1: Thawing Explanation Freeze</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Check-in -->
+    <div class="optima-widget" id="widget-frz">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Be honest &mdash; have you jumped to a conclusion recently that turned out to be wrong?</div>
+        <div class="widget-options">
+            <button onclick="frzPick(this, 0)">&#128517; Yeah, embarrassingly often</button>
+            <button onclick="frzPick(this, 1)">&#129488; Sometimes, but I usually catch myself</button>
+            <button onclick="frzPick(this, 2)">&#128526; Rarely &mdash; I tend to think things through</button>
+            <button onclick="frzPick(this, 3)">&#129335; Honestly I don't keep track</button>
+        </div>
+        <div class="widget-feedback" id="widget-frz-fb"></div>
+        <button class="widget-reset" onclick="frzReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHERE YOU'VE SEEN THIS BEFORE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">We face Explanation Freeze all the time, usually without realizing it. Let me give you a few examples:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>You sent your teacher a message asking for extra help on an assignment. Days later, still no response. You start thinking, "Maybe she's mad I asked for help."</li>
+            <li>You crushed your gym workout today &mdash; way better than usual! "It must have been the protein shake I had yesterday!"</li>
+            <li>You feel a weird pain in your side, and it seems to be getting worse. "This could be something serious, like appendicitis!"</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Our brains are quick to jump to conclusions. Why? Because it feels good to have an explanation. But there's a catch: when we get stuck on just one reason, we miss out on all the other possibilities. What if your teacher is just swamped with work? What if your workout went well because you got extra sleep? What if your side pain is just a muscle cramp?</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; WHY DO WE FREEZE?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">So why does this happen? Well, our brains love patterns. When something unusual happens, we want to figure it out as fast as possible. Sometimes, our first explanation feels <em>so</em> right that we don't stop to think about alternatives. But here's the problem: we often stop too soon. That's Explanation Freeze &mdash; your brain "freezes" on one reason without considering the full picture.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Let's break it down more scientifically:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Confirmation Bias:</strong> When we get stuck on one idea, we tend to look for evidence that supports it, and we ignore anything that says otherwise.</li>
+            <li><strong>Emotions:</strong> Ever feel super worried about something? That can make you cling to the scariest explanation, even if it's not the most likely.</li>
+            <li><strong>Mental Shortcuts:</strong> Thinking is hard work! So your brain takes shortcuts, jumping to quick conclusions to save energy.</li>
+        </ul>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128293; THE FIREFIGHTER STORY</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Let's put this in a concrete situation. Imagine a Fire Marshall named Bill ("Let me show you something!"). Bill goes into a burning building without his oxygen mask, and sadly, he dies. Take a minute and think about what killed Bill.</p>
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;"><span style="color: #C7922C;">&#9654;</span>&nbsp; Got an answer? Click to reveal the lesson</summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 12px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                <p style="margin: 0 0 12px 0;">So I ask you: "What caused Bill's death?" Your first response may have been, "Smoke inhalation." That's a solid guess.</p>
+                <p style="margin: 0 0 12px 0;">Here's my next question, one that gets to the heart of today's lesson: <em><strong>how many other possible explanations did you consider?</strong></em></p>
+                <p style="margin: 0;">Here's where Explanation Freeze comes in. There could be <em>lots</em> of reasons Bill died. The story doesn't give us enough information to know. Sure, by mentioning his lack of oxygen mask, we're inclined to think the cause of death was related. But maybe he had a heart attack. Maybe the floor collapsed under him. Maybe he got hit by falling debris. Heck, maybe there was a ninja assassin who set the fire who was then lying in wait for Bill to show, to take him out under the guise of a work-related death. If we only think of the somewhat obvious smoke-inhalation response, we're freezing our explanation, and we might miss what really happened.</p>
+            </div>
+        </details>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; HOW TO THAW THE FREEZE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Good news: You can beat Explanation Freeze with a few simple steps. Here's the secret formula:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Will different explanations change your behavior?</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>If no, then you don't need to overthink it. There's already lots to think about, so if this makes no practical difference, then work with what you got.</li>
+                    <li>If yes, it's time to think through multiple reasons. For example, if your friend is running late due to traffic, you'll wait for her to show; but if she's a no-show because she <em>forgot</em>, waiting is a waste of your own time. Continue to the next step.</li>
+                </ul>
+            </li>
+            <li><strong>Generate at least 3 possible explanations.</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Let's say your friend is a no-show. First thought: she's just running late due to traffic. But what are two other possible reasons?</li>
+                    <li>Maybe she's completely forgotten the plans you made. Or maybe she got recruited by Interpol to catch an international jewel thief and she has to be radio-silent.</li>
+                    <li>See? More explanations give you a better picture!</li>
+                </ul>
+            </li>
+            <li><strong>Consider the likelihood of each explanation.</strong></li>
+            <li><strong>Give each idea a percentage.</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>How likely is it that your friend was recruited by Interpol? Not very likely, maybe 0.5%. How likely is it that she's stuck in traffic? Well, this part of town is a dead zone, so pretty low, maybe 10%. But how likely is it she forgot? Knowing this particular friend, probably more like 60%.</li>
+                    <li>When you lay out all the possibilities, you'll realize that your first guess wasn't as solid as it seemed.</li>
+                </ul>
+            </li>
+            <li><strong>Act accordingly.</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Based on your new understanding, what should you do? Maybe just head home since your friend is likely a no-show instead of waiting around for her for nothing.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Visual: The 5-step thaw flow -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128202; THE THAW PROCESS &mdash; AT A GLANCE</div>
+        <div style="font-size: 14px; color: #888; margin-bottom: 14px;">Run through these five steps any time you catch yourself locked onto a single explanation.</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px;">
+            <div style="background: #FDF3E3; border-left: 5px solid #C7922C; padding: 10px 14px; border-radius: 4px;">
+                <div style="font-size: 11px; color: #8B5E16; letter-spacing: 0.5px;">STEP 1</div>
+                <div style="font-size: 14px; color: #0E1C42;">Would different explanations change what I do? <em>If no, stop here.</em></div>
+            </div>
+            <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; padding: 10px 14px; border-radius: 4px;">
+                <div style="font-size: 11px; color: #c7922c; letter-spacing: 0.5px;">STEP 2</div>
+                <div style="font-size: 14px; color: #0E1C42;">Generate at least <strong>three</strong> possible explanations.</div>
+            </div>
+            <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; padding: 10px 14px; border-radius: 4px;">
+                <div style="font-size: 11px; color: #c7922c; letter-spacing: 0.5px;">STEP 3</div>
+                <div style="font-size: 14px; color: #0E1C42;">Consider the likelihood of each.</div>
+            </div>
+            <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; padding: 10px 14px; border-radius: 4px;">
+                <div style="font-size: 11px; color: #c7922c; letter-spacing: 0.5px;">STEP 4</div>
+                <div style="font-size: 14px; color: #0E1C42;">Give each a rough percentage.</div>
+            </div>
+            <div style="background: #D8F0DD; border-left: 5px solid #2A9D5C; padding: 10px 14px; border-radius: 4px;">
+                <div style="font-size: 11px; color: #1A6B3D; letter-spacing: 0.5px;">STEP 5</div>
+                <div style="font-size: 14px; color: #0E1C42;">Act accordingly &mdash; based on the WHOLE picture, not just your first guess.</div>
+            </div>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 16px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI HAS EXPLANATION FREEZE TOO</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI assistants are built to give you the most likely-sounding answer first, then defend it. They have their own version of Explanation Freeze. The fix is the same: when you ask AI to explain something, ask it for <em>at least three</em> possible explanations instead of just one. Then you decide which is most likely &mdash; the AI is a brainstorm partner, not the final answer.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHY THIS MATTERS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Thinking through multiple explanations might seem like extra work, but it has some huge benefits. Let's check them out:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Better Relationships:</strong> Misinterpreting situations can lead to unnecessary conflict. Instead of thinking your friend is ignoring you because they're upset, consider other explanations. Maybe they're busy or didn't see your message.</li>
+            <li><strong>Healthier Mindset:</strong> If you immediately assume the worst (like thinking every stomachache is appendicitis), you might stress yourself out over nothing. By considering other possibilities, you can stay calm and avoid unnecessary worry.</li>
+            <li><strong>Smarter Decisions:</strong> Imagine you're studying for a big test, and you bomb the first practice quiz. Instead of thinking, "I'm just bad at math," you could come up with other reasons. Maybe you didn't study the right material. Maybe you were tired. Thawing Explanation Freeze helps you take productive steps instead of getting stuck on one idea.</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">In short, by thawing your explanation freeze, you're <em>less</em> likely to make mountains out of molehills, while also <em>more</em> likely to take serious things that might at first not seem like a big deal.</p>
+    </div>
+
+    <!-- Widget 2: Generate alternatives -->
+    <div class="optima-widget" id="widget-alt">
+        <div class="widget-kicker">&#9889; TRY IT &middot; SPOT THE FREEZE, PICK A BETTER MOVE</div>
+        <div class="widget-question">For each scenario, what's the right next step in the thaw process?</div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">1. Your text to a friend went unanswered for 6 hours. Your snap conclusion: "They're mad at me." You haven't generated other explanations yet.</div>
+            <div class="widget-options">
+                <button onclick="altPick(this, 0, 0)">Act on it &mdash; send an apology text right now</button>
+                <button onclick="altPick(this, 0, 1)">Give your snap conclusion a percentage</button>
+                <button onclick="altPick(this, 0, 2)">Generate at least 3 possible explanations first</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. You're trying to pick a movie. Two friends disagree about which one is better. You think one of them is being dramatic.</div>
+            <div class="widget-options">
+                <button onclick="altPick(this, 1, 0)">Ask yourself: would the answer change what I do? If not, stop here.</button>
+                <button onclick="altPick(this, 1, 1)">Generate at least 3 explanations for the disagreement</button>
+                <button onclick="altPick(this, 1, 2)">Assign a percentage to your snap judgment</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. You've generated three possible reasons your grade dropped: less sleep, harder material, distracted classes. Now what?</div>
+            <div class="widget-options">
+                <button onclick="altPick(this, 2, 0)">Pick the one that sounds most likely without checking</button>
+                <button onclick="altPick(this, 2, 1)">Give each a rough percentage based on what you know about your last few weeks</button>
+                <button onclick="altPick(this, 2, 2)">Add a fourth, more exciting explanation</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="altReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 1: Thawing Explanation Freeze</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Think of three recent situations where you jumped to a conclusion. Write down each situation, your initial explanation, and at least three different explanations for what might really have been happening. If you ever found out the real answer, share that too.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.1 VR Assignment &mdash; Hypothesis Hub <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 1 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Set up your VR research lab. Designate a "Hypothesis Hub" area and post at least three hypotheses about what will happen in your Good Life Experiment, each tagged with a likelihood. Record a Video MyRec walking through your reasoning.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Explanation Freeze is something we all deal with, but now you've got the tools to fight it. The next time you catch yourself jumping to conclusions, take a step back. Come up with at least three explanations, weigh the odds, and then decide how to act. This process helps you stay calm, make smarter choices, and handle uncertainty like a pro.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">So, go out there, stay curious, and don't get caught frozen on the first explanation you come up with. You've got this!</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 1 &middot; Explanation Freeze</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const frzResponses = [
+    "Welcome to being human. Explanation Freeze is universal &mdash; the tools below help you do something about it.",
+    "That's the goal. The five-step thaw process below makes the catch faster and more reliable.",
+    "Cool. Read on anyway &mdash; the five-step thaw will give you a name for what you're already doing intuitively.",
+    "That's worth noticing. Today's lesson is partly about catching yourself in the act."
+];
+function frzPick(btn, idx) {
+    document.querySelectorAll('#widget-frz .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-frz-fb');
+    fb.textContent = frzResponses[idx];
+    fb.classList.add('show');
+}
+function frzReset() {
+    document.querySelectorAll('#widget-frz .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-frz-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const altFeedback = {
+    correct: [
+        'Right. Step 2 of the thaw process. You haven\'t even brainstormed alternatives yet &mdash; jumping to action or percentages is premature.',
+        'Right. Step 1 of the thaw process. If the answer doesn\'t change your behavior, you don\'t need to overthink it.',
+        'Right. Step 4 of the thaw process. You have alternatives &mdash; now weigh them based on what you actually know about your situation.'
+    ],
+    hints: [
+        'Hint: you only have ONE explanation. The first thaw step you skipped is generating more.',
+        'Hint: this is a "does it matter?" situation. Two friends disagree about a movie &mdash; will any explanation change what YOU do?',
+        'Hint: you already have alternatives. The next step is weighing them, not adding more.'
+    ]
+};
+function altPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, altFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, altFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function altReset() {
+    document.querySelectorAll('#widget-alt .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

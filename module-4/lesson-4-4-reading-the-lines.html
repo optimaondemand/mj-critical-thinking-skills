@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 4 Lesson 4: Reading the Lines</title>
+<style>
+body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+.canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+.widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+.widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+.widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+.widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+.widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+.widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+.row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+.row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+.row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+.widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+.widget-reset:hover { background: #FDF3E3; }
+.deepity-card { background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 4</div><div style="font-size: 12px; color: #666;">Reading like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 4</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading the Lines</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Direct Claims (Stage 4)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Reading the Lines &mdash; Resolving Ambiguities</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">When something can mean more than one thing, how do you figure out what it <em>actually</em> means?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Have you ever heard a sentence and thought, "Wait, what does that mean exactly?" That's what we call <em>ambiguity</em> &mdash; when something can have more than one meaning. "The star is shining brightly." Are they talking about a celebrity or the sun? The process of figuring out the right meaning is called <em>disambiguation</em>. Authors, speakers, and advertisers use ambiguity all the time &mdash; sometimes by accident, sometimes on purpose. Today you'll learn how to spot it and resolve it.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> spot ambiguous statements and explain why they're ambiguous.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> disambiguate using context, questions, and the author's purpose.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify "deepities" &mdash; statements that sound profound but turn out to be either trivial or false.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-amb">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">"I saw her duck." &mdash; what's the first interpretation that hits you?</div>
+        <div class="widget-options">
+            <button onclick="ambPick(this, 0)">She crouched down quickly</button>
+            <button onclick="ambPick(this, 1)">She owns a pet duck</button>
+            <button onclick="ambPick(this, 2)">Both seem equally likely</button>
+            <button onclick="ambPick(this, 3)">Honestly, I want more context</button>
+        </div>
+        <div id="widget-amb-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="ambReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; FOUR REASONS AMBIGUITY EXISTS</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Accident.</strong> The speaker didn't realize the wording could be read two ways. <em>"I watched her duck."</em></li>
+            <li><strong>Ignorance.</strong> The person doesn't fully understand what they're talking about. <em>"The brain is a computer."</em> &mdash; how is it like a computer, exactly?</li>
+            <li><strong>Poetic or comedic effect.</strong> The ambiguity is the point. <em>"The peasants are revolting"</em> &mdash; disgusting, or in rebellion? Maybe both.</li>
+            <li><strong>Malicious intent.</strong> Someone wants to manipulate. <em>"This product is guaranteed to make you happier."</em> Happier than what?</li>
+        </ol>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; HOW TO DISAMBIGUATE</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li><strong>Look for context clues.</strong> "The star is shining brightly at the concert." Now we know it's a celebrity.</li>
+            <li><strong>Ask questions.</strong> "Are you talking about an animal, or did she crouch down?"</li>
+            <li><strong>Consider the author's purpose.</strong> Are they being poetic? Simplifying? Trying to manipulate you?</li>
+        </ol>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; DEEPITIES &mdash; PROFUNDITIES SPEWED</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A <em>deepity</em> (a term coined by philosopher Daniel Dennett) is a statement that <em>sounds</em> profound but, when you look closely, breaks into two layers:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>One interpretation that is <strong>profound&hellip; but false</strong>.</li>
+            <li>Another interpretation that is <strong>true&hellip; but trivial</strong>.</li>
+        </ol>
+        <div class="deepity-card">
+            <strong>"Love is just a word."</strong><br />
+            &mdash; Trivial: "love" is literally a word in the dictionary. True but obvious.<br />
+            &mdash; Profound but false: love is nothing more than a word &mdash; ignoring all the emotions, experiences, and relationships tied to it.
+        </div>
+        <div class="deepity-card">
+            <strong>"Beauty is only skin deep."</strong><br />
+            &mdash; Trivially true: beauty is often judged on appearance.<br />
+            &mdash; Profoundly false: it suggests beauty has no deeper significance &mdash; ignoring emotional, cultural, spiritual, moral aspects of beauty.
+        </div>
+        <div class="deepity-card">
+            <strong>"Any sufficiently advanced technology is indistinguishable from magic."</strong><br />
+            &mdash; Trivially true: people CAN be fooled into thinking advanced tech is magic.<br />
+            &mdash; Profoundly false: a sufficiently advanced technology would BE magic. We know it's not magic precisely because we know it's tech.
+        </div>
+        <p style="font-size: 16px; color: #555; font-style: italic; margin: 8px 0 0 0;"><strong>Challenge:</strong> See if you can show why "A machine running a sufficiently advanced computer program really is intelligent" is just as much a deepity as the magic one.</p>
+    </div>
+
+    <!-- Widget 2: Deepity or not -->
+    <div class="optima-widget" id="widget-deep">
+        <div class="widget-kicker">&#9889; TRY IT &middot; DEEPITY OR NOT?</div>
+        <div class="widget-question">For each statement, decide: is it a deepity (sounds profound but breaks down into trivial-OR-false), or a genuine claim?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"Everything happens for a reason."</div>
+            <div class="widget-options">
+                <button onclick="deepPick(this, 0, 0)">Deepity</button>
+                <button onclick="deepPick(this, 0, 1)">Genuine claim</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"Regular exercise lowers blood pressure on average."</div>
+            <div class="widget-options">
+                <button onclick="deepPick(this, 1, 0)">Deepity</button>
+                <button onclick="deepPick(this, 1, 1)">Genuine claim</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"Time is an illusion."</div>
+            <div class="widget-options">
+                <button onclick="deepPick(this, 2, 0)">Deepity</button>
+                <button onclick="deepPick(this, 2, 1)">Genuine claim</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="deepReset()">Reset</button>
+    </div>
+
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND DEEPITIES</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI assistants often produce deepities by accident &mdash; they're trained on a LOT of writing that sounds wise, and they can stitch together a sentence that <em>sounds</em> profound without actually meaning anything specific. When you read an AI's answer, run the deepity check: does it break into a trivial reading and a false-but-impressive reading? If yes, it's a deepity. Ask for a specific, falsifiable claim instead.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 4: Resolving Ambiguities</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Disambiguate 10 statements. Five are deepities &mdash; for those, explain what makes the profound interpretation false and the trivial interpretation true. This is the first of two formal graded assignments in Module 4.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>4.4 VR Assignment &mdash; Direct Claims Board <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(VR Research Library, Stage 4 of 8)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">In your library, build a Direct Claims Board. For each curated source, post 2-3 sticky notes listing what the text STRAIGHT-OUT says (direct, unambiguous claims).</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Disambiguation and understanding deepities are crucial skills for clear thinking. When you can see through ambiguity and break down seemingly profound statements, you become a more effective communicator and thinker. Next time you come across something that sounds confusing or too good to be true, don't just accept it. Break it down. Ask: what does this <em>really</em> mean?</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 4 Lesson 4 &middot; Reading the Lines</div>
+</div>
+
+</div>
+<script>
+const ambResponses = [
+    "Right &mdash; 'duck' as a verb (crouch) is one valid reading. There's a second one too. That's ambiguity.",
+    "Right &mdash; 'duck' as a noun (the bird) is the other valid reading. Both are possible without context.",
+    "You're seeing the ambiguity clearly. Context would resolve which is meant.",
+    "That instinct &mdash; 'I need context' &mdash; is exactly the disambiguation move. You're already doing it."
+];
+function ambPick(btn, idx) {
+    document.querySelectorAll('#widget-amb .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-amb-fb');
+    fb.textContent = ambResponses[idx]; fb.style.display = 'block';
+}
+function ambReset() {
+    document.querySelectorAll('#widget-amb .widget-options button').forEach(b => b.classList.remove('selected'));
+    document.getElementById('widget-amb-fb').style.display = 'none';
+}
+const deepFb = {
+    correct: [
+        "Right. Trivial reading: events happen, with causes. Profound-but-false: every event is part of some cosmic plan. Classic deepity.",
+        "Right. This is a specific, testable, evidence-based claim about exercise and blood pressure. Not a deepity &mdash; a real claim.",
+        "Right. Trivial: our PERCEPTION of time can mislead. Profound-but-false: time doesn't really exist. Classic deepity."
+    ],
+    hints: [
+        "Hint: split it. Trivially? Profoundly?",
+        "Hint: can you test this? Is it the kind of claim that can be checked with data?",
+        "Hint: split it. Is there an obvious trivial reading and an unsupported profound reading?"
+    ]
+};
+function deepPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, deepFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, deepFb.hints[rowIdx], 'incorrect'); }
+}
+function deepReset() {
+    document.querySelectorAll('#widget-deep .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

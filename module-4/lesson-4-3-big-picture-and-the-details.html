@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 4 Lesson 3: Big Picture and the Details</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .zoom-card { background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 4</div><div style="font-size: 12px; color: #666;">Reading like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 3</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Big Picture &amp; Details</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Source Shelves (Stage 3)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Big Picture and the Details <span style="font-size: 14px; color: #666;">(hey! cool band name)</span></div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Zoom out and zoom in: how to understand the whole text and its key pieces.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Imagine you're looking at a painting. First, you take a step back. You see the whole scene &mdash; a sunset over a field, maybe a few trees, a river running through. That's the <em>big picture</em>. But then you move closer. You notice brushstrokes, shadows, little details like a fox peeking out from the grass. That's the <em>detail</em>. Reading is the same way.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> spot the "big idea" of a text and why it matters.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> find and focus on key details that support or explain the big idea.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> avoid getting lost in the weeds &mdash; or worse, missing the important stuff hiding in plain sight.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-zoom">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">When you finish a long article, what's usually easier for you to remember?</div>
+        <div class="widget-options">
+            <button onclick="zoomPick(this, 0)">The main point</button>
+            <button onclick="zoomPick(this, 1)">A specific detail or example</button>
+            <button onclick="zoomPick(this, 2)">Honestly, neither &mdash; I forget pretty fast</button>
+            <button onclick="zoomPick(this, 3)">It depends on the article</button>
+        </div>
+        <div class="widget-feedback" id="widget-zoom-fb"></div>
+        <button class="widget-reset" onclick="zoomReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; ZOOMING OUT &mdash; SEEING THE BIG PICTURE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The big picture is the <em>main idea</em> or <em>overall purpose</em> of a text. It's what the author is really trying to say &mdash; sometimes clear, sometimes hidden under layers of examples or stories.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">As you read, look for:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Repeated words or ideas.</li>
+            <li>Topic sentences (often the first sentence of a paragraph).</li>
+            <li>Summaries or conclusions.</li>
+        </ul>
+        <div style="background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 4px; padding: 12px 16px;">
+            <strong style="color: #6b4f1d;">&#128161; Pro Tip:</strong> Academic texts love to <em>announce</em> their purpose. Watch for phrases like "This article will examine&hellip;" or "The purpose of this study is&hellip;" or "In conclusion&hellip;" If you had to summarize the whole text in one sentence, what would it be? That's the big picture.
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; ZOOMING IN &mdash; SPOTTING IMPORTANT DETAILS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Details are the bricks that build the house of meaning. But not all bricks are equal. Some hold up the structure. Others just decorate it. The four key detail types:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Evidence</strong> &mdash; statistics, facts, quotes, examples that back up the main idea.</li>
+            <li><strong>Explanations</strong> &mdash; when the author tells you <em>why</em> something matters.</li>
+            <li><strong>Definitions</strong> &mdash; new or tricky terms the text needs you to understand.</li>
+            <li><strong>Contrasts or Surprises</strong> &mdash; moments that go against your expectations.</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">After each paragraph, ask: <em>What's the main idea here? What's a detail that proves it? Is it important, or just extra?</em></p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; PUTTING IT TOGETHER (WORKED EXAMPLE)</div>
+        <div class="zoom-card">
+            <strong>Text title:</strong> <em>The Risks and Rewards of Running an Alligator Farm</em>
+        </div>
+        <div class="zoom-card"><strong>Step 1 &mdash; Big Picture Prediction:</strong> "This probably explains what it's like to operate an alligator farm &mdash; maybe the dangers and the money people can make from it."</div>
+        <div class="zoom-card"><strong>Step 2 &mdash; First Paragraph Says:</strong> "While raising alligators may sound like something out of a movie, hundreds of farms in the southern U.S. manage these powerful reptiles for their meat, hides, and even tourism."<br /><br /><em>Big picture confirmed:</em> the article is about the real-life business of alligator farming, including its benefits and challenges.</div>
+        <div class="zoom-card"><strong>Step 3 &mdash; Key details that matter:</strong>
+            <ul style="margin: 6px 0 0 18px;">
+                <li>Alligator farms must follow strict safety and environmental rules (risk detail).</li>
+                <li>Farmers can earn income by selling leather goods, meat, and guided tours (reward detail).</li>
+                <li>A single mistake &mdash; like leaving a gate unlatched &mdash; can lead to serious danger (evidence/example of risk).</li>
+            </ul>
+        </div>
+        <p style="font-size: 16px; color: #555; font-style: italic; margin: 8px 0 0 0;">These details support and explain the big picture. Everything connects.</p>
+    </div>
+
+    <!-- Widget 2 -->
+    <div class="optima-widget" id="widget-detail">
+        <div class="widget-kicker">&#9889; TRY IT &middot; BIG PICTURE OR DETAIL?</div>
+        <div class="widget-question">Imagine you're reading an article titled "Why Old Books Still Matter." For each statement from the article, is it the big picture, or a supporting detail?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"Reading old books helps you see what your own time is missing."</div>
+            <div class="widget-options">
+                <button onclick="detailPick(this, 0, 0)">Big Picture</button>
+                <button onclick="detailPick(this, 0, 1)">Supporting Detail</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"C.S. Lewis called this trap 'chronological snobbery.'"</div>
+            <div class="widget-options">
+                <button onclick="detailPick(this, 1, 0)">Big Picture</button>
+                <button onclick="detailPick(this, 1, 1)">Supporting Detail</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"Take Plato, Jane Austen, or Frederick Douglass &mdash; their ideas still speak today."</div>
+            <div class="widget-options">
+                <button onclick="detailPick(this, 2, 0)">Big Picture</button>
+                <button onclick="detailPick(this, 2, 1)">Supporting Detail</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="detailReset()">Reset</button>
+    </div>
+
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND THE "BIG PICTURE" TRAP</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When you ask an AI to summarize an article, you're asking for the big picture &mdash; but the AI might miss it. AI summaries often grab the most-repeated phrases, not the most-important ideas. The two aren't the same. Practice finding the big picture YOURSELF first, then check it against AI's version. If they disagree, you'll know which one to trust.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>In-Lesson Practice Submission</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Read the short article <em>"Why You Should Read Old Books"</em> (linked in this lesson in Canvas). Write the big picture in one sentence. List 3 key details. Add a 2-sentence reflection on what surprised you. Submit a Word document via the OneDrive tab.</div>
+                <div style="font-size: 13px; color: #555; font-style: italic; margin-top: 6px;">File name: <code style="background:#EEF1F8; padding:1px 5px;">LastName_FirstName_BigPictureDetails_MJCRT</code></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>4.3 VR Assignment &mdash; Source Shelves <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(VR Research Library, Stage 3 of 8)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Now that all six sources have been previewed and you have your Question Wall, build the Source Shelves. For each curated source, post a one-line "Big Picture" summary on its shelf.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Reading isn't just about going from the first word to the last. It's about thinking as you go &mdash; stepping back to see the full message, and zooming in to spot the key parts that build it. You already know how to preview and ask questions. Now you're learning how to <em>connect the dots</em>.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 4 Lesson 3 &middot; Big Picture and the Details</div>
+</div>
+
+</div>
+<script>
+const zoomResponses = [
+    "Common &mdash; and a good sign. You're seeing the forest, not just the trees. Today's lesson sharpens that skill.",
+    "Common too &mdash; and totally normal. Specific details often stick. Today you'll learn how to make sure you ALSO walk away with the big idea.",
+    "Real answer. Big picture + details is exactly the structure that makes things memorable. This lesson gives you the technique.",
+    "Honest answer. The right strategy depends on the article's purpose &mdash; that's the structure-recognition skill we'll sharpen here."
+];
+function zoomPick(btn, idx) {
+    document.querySelectorAll('#widget-zoom .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-zoom-fb');
+    fb.textContent = zoomResponses[idx]; fb.classList.add('show');
+}
+function zoomReset() {
+    document.querySelectorAll('#widget-zoom .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-zoom-fb'); fb.textContent = ''; fb.classList.remove('show');
+}
+const detailFb = {
+    correct: [
+        "Right. That sentence captures the OVERALL argument of the piece &mdash; that's the big picture.",
+        "Right. A specific named concept from one author = supporting detail.",
+        "Right. Three named examples that prove the big picture &mdash; that's a supporting detail."
+    ],
+    hints: [
+        "Hint: does this say WHY old books matter (big picture) or give a specific concept that supports the argument?",
+        "Hint: is this naming a specific concept from one source, or is it the main message?",
+        "Hint: a list of specific examples used to support a claim &mdash; what role does that play?"
+    ]
+};
+function detailPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, detailFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, detailFb.hints[rowIdx], 'incorrect'); }
+}
+function detailReset() {
+    document.querySelectorAll('#widget-detail .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

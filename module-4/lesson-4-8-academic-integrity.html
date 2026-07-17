@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 4 Lesson 8: Academic Integrity</title>
+<style>
+body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+.canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+.widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+.widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+.widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+.widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+.widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+.widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+.row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+.row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+.row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+.widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+.widget-reset:hover { background: #FDF3E3; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0; }
+.compare-table th { background: #0E1C42; color: #fff; padding: 8px 12px; text-align: left; }
+.compare-table td { padding: 10px 12px; border: 1px solid #D0D9E8; vertical-align: top; }
+.compare-table .good { background: #D8F0DD; }
+.compare-table .bad { background: #FDECEC; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 4</div><div style="font-size: 12px; color: #666;">Reading like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 8</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Academic Integrity</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Citation Station (Stage 8)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8 &middot; Final lesson of the module</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Academic Integrity: Notes, Paraphrasing, and Citing</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Be a respectful scholar &mdash; take notes, rephrase accurately, and give credit.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Congratulations, scholar! You've traveled far. You can preview, ask questions, zoom in and out, understand structure, summarize, and synthesize. But there's one more essential skill that ties it all together &mdash; and protects your credibility as a thinker. This lesson is about <strong>Academic Integrity</strong>: what it means, why it matters, and how to put it into practice through note-taking, paraphrasing, and citing your sources.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> take notes that actually help me think.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> paraphrase honestly &mdash; using my own words without copying.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> cite my sources properly in my annotated bibliography.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-ai">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">If you read three articles and use ideas from all three in your own paper without naming them, that's&hellip;</div>
+        <div class="widget-options">
+            <button onclick="aiPick(this, 0)">Totally fine &mdash; I rephrased everything</button>
+            <button onclick="aiPick(this, 1)">Plagiarism, even if I rephrased the words</button>
+            <button onclick="aiPick(this, 2)">Only a problem if I copied word-for-word</button>
+            <button onclick="aiPick(this, 3)">Depends on the assignment</button>
+        </div>
+        <div id="widget-ai-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="aiReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; SMART NOTE-TAKING (THE TWO-COLUMN METHOD)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Three golden rules:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Only write what matters</strong> &mdash; main ideas, facts, and key terms.</li>
+            <li><strong>Use your own words</strong> &mdash; restate things how you understand them.</li>
+            <li><strong>Mark sources clearly</strong> &mdash; note the article name, author, or link.</li>
+        </ol>
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px; margin: 12px 0;">
+            <tr style="background: #0E1C42; color: #fff;">
+                <th style="padding: 8px 12px; text-align: left;">Notes</th>
+                <th style="padding: 8px 12px; text-align: left;">My Thoughts</th>
+            </tr>
+            <tr><td style="padding: 10px 12px; border: 1px solid #D0D9E8;">"More teens are getting less than 7 hours of sleep." <em>(Article: Teen Sleep Crisis)</em></td><td style="padding: 10px 12px; border: 1px solid #D0D9E8;">I wonder if school start times affect this. Check other sources.</td></tr>
+            <tr><td style="padding: 10px 12px; border: 1px solid #D0D9E8;">"Sleep loss can impact memory and focus."</td><td style="padding: 10px 12px; border: 1px solid #D0D9E8;">Maybe link this to test scores? Useful for paper.</td></tr>
+        </table>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PARAPHRASING &mdash; SAY IT IN YOUR OWN WORDS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Paraphrasing</strong> means restating someone else's idea in your own words while keeping the original meaning.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Example:</strong></p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 14px 18px; margin: 10px 0; font-size: 15px;">
+            <strong>Original:</strong> "Sharks have survived for hundreds of millions of years thanks to their highly efficient senses."<br /><br />
+            <strong>Weak paraphrase</strong> (too close to the original): "Sharks have lived for millions of years because of their efficient senses."<br /><br />
+            <strong>Strong paraphrase</strong>: "Strong senses have made sharks long-time survivors."
+        </div>
+        <div style="background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 4px; padding: 12px 16px; margin: 12px 0;">
+            <strong style="color: #6b4f1d;">&#9989; The Three-Step Process:</strong>
+            <ol style="margin: 6px 0 0 18px;">
+                <li>Read the sentence carefully.</li>
+                <li>Cover it up &mdash; don't look.</li>
+                <li>Say it in your own words like you're explaining it to a friend.</li>
+            </ol>
+        </div>
+
+        <table class="compare-table">
+            <tr><th>Paraphrasing</th><th>Plagiarism</th></tr>
+            <tr><td class="good">Using your own words to express someone else's idea</td><td class="bad">Copying text or using someone's words without credit</td></tr>
+            <tr><td class="good">Still gives credit to the source</td><td class="bad">Pretends the idea is your own</td></tr>
+            <tr><td class="good">A skill that takes practice</td><td class="bad">A mistake that can lead to serious consequences</td></tr>
+        </table>
+    </div>
+
+    <!-- Widget 2 -->
+    <div class="optima-widget" id="widget-para">
+        <div class="widget-kicker">&#9889; TRY IT &middot; STRONG, WEAK, OR PLAGIARISM?</div>
+        <div class="widget-question">The original says: <em>"Coral reefs are home to about a quarter of all marine species."</em> For each rewording, what is it?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"Coral reefs are home to roughly 25% of all marine species."</div>
+            <div class="widget-options">
+                <button onclick="paraPick(this, 0, 0)">Strong paraphrase</button>
+                <button onclick="paraPick(this, 0, 1)">Weak paraphrase (too close)</button>
+                <button onclick="paraPick(this, 0, 2)">Plagiarism (copied)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"About one in four ocean species lives somewhere on a coral reef."</div>
+            <div class="widget-options">
+                <button onclick="paraPick(this, 1, 0)">Strong paraphrase</button>
+                <button onclick="paraPick(this, 1, 1)">Weak paraphrase (too close)</button>
+                <button onclick="paraPick(this, 1, 2)">Plagiarism (copied)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">"Coral reefs are home to about a quarter of all marine species."</div>
+            <div class="widget-options">
+                <button onclick="paraPick(this, 2, 0)">Strong paraphrase</button>
+                <button onclick="paraPick(this, 2, 1)">Weak paraphrase (too close)</button>
+                <button onclick="paraPick(this, 2, 2)">Plagiarism (copied)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="paraReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; CITING &mdash; GIVE CREDIT WHERE IT'S DUE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A citation tells your reader: <em>"I got this idea or fact from someone else &mdash; here's where."</em></p>
+        <div style="background: #D8F0DD; border-left: 4px solid #2A9D5C; border-radius: 4px; padding: 12px 16px; margin: 10px 0;">
+            <strong style="color: #1A6B3D;">Rule of thumb:</strong> If it's not your own idea, observation, or common knowledge &mdash; <strong>cite it.</strong>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 6px 0;"><strong>Simple citation format</strong> (for school assignments):</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Title</strong> of the article, book, or website</li>
+            <li><strong>Author</strong> or source name</li>
+            <li><strong>Publication Date</strong> (if available)</li>
+            <li><strong>Link</strong> (for web sources)</li>
+        </ul>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0;"><strong>Example:</strong> (From: "The Importance of Sharks," National Geographic, 2020)</p>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;"><strong>What doesn't need a citation?</strong> Common knowledge. "The Earth orbits the sun." "Water boils at 100&deg;C." "The American Revolution ended in 1783." But specific opinions, data points, or theories &mdash; cite them.</p>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND ACADEMIC INTEGRITY</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If you use an AI tool to draft text and submit it as your own, that's the same kind of integrity violation as copying from a website without crediting. The work isn't yours; the thinking isn't yours. AI can help you brainstorm or check your understanding, but the writing you turn in needs to be the product of <em>your</em> reading and <em>your</em> reasoning &mdash; and any AI-generated text you use should be acknowledged the same way you'd cite any other source.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>In-Lesson Practice &mdash; Cite It</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Find a passage in some text (lesson, blog, article, even an AI write-up). Paste the passage. Summarize it in 3 sentences or fewer. Cite it: Title, Author/Source, Date, Link. Submit a short Word document.</div>
+                <div style="font-size: 13px; color: #555; font-style: italic; margin-top: 6px;">File name: <code style="background:#EEF1F8; padding:1px 5px;">LastName_FirstName_CiteIt_MJCRT</code></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>4.8 VR Assignment &mdash; Citation Station <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(VR Research Library, Stage 8 of 8 &mdash; FINAL STAGE)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For each curated source, post a properly formatted citation sticky on its shelf. Then walk the whole library &mdash; this is your dress rehearsal for the capstone.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Academic integrity isn't about avoiding trouble. It's about <strong>becoming the kind of person people trust</strong> &mdash; in school, in life, in the world. When you take clear notes, paraphrase honestly, and give credit to others, you're not just being a good student. You're building your reputation as a <em>real thinker</em>.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 4 Lesson 8 &middot; Academic Integrity</div>
+</div>
+
+</div>
+<script>
+const aiResp = [
+    "Common misconception. Rephrasing without crediting the source is still plagiarism &mdash; you're using someone else's ideas as if they were yours.",
+    "Right. Even if every word is yours, using ideas from sources without citing them is plagiarism. Today's lesson shows you the move that protects you.",
+    "Common but wrong. Copying words is one kind of plagiarism. Using someone's ideas without crediting them is also plagiarism &mdash; even if you rephrase.",
+    "Honest answer. Different assignments have different rules. But the general principle (cite ideas not just words) holds almost everywhere."
+];
+function aiPick(btn, idx) {
+    document.querySelectorAll('#widget-ai .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-ai-fb');
+    fb.textContent = aiResp[idx]; fb.style.display = 'block';
+}
+function aiReset() {
+    document.querySelectorAll('#widget-ai .widget-options button').forEach(b => b.classList.remove('selected'));
+    document.getElementById('widget-ai-fb').style.display = 'none';
+}
+const paraFb = {
+    correct: [
+        "Right. 'Roughly 25%' is just a numerical version of 'about a quarter.' Most of the sentence is unchanged &mdash; that's a weak paraphrase.",
+        "Right. New structure, new words, same meaning. Strong paraphrase.",
+        "Right. Word-for-word with no quotation marks or citation = plagiarism."
+    ],
+    hints: [
+        "Hint: 'about a quarter' &harr; 'roughly 25%' are the same kind of change. How much else changed?",
+        "Hint: did this rewrite the SENTENCE STRUCTURE, not just swap words?",
+        "Hint: this is identical to the original. With no quotes and no citation, what's it called?"
+    ]
+};
+function paraPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, paraFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, paraFb.hints[rowIdx], 'incorrect'); }
+}
+function paraReset() {
+    document.querySelectorAll('#widget-para .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Lesson 1: Super Clear Instructions</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- HEADER -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<!-- METADATA -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Acting like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1 &#129302;</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Super Clear Instructions</div>
+        <div style="font-size: 12px; color: #666;">Course content (this page)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 16px; color: #0e1c42;">Developing Soft Skills</div>
+    </div>
+</div>
+
+<!-- BODY -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Super Clear Instructions &#129302;</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Communication isn't what you say. It's what gets received.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">When you hear the word "communication," what comes to mind? Talking? Texting? Giving a speech? While all of those are ways of communicating, the truth is that communication is much bigger than just the words we say.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> recognize the four kinds of communication (verbal, nonverbal, intentional, unintentional).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify five common reasons people miscommunicate, and the fix for each.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> give clear, step-by-step instructions for a task someone has never done before.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or document for sketching task instructions.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A flowchart tool (paper and pencil works, or a digital tool like draw.io, Lucidchart, or Google Drawings) &mdash; for the paired <em>Assignment 1</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>2.1 VR Assignment</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Communication check-in -->
+    <div class="optima-widget" id="widget-comm">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">When was the last time something you said or wrote got misinterpreted?</div>
+        <div class="widget-options">
+            <button onclick="commPick(this, 0)">&#128517; This week, more than once</button>
+            <button onclick="commPick(this, 1)">&#129300; A while back</button>
+            <button onclick="commPick(this, 2)">&#128528; Honestly doesn't happen much</button>
+            <button onclick="commPick(this, 3)">&#129335; I'm not sure</button>
+        </div>
+        <div class="widget-feedback" id="widget-comm-fb"></div>
+        <button class="widget-reset" onclick="commReset()">Reset</button>
+    </div>
+
+    <!-- Content card 1: What is Communication, Really? -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT IS COMMUNICATION, REALLY?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Communication is everything we do that sends a message to someone else &mdash; whether we realize it or not. It includes:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Verbal communication</strong> &mdash; The actual words you say (or type).</li>
+            <li><strong>Nonverbal communication</strong> &mdash; Body language, facial expressions, tone of voice, and even the way you dress.</li>
+            <li><strong>Intentional communication</strong> &mdash; Messages you purposely send (like waving to say hello).</li>
+            <li><strong>Unintentional communication</strong> &mdash; Messages you send without meaning to (like yawning while someone is talking and making them think you're bored).</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">For example, imagine I never tell you that I'm married, but you notice a wedding ring on my finger. You've learned something about me &mdash; not because I said it, but because of what I <em>showed</em> you. That's nonverbal communication at work.</p>
+
+        <!-- Communication-types visual -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 20px; margin: 18px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128202; FOUR KINDS OF COMMUNICATION &mdash; MAPPED</div>
+            <div style="display: grid; grid-template-columns: auto 1fr 1fr; gap: 0;">
+                <div></div>
+                <div style="font-size: 12px; color: #6b7a99; text-align: center; padding: 6px; letter-spacing: 0.5px;">VERBAL (words)</div>
+                <div style="font-size: 12px; color: #6b7a99; text-align: center; padding: 6px; letter-spacing: 0.5px;">NONVERBAL (body, tone, looks)</div>
+
+                <div style="font-size: 12px; color: #6b7a99; padding: 6px; letter-spacing: 0.5px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: center;">INTENTIONAL</div>
+                <div style="background: #EEF1F8; border: 1px solid #D0D9E8; padding: 14px; font-size: 14px; color: #1a2340;">Saying "I love you" out loud. Texting "thanks." Asking a question in class.</div>
+                <div style="background: #EEF1F8; border: 1px solid #D0D9E8; padding: 14px; font-size: 14px; color: #1a2340;">Waving hello. Nodding in agreement. Dressing up for a presentation.</div>
+
+                <div style="font-size: 12px; color: #6b7a99; padding: 6px; letter-spacing: 0.5px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: center;">UNINTENTIONAL</div>
+                <div style="background: #FDF3E3; border: 1px solid #EFD9A6; padding: 14px; font-size: 14px; color: #1a2340;">Talking too fast and saying something you'd never say slowly. A muttered comment overheard.</div>
+                <div style="background: #FDF3E3; border: 1px solid #EFD9A6; padding: 14px; font-size: 14px; color: #1a2340;">Yawning while someone talks. The wedding ring you forgot you were wearing. Eye-rolling you didn't know you did.</div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic;">The trickiest box is bottom-right &mdash; nonverbal AND unintentional. That's where most miscommunication hides.</div>
+        </div>
+    </div>
+
+    <!-- Content card 2: Communication Gone Wrong -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; COMMUNICATION GONE WRONG</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Because communication includes so much &mdash; words, body language, tone of voice, assumptions &mdash; it's very easy to miscommunicate. Have you ever:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Sent a text that someone misinterpreted?</li>
+            <li>Thought you explained something well, but the person did something totally different?</li>
+            <li>Felt like someone ignored what you said, but they actually just didn't hear you?</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">These are all examples of unclear communication. Even when we <em>think</em> we're being clear, there are many reasons our message might not come across the way we expect.</p>
+    </div>
+
+    <!-- Content card 3: Why Are We Sometimes Unclear? -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WHY ARE WE SOMETIMES UNCLEAR?</div>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 0 0 6px 0;">1. We assume people already know what we mean.</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If you say, "Go to that place over there," but your friend doesn't know where "there" is, they won't get it right.</li>
+            <li><strong>Fix it:</strong> Be specific. Instead of "that place," say "the bench next to the library entrance."</li>
+        </ul>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">2. We leave out important steps.</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Imagine giving someone directions to your house but forgetting to mention a turn they need to take. That missing step will throw everything off.</li>
+            <li><strong>Fix it:</strong> Walk through your instructions in your mind as if you were the person following them for the first time.</li>
+        </ul>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">3. We use vague or confusing words.</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Saying, "Move that thing over here" doesn't help if someone doesn't know what "thing" or "here" means.</li>
+            <li><strong>Fix it:</strong> Use clear, direct words. Instead of "that thing," say "the blue notebook."</li>
+        </ul>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">4. We think people understand things the same way we do.</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If you and a friend play the same video game but have different strategies, saying "Go left" might mean one thing to you and something totally different to them.</li>
+            <li><strong>Fix it:</strong> Check for understanding. Ask, "Do you know what I mean?" or have them repeat back the steps.</li>
+        </ul>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">5. Nonverbal signals can change the message.</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If you say "I'm fine" but roll your eyes and sigh, people will believe your body language more than your words.</li>
+            <li><strong>Fix it:</strong> Make sure your tone and expressions match what you mean to say.</li>
+        </ul>
+    </div>
+
+    <!-- Content card 4: How to Make Your Communication Clearer -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; HOW TO MAKE YOUR COMMUNICATION CLEARER</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Now that we know where communication goes wrong, let's look at how to get it right:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Be specific.</strong> Instead of "Put this somewhere," say "Put this book on the shelf."</li>
+            <li><strong>Break it down step by step.</strong> Imagine explaining it to someone who knows nothing about the topic.</li>
+            <li><strong>Ask for feedback.</strong> Say, "Can you repeat that back to me?" to check if they understood.</li>
+            <li><strong>Watch for confusion.</strong> If someone looks puzzled, stop and ask if they have questions.</li>
+            <li><strong>Match your words to your actions.</strong> If you say "I'm happy to help" but look annoyed, people might believe your tone more than your words.</li>
+        </ul>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND CLEAR INSTRUCTIONS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When you give instructions to a person, they fill in gaps with what they already know about you. When you give instructions to an AI, it has <em>only your words</em> &mdash; no shared history, no body language, no glance for "did that make sense?" Every skill in this lesson &mdash; being specific, breaking it down, watching for confusion &mdash; is exactly what makes a strong prompt to an AI tool too. If you can give crystal-clear instructions to a person, you're already most of the way to giving crystal-clear prompts to a machine.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Spot the clearer instruction -->
+    <div class="optima-widget" id="widget-clear">
+        <div class="widget-kicker">&#9889; TRY IT &middot; SPOT THE CLEARER INSTRUCTION</div>
+        <div class="widget-question">For each pair, which version would actually work for someone following it?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. You're telling a friend how to find you.</div>
+            <div class="widget-options">
+                <button onclick="clrPick(this, 0, 0)">"Meet me over by that thing."</button>
+                <button onclick="clrPick(this, 0, 1)">"Meet me at the picnic table behind the gym, near the basketball hoops."</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. You're explaining how to make scrambled eggs.</div>
+            <div class="widget-options">
+                <button onclick="clrPick(this, 1, 0)">"Crack 2 eggs into a bowl, whisk for 10 seconds, pour into a buttered pan over low heat, stir slowly with a spatula until just set."</button>
+                <button onclick="clrPick(this, 1, 1)">"Just cook the eggs the normal way until they look good."</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. You're asking a classmate to help you study.</div>
+            <div class="widget-options">
+                <button onclick="clrPick(this, 2, 0)">"Wanna study sometime?"</button>
+                <button onclick="clrPick(this, 2, 1)">"Can you quiz me on the 10 vocab words from Chapter 4 tomorrow at lunch?"</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="clrReset()">Reset</button>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 1: Super Clear Instructions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Pick a task (hobby, school project, daily routine), write a step-by-step breakdown, draw a flowchart of the task, then self-assess your own clarity using the provided checklist and revise.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>2.1 VR Assignment &mdash; The Wordless Museum of Emotion &amp; Intention</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build five "emotion statue" scenes in VR that communicate complex human experiences <em>without</em> any written or spoken language. Then record a video tour walking us through each scene.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Communication isn't just about talking &mdash; it's about making sure your message is understood the way you intended. Whether you're explaining how to play a game, giving directions, or just trying to tell a story, using clear, intentional communication will make everything easier.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">So next time you explain something, slow down, be specific, and check if the other person really understands &mdash; because great communication isn't just about what you say, but how well it's received!</p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 2 Lesson 1 &middot; Super Clear Instructions &#129302;</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const commResponses = [
+    "Welcome to communication for humans. The good news: it's a skill, and you can build it. Read on.",
+    "Probably more recent than you remember. We forget the small ones. This lesson is about making fewer of them.",
+    "Either you're a natural, or you don't notice when it happens. Both are worth checking. Read on.",
+    "That's actually a useful answer — most miscommunication happens without anyone realizing it. The unintentional kind is the hardest to fix."
+];
+function commPick(btn, idx) {
+    document.querySelectorAll('#widget-comm .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-comm-fb');
+    fb.textContent = commResponses[idx];
+    fb.classList.add('show');
+}
+function commReset() {
+    document.querySelectorAll('#widget-comm .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-comm-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const clrFeedback = {
+    correct: [
+        'Right. "Picnic table behind the gym, near the basketball hoops" can only mean one place. The first version is the kind of instruction this whole lesson is about.',
+        'Right. Specific verbs (crack, whisk, pour, stir), measurements (2 eggs, 10 seconds, low heat), and a stopping point (until just set) — anyone could follow that.',
+        'Right. "Quiz me on the 10 vocab words from Chapter 4 tomorrow at lunch" is concrete enough to actually happen. "Wanna study sometime?" almost never turns into a real study session.'
+    ],
+    hints: [
+        'Hint: which version names a specific place that can only mean one thing?',
+        'Hint: which version could a stranger actually follow without asking you any follow-up questions?',
+        'Hint: which version is concrete enough that it would actually get on someone\'s calendar?'
+    ]
+};
+function clrPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, clrFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, clrFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function clrReset() {
+    document.querySelectorAll('#widget-clear .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

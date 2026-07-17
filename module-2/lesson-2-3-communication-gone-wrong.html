@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Lesson 3: Communication Gone Wrong</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Acting like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3 &#128553;</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Communication Gone Wrong</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 16px; color: #0e1c42;">Developing Soft Skills</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Communication Gone Wrong &#128553;</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The Transactional Model &mdash; communication as a two-way street</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Imagine this: You're in a group project, and things aren't going well. Some people aren't pulling their weight, others don't seem to understand the plan, and you're frustrated because you feel like no one is listening to your ideas. Sound familiar? Problems like these often boil down to one thing: how we communicate.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">This lesson is about a tool called <em>the transactional model of communication</em>, which can help you communicate better, collaborate more effectively, and even build stronger relationships &mdash; not just in school but in life. Let's break it down together.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the transactional model of communication and name its six characteristics.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify which piece of the transactional model is missing in a miscommunication.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use active listening, feedback, and nonverbal awareness to fix a broken conversation.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A device with a browser &mdash; for the paired <em>Assignment 3</em>, which uses a course-provided GPT "manager" simulation.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>2.3 VR Assignment</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Group project check-in -->
+    <div class="optima-widget" id="widget-grp">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Be honest &mdash; how do group projects usually go for you?</div>
+        <div class="widget-options">
+            <button onclick="grpPick(this, 0)">&#128557; Disaster every time</button>
+            <button onclick="grpPick(this, 1)">&#128528; Mixed &mdash; depends on the group</button>
+            <button onclick="grpPick(this, 2)">&#128526; Smooth, usually</button>
+            <button onclick="grpPick(this, 3)">&#129335; Haven't done many</button>
+        </div>
+        <div class="widget-feedback" id="widget-grp-fb"></div>
+        <button class="widget-reset" onclick="grpReset()">Reset</button>
+    </div>
+
+    <!-- Part 1: What is the Transactional Model -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT IS THE TRANSACTIONAL MODEL?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">At its heart, communication isn't just about <em>talking</em>. It's about <em>understanding</em>. The transactional model of communication recognizes that communication is a two-way street &mdash; a back-and-forth process where everyone involved plays an active role.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Key parts of the transactional model:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Active participation:</strong> Both people share ideas, feelings, and reactions.</li>
+            <li><strong>Nonverbal cues:</strong> Facial expressions, gestures, and even your tone of voice carry meaning.</li>
+            <li><strong>Feedback:</strong> This is when someone responds to what you've said, helping to clarify or continue the conversation.</li>
+        </ul>
+    </div>
+
+    <!-- Part 2: Linear vs Transactional -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LINEAR vs. TRANSACTIONAL</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Think of the linear model as like creating a blog post. You send a message for others to read, but there's no response. Did anyone see it? Do others agree with you? Did they like what you have to say? You don't know. Communication here is a one-way street.</p>
+        <div style="text-align: center; margin: 14px 0;">
+            <img src="../images/comm-linear%20model.png" alt="Linear communication model" style="max-width: 189px; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Now compare this to the transactional model: You post your ideas in a Discord thread, and your friend replies, "That's a cool idea! But here's an interesting twist&hellip;." Suddenly, you're having a real conversation. This model is about interaction, which makes communication clearer and more effective.</p>
+        <div style="text-align: center; margin: 14px 0;">
+            <img src="../images/comm-transactional%20model.png" alt="Transactional communication model" style="max-width: 600px; width: 100%; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+    </div>
+
+    <!-- Part 3: 6 characteristics -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SIX CHARACTERISTICS OF THE MODEL</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">To really understand how this model works, let's dive into its key characteristics. Here's what makes it different &mdash; and a better model of how communication works than the linear one:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>It's Dynamic</strong> &mdash; Communication isn't static. It's a living, moving process where all parties influence the conversation. For instance, if you're telling a story and your friend looks confused, you might stop and explain some background for the part that confused her.</li>
+            <li><strong>It Happens in Real-Time</strong> &mdash; This doesn't always mean face-to-face. A phone call, video chat, instant messaging, or even gabbing it up in VR counts as real-time communication. It works best when you're paying attention and responding actively.</li>
+            <li><strong>It's a Shared Responsibility</strong> &mdash; All people involved in the conversation are responsible for making it work. If you don't understand something, it's okay to ask questions. If someone seems confused, it's your job to clarify.</li>
+            <li><strong>Context Matters</strong> &mdash; Everything &mdash; from the environment you're in to your cultural background &mdash; affects how you communicate and what you understand of what others communicate to you. Similarly, your interlocutors (the people you're conversing with) have their own cultural background and assumptions that affect how they communicate and what they understand of others' communication. Talking in a noisy cafeteria is different from having a quiet conversation at home. In American English "flat" is only used as a modifier ("that flat surface," "his joke fell flat"). But in British English, "a flat" is a noun for what we in American call "an apartment." Not knowing this difference might lead to confusion.</li>
+            <li><strong>Nonverbal Communication Speaks Volumes</strong> &mdash; Sometimes, what you don't say matters as much as what you do say. Rolling your eyes, crossing your arms, or smiling can change how your words are understood. "No" usually means "no." But say it in an exaggerated way and with an eyeroll, and you'll effectively communicate "yes" with your "no" dripping with sarcasm.</li>
+            <li><strong>Feedback is Key</strong> &mdash; Without feedback, communication breaks down. Saying, "I see what you mean" or asking, "Can you explain that again?" helps both sides stay on the same page.</li>
+        </ol>
+    </div>
+
+    <!-- Part 4: Why care -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHY SHOULD YOU CARE?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">You might be wondering, "Why does this matter to me?!" The truth is, the transactional model of communication can help you in all kinds of ways:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Building better relationships</strong> &mdash; When you communicate effectively, you show others that you care about their ideas and feelings. This builds trust and respect.</li>
+            <li><strong>Succeeding in school</strong> &mdash; From group projects to class discussions, clear communication helps you avoid misunderstandings and work better with others.</li>
+            <li><strong>Preparing for the real world</strong> &mdash; Whether it's a future job, college, or just navigating life, good communication is a skill you'll use every day.</li>
+        </ul>
+    </div>
+
+    <!-- Part 5: Practical steps -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; PRACTICAL STEPS</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Be an active listener</strong> &mdash; When someone speaks, don't just hear their words. Pay attention! Show you're listening by nodding, asking questions, or summarizing what they said.</li>
+            <li><strong>Use feedback</strong> &mdash; If you're not sure what someone means, ask. Phrases like "Could you explain that differently?" or "Do you mean&hellip;?" can clear up confusion.</li>
+            <li><strong>Pay attention to nonverbal cues</strong> &mdash; Watch for facial expressions, body language, and tone of voice. Are they excited? Nervous? Confused? Adjust how you communicate based on these signals.</li>
+            <li><strong>Adapt to the context</strong> &mdash; If you're in a formal setting, like a class presentation, your communication style should be more professional than when you're joking around with friends.</li>
+            <li><strong>Take responsibility</strong> &mdash; If a misunderstanding happens, don't play the blame game. Instead, work together to fix it. Communication is a team effort.</li>
+        </ol>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 20px 0 8px 0;">Challenges You Might Face</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Distractions</strong> &mdash; Turn off your phone or find a quiet place to talk.</li>
+            <li><strong>Different styles</strong> &mdash; Some people are shy; others are more outgoing. Some so frank they seem rude, others so accommodating they seem flaky. Be patient, respectful, and charitable in interpreting others' behavior.</li>
+            <li><strong>Cultural differences</strong> &mdash; If someone communicates differently than you, try to learn from them. Ask questions to understand their perspective.</li>
+        </ul>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 20px 0 8px 0;">The Benefits of Better Communication</h3>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Fewer misunderstandings: Everyone knows what's expected.</li>
+            <li>Stronger teamwork: You'll collaborate more effectively.</li>
+            <li>Better relationships: People will feel valued and understood.</li>
+        </ul>
+    </div>
+
+    <!-- Part 6: Applying in real life -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 6 &middot; APPLYING THIS IN REAL LIFE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Whether you're working on a group project, texting a friend, or having a disagreement with a sibling, knowing how to reduce noise and improve clarity will make your communication much more effective.</p>
+
+        <h4 style="font-size: 18px; color: #0e1c42; margin: 16px 0 6px 0;">Scenario 1: Group Project Confusion</h4>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 8px 0;">You're in a group project, and people keep misunderstanding each other. How can you use the transactional model to improve communication?</p>
+        <ul style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 12px 18px;">
+            <li><strong>Reduce noise:</strong> Move to a quieter location or ask everyone to put their phones away.</li>
+            <li><strong>Adjust your vocabulary:</strong> If someone isn't getting what you mean, rephrase it in simpler terms.</li>
+            <li><strong>Use feedback:</strong> Ask, "Does that make sense?" or "What do you think?" to check for understanding.</li>
+            <li><strong>Watch for nonverbal cues:</strong> If someone looks confused or disengaged, ask them directly if they have questions.</li>
+        </ul>
+
+        <h4 style="font-size: 18px; color: #0e1c42; margin: 16px 0 6px 0;">Scenario 2: Miscommunication at Work (or in a Club/Sports Team)</h4>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 8px 0;">Your boss or coach gives instructions, but things keep going wrong. How do you fix the breakdown?</p>
+        <ul style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 12px 18px;">
+            <li><strong>Clarify the message:</strong> Repeat back what you understood &mdash; "Just to be sure, you want me to&hellip;?"</li>
+            <li><strong>Ask for feedback:</strong> If something is unclear, say, "Can you show me an example?"</li>
+            <li><strong>Adapt your response:</strong> If your boss or coach seems frustrated, stay calm and adjust how you respond based on their tone and expectations.</li>
+        </ul>
+
+        <h4 style="font-size: 18px; color: #0e1c42; margin: 16px 0 6px 0;">Scenario 3: Disagreement with a Friend or Family Member</h4>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 8px 0;">You're arguing because they misunderstood something you said. Instead of getting defensive, how can you apply the transactional model?</p>
+        <ul style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 12px 18px;">
+            <li><strong>Stay aware of emotional noise:</strong> If either of you is upset, take a deep breath before responding.</li>
+            <li><strong>Acknowledge their perspective:</strong> "I see why you felt that way. Here's what I meant&hellip;"</li>
+            <li><strong>Use clear feedback loops:</strong> "So what I'm hearing is that you thought I ignored you. I actually didn't hear you. Let's fix that."</li>
+        </ul>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI HAS NO TRANSACTIONAL MODEL</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When you talk to an AI assistant, there are no nonverbal cues. The AI can't see you frown or hear your tone. It has no shared cultural context with you. It can't ask, "Did you mean&hellip;?" the way a friend would. <em>You</em> have to do all the feedback-checking and clarifying yourself. The transactional model is what you build when you talk to people; with AI, you're playing both roles. Get good at this skill with people first, and you'll be the rare student who knows how to handle AI well too.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Identify the missing piece -->
+    <div class="optima-widget" id="widget-miss">
+        <div class="widget-kicker">&#9889; TRY IT &middot; WHAT'S MISSING FROM THE MODEL?</div>
+        <div class="widget-question">For each broken conversation, which piece of the transactional model is most clearly missing?</div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">1. Your friend tells you "I'm fine" while crossing her arms and looking away. You assume the words are the message and move on.</div>
+            <div class="widget-options">
+                <button onclick="missPick(this, 0, 0)">Feedback</button>
+                <button onclick="missPick(this, 0, 1)">Shared responsibility</button>
+                <button onclick="missPick(this, 0, 2)">Attention to nonverbal cues</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. Your teacher gives directions for an assignment. You think you got it, but you don't ask any follow-up questions. The next day, you turn in the wrong thing.</div>
+            <div class="widget-options">
+                <button onclick="missPick(this, 1, 0)">Feedback</button>
+                <button onclick="missPick(this, 1, 1)">Shared responsibility</button>
+                <button onclick="missPick(this, 1, 2)">Attention to nonverbal cues</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. In a group project, three people sit silently while one person makes every decision. Later, the silent ones complain about the result.</div>
+            <div class="widget-options">
+                <button onclick="missPick(this, 2, 0)">Feedback</button>
+                <button onclick="missPick(this, 2, 1)">Shared responsibility</button>
+                <button onclick="missPick(this, 2, 2)">Attention to nonverbal cues</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="missReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 3: Understanding and Refining Communication</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Interact with a course-provided GPT "manager" who gives you a deliberately confusing work assignment. Ask questions until you have everything you need. Then reflect on what made it frustrating and rewrite the original request so it would have worked in one go.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>2.3 VR Assignment &mdash; Fix the Miscommunication!</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a miscommunication scene in VR (group project gone wrong, cultural mix-up, misread silence, etc.). Then build a fixed version of the same scene right next to it, showing what the transactional model would have looked like. Record a video tour comparing the two.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The transactional model of communication is like a secret weapon for better teamwork, stronger friendships, and less stress. Remember: communication isn't just about talking; it's about connecting. Start practicing today by really listening, giving feedback, and paying attention to the context &mdash; and watch how it transforms your interactions!</p>
+    </div>
+
+    <!-- Optional Canva resource -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#127916; OPTIONAL VISUAL LESSON</div>
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; overflow: hidden; border-radius: 8px;"><iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;" src="https://www.canva.com/design/DAGtgPuzJCU/NlSwqZn_BI3XtND-V0-Thg/view?embed" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 2 Lesson 3 &middot; Communication Gone Wrong</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const grpResponses = [
+    "Group projects often fail at the communication layer, not the work layer. This lesson is for you.",
+    "That's most people. The 'good' groups usually got lucky with members who already used the transactional model. This lesson teaches the tool deliberately.",
+    "Lucky &mdash; or skilled. Pay attention to WHY your groups work. You're probably doing what this lesson describes already.",
+    "Fine. You will. The tools below are the ones that separate a productive group from a frustrating one."
+];
+function grpPick(btn, idx) {
+    document.querySelectorAll('#widget-grp .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-grp-fb');
+    fb.textContent = grpResponses[idx];
+    fb.classList.add('show');
+}
+function grpReset() {
+    document.querySelectorAll('#widget-grp .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-grp-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const missFeedback = {
+    correct: [
+        'Right. Her crossed arms and looking-away are nonverbal cues that contradict her words. Ignoring them means you missed half the conversation.',
+        'Right. Feedback &mdash; asking a clarifying question &mdash; would have caught the misunderstanding before it cost you a grade.',
+        'Right. Shared responsibility means the silent group members had a job too: speak up, contribute, push back. Silence wasn\'t neutral &mdash; it was a choice.'
+    ],
+    hints: [
+        'Hint: she said one thing with her words and another with her body. Which characteristic of the model are you ignoring?',
+        'Hint: you never checked your understanding. Which characteristic would have caught the mix-up?',
+        'Hint: communication is a team effort. Silence means someone wasn\'t doing their part. Which characteristic?'
+    ]
+};
+function missPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, missFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, missFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function missReset() {
+    document.querySelectorAll('#widget-miss .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

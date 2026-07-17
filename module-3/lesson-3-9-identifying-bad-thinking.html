@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 9: Identifying Bad Thinking</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .fallacy-card { background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 4px; padding: 14px 18px; margin: 12px 0; }
+    .fallacy-card h4 { margin: 0 0 6px 0; color: #0E1C42; font-size: 17px; }
+    .fallacy-card .example { font-style: italic; color: #555; margin: 6px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div><div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 9</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Identifying Bad Thinking</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Fallacy audit on your own work</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Identifying Bad Thinking</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">"Non sequitur" &mdash; it does not follow.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today's lesson is the payoff: you'll use Bayes' Rule to spot flawed reasoning &mdash; <em>fallacious thinking</em>. By the end you'll have a better grasp of what makes arguments weak or strong, and you'll be ready to spot when someone (or your own brain) is making a leap that isn't supported by the evidence.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the difference between formal and informal fallacies.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use Bayes' Rule to show why a fallacious argument fails &mdash; not just name what it's called.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document for <em>Assignment 9: Analyzing Fallacies</em> &mdash; pick 3 of 10 arguments and break each one down.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset and a clean look at your own Good Life Experiment &mdash; for <em>3.9 VR Fallacy Audit</em>.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT ARE FALLACIES?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Fallacies are errors in reasoning. They happen when the evidence presented doesn't actually support the conclusion being drawn. A fancy Latin phrase &mdash; <em>non sequitur</em> &mdash; captures it perfectly: <em>"it does not follow."</em> The conclusion doesn't follow logically from the evidence.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FORMAL vs. INFORMAL FALLACIES</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Formal fallacies</strong> happen when the <em>structure</em> of an argument is flawed &mdash; the premises don't logically guarantee the conclusion. This is the world of deductive arguments.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Informal fallacies</strong> are trickier. The problem isn't the structure but the <em>evidence itself</em>, or the way it's being used. You can't spot informal fallacies just by looking at the shape of the argument &mdash; you have to think through whether the evidence is actually relevant.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">There are <em>hundreds</em> of named informal fallacies. Here are three common ones:</p>
+
+        <div class="fallacy-card">
+            <h4>Red Herring</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340;"><strong>Definition:</strong> Introducing irrelevant information to distract from the real issue.</p>
+            <div class="example">"I know I didn't clean up, but have you noticed how messy my sister's room is?"</div>
+            <p style="margin: 0; font-size: 15px; color: #555;"><em>Why it fails:</em> Whether your sister cleaned has nothing to do with whether YOU did.</p>
+        </div>
+
+        <div class="fallacy-card">
+            <h4>False Cause</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340;"><strong>Definition:</strong> Claiming a cause-and-effect relationship where none exists.</p>
+            <div class="example">"I got an A on my history test because I wore my lucky socks!"</div>
+            <p style="margin: 0; font-size: 15px; color: #555;"><em>Why it fails:</em> Socks don't affect test scores; what you studied does.</p>
+        </div>
+
+        <div class="fallacy-card">
+            <h4>Decomposition</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340;"><strong>Definition:</strong> Assuming what's true for the whole is true for each of its parts.</p>
+            <div class="example">"The team is unbeatable, so each player must be the best!"</div>
+            <p style="margin: 0; font-size: 15px; color: #555;"><em>Why it fails:</em> An unbeatable team can still have a weak player; teamwork &amp; strategy carry the rest.</p>
+        </div>
+
+        <p style="font-size: 16px; color: #555; font-style: italic; margin: 14px 0 0 0;">Take heart! The names aren't usually worth memorizing. At their core, all fallacies share one trait: the evidence fails to support the conclusion.</p>
+    </div>
+
+    <!-- Widget 1: name the fallacy -->
+    <div class="optima-widget" id="widget-fal">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN &middot; NAME THAT FALLACY</div>
+        <div class="widget-question">Match each argument to the kind of fallacy.</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. "You're mad I'm late? Did you see how late YOU were last Tuesday?"</div>
+            <div class="widget-options">
+                <button onclick="falPick(this, 0, 0)">Red Herring</button>
+                <button onclick="falPick(this, 0, 1)">False Cause</button>
+                <button onclick="falPick(this, 0, 2)">Decomposition</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">2. "Our class won the science fair, so every kid in our class must be a science genius."</div>
+            <div class="widget-options">
+                <button onclick="falPick(this, 1, 0)">Red Herring</button>
+                <button onclick="falPick(this, 1, 1)">False Cause</button>
+                <button onclick="falPick(this, 1, 2)">Decomposition</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. "I ate cereal for breakfast and got a 100 on my quiz. Cereal makes me smarter."</div>
+            <div class="widget-options">
+                <button onclick="falPick(this, 2, 0)">Red Herring</button>
+                <button onclick="falPick(this, 2, 1)">False Cause</button>
+                <button onclick="falPick(this, 2, 2)">Decomposition</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="falReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; BAYES' RULE AS A FALLACY-BUSTER</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Bayes' Rule (Lesson 8) gives you a precise way to show <em>why</em> a fallacious argument fails. The trick is this:</p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 12px 16px; margin: 8px 0; border-radius: 4px;">
+            <div style="font-size: 17px; color: #0e1c42; font-style: italic;">If the evidence is just as likely whether the claim is true OR false, then the evidence is IRRELEVANT &mdash; and an argument that leans on irrelevant evidence is fallacious.</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;"><strong>The 4-step move:</strong></p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 18px;">
+            <li><strong>Spell out the claim clearly.</strong> Write the real argument the speaker is making.</li>
+            <li><strong>Name the evidence.</strong> What is being offered as support?</li>
+            <li><strong>Bayesian analysis.</strong> If the claim is TRUE, how likely is this evidence? If the claim is FALSE, how likely is this evidence?</li>
+            <li><strong>Upshot.</strong> If the likelihoods are about equal, the evidence doesn't support the claim. The argument fails.</li>
+        </ol>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WORKED EXAMPLES</div>
+
+        <div class="fallacy-card">
+            <h4>Example 1 &mdash; Red Herring (with Bayesian analysis)</h4>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Claim spelled out:</strong> It's okay I didn't clean my room because my sister hasn't cleaned hers.</p>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Evidence:</strong> My sister's room is messy.</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If the claim is TRUE</strong> (it's okay you didn't clean): how likely is sister's room being messy? About 40% (she lets things go sometimes).</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If the claim is FALSE</strong> (it's NOT okay you didn't clean): how likely is sister's room being messy? Also about 40% &mdash; same person, same habits.</p>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;"><strong>Upshot:</strong> Equally likely either way. Sister's room is irrelevant. Argument fails.</p>
+        </div>
+
+        <div class="fallacy-card">
+            <h4>Example 2 &mdash; False Cause</h4>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Claim:</strong> My lucky socks caused my A on the history test.</p>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Evidence:</strong> I wore my lucky socks and got an A.</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If socks DID cause the A:</strong> probability of getting an A while wearing them &asymp; 70%.</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If socks did NOT cause the A:</strong> probability of getting an A while wearing them &asymp; 70% (your grade depends on studying, not socks).</p>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;"><strong>Upshot:</strong> Same likelihood. No reason to think socks caused the A. Argument fails.</p>
+        </div>
+
+        <div class="fallacy-card">
+            <h4>Example 3 &mdash; Decomposition</h4>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Claim:</strong> Because the team is unbeatable, each player must individually be the best.</p>
+            <p style="margin: 0 0 8px 0; font-size: 16px; color: #1a2340;"><strong>Evidence:</strong> The team has an undefeated record.</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If every player is the best:</strong> probability of undefeated record &asymp; 80%.</p>
+            <p style="margin: 0 0 4px 0; font-size: 15px; color: #1a2340;"><strong>If NOT every player is the best:</strong> probability of undefeated record &asymp; 80% (teamwork, strategy, and a few stars can do it).</p>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;"><strong>Upshot:</strong> The team's record doesn't actually support the claim about each individual player. Argument fails.</p>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND FALLACIES</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI assistants can produce fallacious arguments that <em>sound</em> confident and reasonable. They especially trip on false cause ("X happened after Y, so Y caused X"), red herrings (changing the subject when challenged), and decomposition (extending a fact about a group to every individual in it). Use the same 4-step Bayesian audit on any AI-generated argument. The same tool that catches your sister's bad excuse catches a model's bad reasoning.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: relevant or irrelevant evidence -->
+    <div class="optima-widget" id="widget-rel">
+        <div class="widget-kicker">&#9889; TRY IT &middot; IS THE EVIDENCE RELEVANT?</div>
+        <div class="widget-question">For each argument: is the evidence MORE likely under the claim, or about equally likely either way?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. Claim: "Studying improves my test scores." Evidence: Studied for 10 hours last week and scored 92 (up from 78).</div>
+            <div class="widget-options">
+                <button onclick="relPick(this, 0, 0)">More likely if claim is true &mdash; relevant evidence</button>
+                <button onclick="relPick(this, 0, 1)">Equally likely either way &mdash; irrelevant (fallacious)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. Claim: "Studying improves my test scores." Evidence: It was raining the day I studied.</div>
+            <div class="widget-options">
+                <button onclick="relPick(this, 1, 0)">More likely if claim is true &mdash; relevant evidence</button>
+                <button onclick="relPick(this, 1, 1)">Equally likely either way &mdash; irrelevant (fallacious)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. Claim: "Eli is honest." Evidence: Eli has brown hair.</div>
+            <div class="widget-options">
+                <button onclick="relPick(this, 2, 0)">More likely if claim is true &mdash; relevant evidence</button>
+                <button onclick="relPick(this, 2, 1)">Equally likely either way &mdash; irrelevant (fallacious)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">4. Claim: "Eli is honest." Evidence: Eli returned a wallet full of cash she found in the cafeteria.</div>
+            <div class="widget-options">
+                <button onclick="relPick(this, 3, 0)">More likely if claim is true &mdash; relevant evidence</button>
+                <button onclick="relPick(this, 3, 1)">Equally likely either way &mdash; irrelevant (fallacious)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="relReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TAKEAWAYS</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li style="margin-bottom: 10px;">Evidence that doesn't make one claim more likely than the alternatives <strong>isn't evidence at all.</strong></li>
+            <li style="margin-bottom: 10px;">Bayes' Rule helps us spot fallacies by asking the right questions.</li>
+            <li>An "explanation thaw" &mdash; considering all the possible explanations &mdash; lets you avoid tunnel vision and think critically about everything on the table.</li>
+        </ol>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 9: Analyzing Fallacies</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">From the list of 10 arguments, pick 3. For each: rewrite the claim, name the evidence, run the Bayesian analysis (likely if true? likely if false?), and write the upshot. Extra credit: bring in a fallacy you spotted in a book, movie, or real life.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.9 VR Assignment &mdash; Fallacy Audit <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 9 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Final lab stage. Audit your own experiment for fallacies you might have committed: a red herring you noticed when looking at your data, a false cause you almost claimed, a decomposition you almost wrote into your conclusion. Then your lab is ready for the capstone tour.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The next time you hear an argument, put on your Bayesian detective hat. Ask: What are all the possible explanations? Does the evidence truly support one over the others, or is it irrelevant? Critical thinking isn't just spotting flaws &mdash; it's building habits of thoughtful analysis that lead you closer to the truth. You've got the tools. Go use them.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 9 &middot; Identifying Bad Thinking</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const falFb = {
+    correct: [
+        "Right. Bringing up the OTHER person's lateness doesn't change whether YOU were late. Classic red herring.",
+        "Right. A team's success doesn't mean every individual is excellent. Decomposition fallacy.",
+        "Right. Two things happening together (cereal + good quiz) doesn't mean one caused the other. False cause."
+    ],
+    hints: [
+        'Hint: deflecting from your own action by pointing at someone else\'s. What kind of fallacy is that?',
+        'Hint: extending a fact about the GROUP to every individual MEMBER. What\'s that called?',
+        'Hint: assuming one thing CAUSED another just because they happened together. What\'s that?'
+    ]
+};
+function falPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFb(row, falFb.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFb(row, falFb.hints[rowIdx], 'incorrect');
+    }
+}
+function falReset() {
+    document.querySelectorAll('#widget-fal .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+const relFb = {
+    correct: [
+        "Right. A big score jump after studying is MORE likely if studying helps than if it doesn't. Relevant evidence that supports the claim.",
+        "Right. Weather has no plausible connection to whether studying improves scores. Irrelevant. Citing this would be fallacious.",
+        "Right. Hair color is unrelated to honesty. Citing it would be fallacious (a kind of red herring or non sequitur).",
+        "Right. Returning a wallet full of cash is MUCH more likely from an honest person than a dishonest one. Strong relevant evidence."
+    ],
+    hints: [
+        'Hint: would a big score jump be more likely under "studying helps" than under "studying doesn\'t help"?',
+        'Hint: does rain plausibly relate to whether studying works? Same likelihood either way?',
+        'Hint: do honest and dishonest people have different hair colors? Same likelihood either way?',
+        'Hint: returning cash that wasn\'t yours — are honest and dishonest people equally likely to do that?'
+    ]
+};
+function relPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFb(row, relFb.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFb(row, relFb.hints[rowIdx], 'incorrect');
+    }
+}
+function relReset() {
+    document.querySelectorAll('#widget-rel .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

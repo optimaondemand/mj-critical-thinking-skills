@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 4 Lesson 2: Asking Questions of a Text</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .qtype-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+    .qtype-card { background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 12px 14px; }
+    .qtype-card h4 { margin: 0 0 4px 0; color: #0E1C42; font-size: 15px; }
+    .qtype-card .sub { font-size: 14px; color: #1a2340; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 4</div><div style="font-size: 12px; color: #666;">Reading like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 2</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Asking Questions of a Text</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Question Wall (Stage 2)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Asking Questions of a Text</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The best readers aren't the ones who always know the answers. They're the ones who know how to ask the right questions.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Last time you learned to preview and predict before reading. You looked at titles, scanned headings, studied images. You thought like a detective. Well, that detective mindset is about to level up. This lesson is about the questions you ask <em>while</em> reading &mdash; the kind that open doors to deeper understanding.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> ask purposeful, powerful questions while reading.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use four different types of questions to guide my understanding.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> get more out of everything I read &mdash; from stories to science articles to historical speeches.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document for the in-lesson practice (you'll apply the four question types to a short text).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for <em>4.2 VR Question Wall</em>, where you'll post the questions YOU want the curated sources to answer.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-ask">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">When you're reading something for school, do you usually ask yourself questions as you go?</div>
+        <div class="widget-options">
+            <button onclick="askPick(this, 0)">Yes &mdash; I'm always wondering things</button>
+            <button onclick="askPick(this, 1)">Only when I'm confused</button>
+            <button onclick="askPick(this, 2)">Rarely &mdash; I just try to finish</button>
+            <button onclick="askPick(this, 3)">Honestly, my mind wanders before I get there</button>
+        </div>
+        <div class="widget-feedback" id="widget-ask-fb"></div>
+        <button class="widget-reset" onclick="askReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY ASK QUESTIONS?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine reading a mystery novel without ever wondering <em>who did it</em>. Or reading a science article without wondering <em>why this experiment matters</em>. Kind of pointless, right?</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Asking questions is what makes reading meaningful. It's what transforms you from a passive reader into an <em>active learner</em>. It's how you go from "just reading words" to actually <em>getting something</em> from them.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Questions help you:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li>Stay focused while reading.</li>
+            <li>Think critically about what the author is saying.</li>
+            <li>Connect ideas to other things you know or wonder about.</li>
+            <li>Remember more because your brain has a purpose.</li>
+        </ul>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; WHERE DO GOOD QUESTIONS COME FROM? (FOUR TYPES)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Strong readers ask questions <em>before</em>, <em>during</em>, AND <em>after</em> reading. Here are the four reliable sources good questions come from:</p>
+
+        <div class="qtype-grid">
+            <div class="qtype-card">
+                <h4>1. From Previewing &amp; Predicting</h4>
+                <div class="sub">Turn the signals you saw in your preview into questions. Title says "Will AI Replace Teachers?" &rarr; "Is this a real concern or a dramatic headline?"</div>
+            </div>
+            <div class="qtype-card">
+                <h4>2. From Context</h4>
+                <div class="sub">Questions from <em>outside</em> the text: why the teacher assigned it, what unit you're in, what's happening in the world. "Why is this such a big deal right now?"</div>
+            </div>
+            <div class="qtype-card">
+                <h4>3. From Your Own Curiosity</h4>
+                <div class="sub">The "wait, what?" moments. "Could students cheat with this?" "How would I feel if a robot graded my work?"</div>
+            </div>
+            <div class="qtype-card">
+                <h4>4. About the Author's Moves</h4>
+                <div class="sub">Not just <em>what</em> they said but <em>how</em> and <em>why</em>. "What tone is this? Is the author trying to persuade me? Do I trust this?"</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Widget 2 -->
+    <div class="optima-widget" id="widget-class">
+        <div class="widget-kicker">&#9889; TRY IT &middot; CLASSIFY THE QUESTION</div>
+        <div class="widget-question">For each reader question, which of the four types is it?</div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">1. "Why did the author end with a quote instead of a fact?"</div>
+            <div class="widget-options">
+                <button onclick="classPick(this, 0, 0)">Preview/Prediction</button>
+                <button onclick="classPick(this, 0, 1)">Context</button>
+                <button onclick="classPick(this, 0, 2)">Curiosity</button>
+                <button onclick="classPick(this, 0, 3)">Author's Moves</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. "The title says 'Hidden Costs' &mdash; what costs is it going to reveal?"</div>
+            <div class="widget-options">
+                <button onclick="classPick(this, 1, 0)">Preview/Prediction</button>
+                <button onclick="classPick(this, 1, 1)">Context</button>
+                <button onclick="classPick(this, 1, 2)">Curiosity</button>
+                <button onclick="classPick(this, 1, 3)">Author's Moves</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">3. "Wait &mdash; how does this connect to what I learned in science last year?"</div>
+            <div class="widget-options">
+                <button onclick="classPick(this, 2, 0)">Preview/Prediction</button>
+                <button onclick="classPick(this, 2, 1)">Context</button>
+                <button onclick="classPick(this, 2, 2)">Curiosity</button>
+                <button onclick="classPick(this, 2, 3)">Author's Moves</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">4. "Why is my teacher having us read this article during our climate unit?"</div>
+            <div class="widget-options">
+                <button onclick="classPick(this, 3, 0)">Preview/Prediction</button>
+                <button onclick="classPick(this, 3, 1)">Context</button>
+                <button onclick="classPick(this, 3, 2)">Curiosity</button>
+                <button onclick="classPick(this, 3, 3)">Author's Moves</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="classReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE QUESTION WEB (A WORKED EXAMPLE)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">As you read, imagine you're building a web of questions that surround your understanding. Some strands come from previewing, some from context, some from curiosity, some from analysis. Here's how that looks with a short passage:</p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 12px 16px; margin: 8px 0; border-radius: 4px; font-style: italic; color: #1a2340; font-size: 16px;">"As schools adapt to rapidly advancing technology, many educators are exploring how generative AI can support student learning. Some argue that AI tools can personalize lessons, assist with grading, and provide instant feedback. Others worry these tools might reduce human connection or encourage shortcuts."</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 8px 0;"><strong>Build the web:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li><strong>Preview/Prediction:</strong> How will this text describe AI's role in classrooms? Will it take a clear side?</li>
+            <li><strong>Context:</strong> Why are people so focused on AI right now? What has changed recently?</li>
+            <li><strong>Curiosity:</strong> Would I want to learn from an AI tutor? Better or worse than a teacher?</li>
+            <li><strong>Author's Moves:</strong> Why did the author include both positive and negative views? Are they neutral or pushing me to a conclusion?</li>
+        </ul>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; ASKING QUESTIONS OF AI</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The four question types work just as well on AI-generated content as on human-written texts. When an AI hands you an answer, ask: <em>What did its training data probably look like? Why did it phrase it this way? Whose perspective is missing?</em> The same questioning move that protects you from a manipulative author also protects you from an over-confident AI.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>In-Lesson Practice Submission</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Below is a short text on extra credit. Preview, predict, then BEFORE reading, ask at least one question of each of the four types. Then read and find the text's answers. Submit a short Word document via the OneDrive tab.</div>
+                <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 10px 14px; margin: 10px 0; border-radius: 4px; font-size: 15px; color: #1a2340; line-height: 1.55;"><strong>"Easy or Hard" Dilemmas and Grade Inflation Arguments:</strong> Extra credit options are typically either easy or hard. If they are hard then only the best students will complete them, and they already have high grades, but students who "need" extra credit, because they are not learning the regular material and thus have poor grades, will not receive those points. Easy extra credit contributes to "grade inflation," i.e., grades higher than warranted by the students' understanding: a B-earning student in a very hard class might receive an A because of fluff extra credit. And a student with a D-level of understanding shouldn't get a B or A by doing a lot of easy extra credit. Extra credit can contribute to grades not accurately reflecting students' understanding of the course material.</div>
+                <div style="font-size: 13px; color: #555; font-style: italic;">File name: <code style="background:#EEF1F8; padding:1px 5px;">LastName_FirstName_QuestionWeb_MJCRT</code></div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>4.2 VR Assignment &mdash; Question Wall <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(VR Research Library, Stage 2 of 8)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">In your VR library, build a Question Wall. Post sticky notes with the questions YOU want the curated sources to answer &mdash; at least one of each of the four types. This drives the rest of the project.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The best readers aren't the ones who always know the answers. They're the ones who know how to ask the right questions. This week, every time you read something &mdash; an article, a story, even an instruction manual &mdash; challenge yourself to ask at least three solid questions. Write them down. Then when you read, answer them.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 4 Lesson 2 &middot; Asking Questions of a Text</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const askResponses = [
+    "Excellent. This lesson will give you four named categories of questions to make those wonderings even sharper.",
+    "Good honest answer. We're going to fix that: you'll learn to ask questions even when you're NOT confused &mdash; that's how the strongest readers operate.",
+    "Common move. Just-finishing-the-words is the trap this lesson breaks you out of. Asking questions makes the reading itself faster, not slower.",
+    "Real reaction. The four question types in this lesson are an anti-wandering tool &mdash; they give your brain something specific to do instead of drifting."
+];
+function askPick(btn, idx) {
+    document.querySelectorAll('#widget-ask .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-ask-fb');
+    fb.textContent = askResponses[idx];
+    fb.classList.add('show');
+}
+function askReset() {
+    document.querySelectorAll('#widget-ask .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-ask-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const classFb = {
+    correct: [
+        "Right. 'Why did the author CHOOSE to do that?' is the signature of an Author's Moves question.",
+        "Right. The question is sparked by what you SAW in the preview (the title). Preview/Prediction.",
+        "Right. The question is about connections inside your own head &mdash; pure curiosity.",
+        "Right. 'Why am I being assigned this NOW?' is a Context question."
+    ],
+    hints: [
+        "Hint: this question is about a CHOICE the author made.",
+        "Hint: this question was triggered by something in the title.",
+        "Hint: this question is about a connection between YOU and the text.",
+        "Hint: this question is about WHY (in your life or the world) you're reading this now."
+    ]
+};
+function classPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFb(row, classFb.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFb(row, classFb.hints[rowIdx], 'incorrect');
+    }
+}
+function classReset() {
+    document.querySelectorAll('#widget-class .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

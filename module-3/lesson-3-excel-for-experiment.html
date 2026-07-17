@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Bridge Lesson: Excel for Your Experiment</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Bridge Lesson &#128202;</div>
+        <div style="font-size: 12px; color: #666;">Between Lessons 4 and 5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Excel for Your Experiment</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Supports</div>
+        <div style="font-size: 16px; color: #0e1c42;">The Good Life Experiment</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Bridge Lesson &middot; M365 Skill Building</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Tracking Your Experiment in Excel &#128202;</div>
+        <div style="font-size: 16px; color: #666;">Setting up your digital data log for the Good Life Experiment, from zero.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">From "what is Excel?" to "I have a working data log."</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">In Lesson 5, you'll begin collecting daily data on your Good Life Experiment. Before that happens, you need a place to put that data. This lesson assumes you've never used Excel before. We'll start at the beginning &mdash; signing in to your school account &mdash; and end with a working data log in OneDrive, ready to fill in each day.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">Excel is the spreadsheet tool in Microsoft 365 &mdash; the same family as Word and PowerPoint. Your school gives you free access to all of it. Scientists, researchers, and anyone running an experiment use spreadsheets to log data because they're easier to analyze and graph than a paper notebook. By the end of today, you'll know exactly how to set yours up.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> sign in to my school Microsoft 365 account and find OneDrive.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> create, name, and save a new Excel spreadsheet using the Optima file naming rule.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> set up a data log with column headers, enter daily data, and use basic formulas (COUNT, AVERAGE) and a simple chart.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A computer (or tablet with a keyboard) connected to the internet.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your <strong>school Microsoft 365 account</strong> &mdash; the email and password Optima gave you. (Not a personal Microsoft account or your parents' account.)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your chosen Good Life Experiment topic (from the project intro page).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">About 45 minutes of uninterrupted time.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Excel familiarity -->
+    <div class="optima-widget" id="widget-xc">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">How comfortable are you with Excel right now?</div>
+        <div class="widget-options">
+            <button onclick="xcPick(this, 0)">&#129335; I've literally never opened it</button>
+            <button onclick="xcPick(this, 1)">&#128528; I've seen it but never really used it</button>
+            <button onclick="xcPick(this, 2)">&#129488; I've put a few numbers in cells</button>
+            <button onclick="xcPick(this, 3)">&#128526; I'm pretty comfortable already</button>
+        </div>
+        <div class="widget-feedback" id="widget-xc-fb"></div>
+        <button class="widget-reset" onclick="xcReset()">Reset</button>
+    </div>
+
+    <!-- Part 1: Why Excel -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY EXCEL FOR AN EXPERIMENT?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">You <em>could</em> log your daily experiment data in a notebook, and that's a perfectly fine companion (the project description even suggests it). But Excel adds two things a notebook can't:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Quick math.</strong> Once your data is in a spreadsheet, you can ask Excel "What's the average?" or "How many days did I actually do the habit?" and it answers in seconds. You'll need this in Lessons 7 and 8.</li>
+            <li><strong>Charts.</strong> A line or bar chart of your data makes patterns visible at a glance. Your final video presentation in this module will look much sharper with a real chart in it.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Think of Excel as the upgrade to your composition notebook for the parts where math and pictures help.</p>
+    </div>
+
+    <!-- Part 2: Signing in -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128274; PART 2 &middot; SIGN IN TO MICROSOFT 365 (FIRST TIME)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Optima gives every student a school Microsoft 365 account. This is different from any personal Microsoft account you (or your family) might have. <strong>You must use the school account</strong> &mdash; otherwise the file naming rules and OneDrive folders won't match up, and your teacher won't be able to see your work.</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Open a web browser (Chrome, Edge, Safari &mdash; any of them).</li>
+            <li>Go to <strong>office.com</strong> (or <strong>portal.office.com</strong>).</li>
+            <li>Click <strong>Sign in</strong>.</li>
+            <li>Enter your school email address. It'll look something like <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">firstname.lastname@optimaedu.org</code> (your teacher will give you the exact format).</li>
+            <li>Enter your school password.</li>
+            <li>You should see a landing page with icons for Word, Excel, PowerPoint, OneDrive, and more.</li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WATCH OUT</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If you've used Microsoft tools on this computer before with a different account, the browser may try to sign you in with that one automatically. Look at the top-right of the page after signing in &mdash; click the circle with your initials and make sure it's your <strong>school</strong> account. If it isn't, sign out and start over.</div>
+        </div>
+    </div>
+
+    <!-- Part 3: OneDrive -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9729;&#65039; PART 3 &middot; ONEDRIVE &mdash; YOUR DIGITAL BINDER</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>OneDrive</strong> is Microsoft's cloud storage. Think of it like a digital binder: every file you create or save lives in OneDrive, and you can get to it from any computer by signing in. Optima expects every student to organize their OneDrive the same way &mdash; like keeping the same tabbed binder for every class.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>The folder structure you should have:</strong></p>
+        <pre style="background: #0E1C42; color: #E8F6FB; border-radius: 8px; padding: 16px 20px; margin: 8px 0 12px; overflow-x: auto; font-family: Consolas, Monaco, monospace; font-size: 14px; line-height: 1.55;">OneDrive (your school account)
+&#9492;&#9472;&#9472; Optima/
+    &#9500;&#9472;&#9472; Critical Thinking/
+    &#9474;   &#9492;&#9472;&#9472; Critical_Thinking_2025-26/    &larr; YOU'LL CREATE THIS
+    &#9500;&#9472;&#9472; ELA/
+    &#9500;&#9472;&#9472; Math/
+    &#9500;&#9472;&#9472; Science/
+    &#9492;&#9472;&#9472; [other subjects]/</pre>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>To create the Critical Thinking folder:</strong></p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>From the office.com landing page, click the <strong>OneDrive</strong> icon (it looks like a blue cloud).</li>
+            <li>Look for an existing folder called <strong>Optima</strong>. If there isn't one, click <strong>+ New</strong> at the top, then <strong>Folder</strong>, and name it <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Optima</code>.</li>
+            <li>Open the Optima folder.</li>
+            <li>Click <strong>+ New &rarr; Folder</strong> and create one called <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Critical Thinking</code>.</li>
+            <li>Open it.</li>
+            <li>Click <strong>+ New &rarr; Folder</strong> again and create one called <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Critical_Thinking_2025-26</code> (or whatever school year you're in).</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">That last folder is where your spreadsheet will live.</p>
+    </div>
+
+    <!-- Part 4: Create Excel file -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128193; PART 4 &middot; CREATE YOUR EXCEL FILE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">From inside your <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Critical_Thinking_2025-26</code> folder in OneDrive:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Click <strong>+ New</strong> at the top.</li>
+            <li>Choose <strong>Excel workbook</strong>. (A "workbook" is just what Excel calls a spreadsheet file.)</li>
+            <li>Excel opens with a blank sheet. You'll see a grid of cells &mdash; rows numbered 1, 2, 3&hellip; and columns labeled A, B, C&hellip;</li>
+            <li>At the top, it'll say something like "Book1" or "Document". Click that name to rename the file.</li>
+        </ol>
+    </div>
+
+    <!-- Part 5: Name your file -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128221; PART 5 &middot; NAME YOUR FILE (THE OPTIMA WAY)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Every file you save in Optima follows the same naming rule. This is so your teacher (who has 500 students) can find your work fast, and so you can find your own work later.</p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-family: Consolas, Monaco, monospace; font-size: 16px; color: #0E1C42;">LastName_FirstName_AssignmentName_CourseCode</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">For this experiment data log, type this (replacing the bold parts with your own info):</p>
+        <div style="background: #D8F0DD; border-left: 4px solid #2A9D5C; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-family: Consolas, Monaco, monospace; font-size: 16px; color: #0E1C42;"><strong>LastName</strong>_<strong>FirstName</strong>_GoodLifeDataLog_MJCRT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">For example, if Jane Smith is doing this experiment, her file would be named: <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Smith_Jane_GoodLifeDataLog_MJCRT</code></p>
+
+        <!-- File name breakdown visual -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 20px; margin: 16px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128202; ANATOMY OF A FILE NAME</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px;">
+                <div style="background: #0E1C42; color: #fff; text-align: center; padding: 8px; border-radius: 4px; font-family: Consolas, Monaco, monospace; font-size: 14px;">Smith</div>
+                <div style="background: #2196D0; color: #fff; text-align: center; padding: 8px; border-radius: 4px; font-family: Consolas, Monaco, monospace; font-size: 14px;">Jane</div>
+                <div style="background: #C7922C; color: #fff; text-align: center; padding: 8px; border-radius: 4px; font-family: Consolas, Monaco, monospace; font-size: 14px;">GoodLifeDataLog</div>
+                <div style="background: #2A9D5C; color: #fff; text-align: center; padding: 8px; border-radius: 4px; font-family: Consolas, Monaco, monospace; font-size: 14px;">MJCRT</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+                <div style="text-align: center; font-size: 12px; color: #555;">Your last name</div>
+                <div style="text-align: center; font-size: 12px; color: #555;">Your first name</div>
+                <div style="text-align: center; font-size: 12px; color: #555;">What this file is</div>
+                <div style="text-align: center; font-size: 12px; color: #555;">Course code (this class)</div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 14px; font-style: italic;">Use underscores ( _ ), no spaces, no special characters. Capital first letters keep the parts easy to read.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Excel saves your file to OneDrive automatically as you work &mdash; no need to remember to "save." This is one of the best things about working in M365: you can't lose your work.</p>
+    </div>
+
+    <!-- Part 6: Set up data log -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128221; PART 6 &middot; SET UP YOUR DATA LOG</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A spreadsheet is just a grid. Rows go across (numbered 1, 2, 3&hellip;) and columns go down (lettered A, B, C&hellip;). The little boxes are <strong>cells</strong>. You click a cell and type into it.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">For your data log, you'll use the <strong>first row</strong> as the column headers (what each column means) and one row per day for your data.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Click cell <strong>A1</strong> (top-left). Type <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">Date</code> and press Tab. Now you're in cell B1. Continue across the row, typing one header per cell:</p>
+
+        <!-- Sample data log -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128221; SAMPLE DATA LOG &mdash; SLEEP &amp; FOCUS EXPERIMENT</div>
+            <div style="overflow-x: auto;">
+                <table style="border-collapse: collapse; width: 100%; min-width: 600px; font-family: Consolas, Monaco, monospace; font-size: 13px;">
+                    <thead>
+                        <tr>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340; text-align: left;">&nbsp;</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">A</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">B</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">C</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">D</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">E</th>
+                            <th style="background: #0E1C42; color: #fff; padding: 8px; border: 1px solid #1a2340;">F</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #EEF1F8;">
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #6b7a99; text-align: center;"><strong>1</strong></td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Date</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Did the habit?</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Hours of sleep</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Focus rating (1-10)</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Mood rating (1-10)</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #0E1C42; font-weight: 600;">Notes</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #6b7a99; text-align: center; background: #EEF1F8;"><strong>2</strong></td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">10/14</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Yes</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">8.5</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">8</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">7</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Felt sharp in math</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #6b7a99; text-align: center; background: #EEF1F8;"><strong>3</strong></td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">10/15</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Yes</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">9</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">9</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">8</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Best day so far</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #6b7a99; text-align: center; background: #EEF1F8;"><strong>4</strong></td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">10/16</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">No</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">6</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">5</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">5</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Stayed up late</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8; color: #6b7a99; text-align: center; background: #EEF1F8;"><strong>5</strong></td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">10/17</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Yes</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">8</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">7</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">7</td>
+                            <td style="padding: 6px 8px; border: 1px solid #D0D9E8;">Felt better than 10/16</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic;">Five columns is plenty. Pick measurements that fit your specific experiment &mdash; you decided what to measure back in Lesson 3 (Methodology Wall).</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 8px 0;"><strong>Pick columns that match your own experiment.</strong> Examples by experiment type:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Gratitude:</strong> Date / Did 3 gratitudes? / Mood (1-10) / Stress (1-10) / Notes</li>
+            <li><strong>Phone-Free Hour:</strong> Date / Did the phone-free hour? / Focus tonight (1-10) / Sleep quality (1-10) / Notes</li>
+            <li><strong>Outdoor Time:</strong> Date / Minutes outside / Mood (1-10) / Energy (1-10) / Notes</li>
+            <li><strong>Listening:</strong> Date / Practiced active listening? / How conversations went (1-10) / Notes</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">If your experiment is different, adapt the columns. The first column should always be <strong>Date</strong>. The last column should always be <strong>Notes</strong>.</p>
+    </div>
+
+    <!-- Part 7: Daily entry -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; PART 7 &middot; DAILY ENTRY (3 MINUTES A DAY)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Each day of your experiment, open your data log and add one row. Three minutes, tops. Best done at the same time daily &mdash; right before bed works for most people because you can rate the whole day.</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Open OneDrive (or office.com &rarr; Excel &rarr; recent files).</li>
+            <li>Open your data log file.</li>
+            <li>Click the next empty cell in column A (under your last date).</li>
+            <li>Type today's date in the format <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">10/14</code> or <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">10/14/25</code> (be consistent every day).</li>
+            <li>Press Tab to move to the next column. Fill in each cell.</li>
+            <li>Done. The file auto-saves.</li>
+        </ol>
+    </div>
+
+    <!-- Part 8: Formulas -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129518; PART 8 &middot; SIMPLE FORMULAS (USE THESE IN LESSON 7)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Once you have a week or two of data, you can ask Excel some questions. A <strong>formula</strong> is a special instruction in a cell that starts with the equals sign <code style="background: #F4F6FA; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">=</code>. You type the formula in an empty cell and Excel calculates the answer.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">=AVERAGE() &mdash; What's my typical day?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">If your sleep hours are in column C, rows 2 through 15, click an empty cell and type:</p>
+        <pre style="background: #0E1C42; color: #E8F6FB; border-radius: 8px; padding: 16px 20px; margin: 8px 0 12px; font-family: Consolas, Monaco, monospace; font-size: 14px;">=AVERAGE(C2:C15)</pre>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Press Enter. Excel gives you the average sleep across those 14 days.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">=COUNTIF() &mdash; How many days did I actually do it?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">If "Did the habit?" is in column B with "Yes" or "No" entries:</p>
+        <pre style="background: #0E1C42; color: #E8F6FB; border-radius: 8px; padding: 16px 20px; margin: 8px 0 12px; font-family: Consolas, Monaco, monospace; font-size: 14px;">=COUNTIF(B2:B15,"Yes")</pre>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Excel counts how many cells in that range say "Yes."</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">=MAX() and =MIN() &mdash; Best and worst days</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">For your mood rating in column E:</p>
+        <pre style="background: #0E1C42; color: #E8F6FB; border-radius: 8px; padding: 16px 20px; margin: 8px 0 12px; font-family: Consolas, Monaco, monospace; font-size: 14px;">=MAX(E2:E15)
+=MIN(E2:E15)</pre>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Highest and lowest mood scores across the experiment.</p>
+    </div>
+
+    <!-- Part 9: Chart -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128200; PART 9 &middot; MAKE A CHART (USE THIS IN YOUR FINAL VIDEO)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A chart lets anyone watching your final video see your results at a glance. Excel will build one in three clicks.</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>Click the top-left cell of your data (probably <strong>A1</strong>, the "Date" header).</li>
+            <li>Hold <strong>Shift</strong> and click the bottom-right cell of your data (the last cell with anything in it).</li>
+            <li>In the toolbar at the top, click <strong>Insert &rarr; Chart</strong> (or just <strong>Chart</strong> on the web version).</li>
+            <li>Pick a <strong>Line chart</strong> for trends over time, or a <strong>Bar chart</strong> for comparisons.</li>
+            <li>The chart appears. Drag it where you want it. Excel saves automatically.</li>
+        </ol>
+
+        <!-- Sample chart visual -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128200; SAMPLE CHART &mdash; FOCUS RATING ACROSS THE EXPERIMENT</div>
+            <div style="display: flex; align-items: flex-end; gap: 6px; height: 200px; border-bottom: 2px solid #0E1C42; border-left: 2px solid #0E1C42; padding: 10px 8px 0 8px;">
+                <div style="flex: 1; background: #55C8E8; height: 65%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">7</span></div>
+                <div style="flex: 1; background: #55C8E8; height: 80%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">8</span></div>
+                <div style="flex: 1; background: #55C8E8; height: 90%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">9</span></div>
+                <div style="flex: 1; background: #C7922C; height: 50%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">5</span></div>
+                <div style="flex: 1; background: #55C8E8; height: 70%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">7</span></div>
+                <div style="flex: 1; background: #55C8E8; height: 80%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">8</span></div>
+                <div style="flex: 1; background: #55C8E8; height: 85%; border-top-left-radius: 4px; border-top-right-radius: 4px; position: relative;"><span style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 12px; color: #0E1C42;">8.5</span></div>
+            </div>
+            <div style="display: flex; gap: 6px; padding: 6px 8px 0 8px;">
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/14</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/15</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/16</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/17</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/18</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/19</div>
+                <div style="flex: 1; text-align: center; font-size: 11px; color: #6b7a99;">10/20</div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic; text-align: center;">The dip on 10/16 was the night the student stayed up late. You can <em>see</em> the pattern. That's the power of a chart.</div>
+        </div>
+    </div>
+
+    <!-- M365 Skill Step box -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin: 18px 0;">
+        <div style="font-size: 12px; color: #C7922C; margin-bottom: 12px; letter-spacing: 0.5px;">&#128193; M365 SKILL STEP</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.7;">
+            <strong>Before moving on to Lesson 5, make sure you have:</strong><br />
+            &#9744; Signed in to your school Microsoft 365 account at office.com<br />
+            &#9744; Found or created your folder: Optima &rarr; Critical Thinking &rarr; Critical_Thinking_2025-26<br />
+            &#9744; Created a new Excel workbook in that folder<br />
+            &#9744; Named the file: <code style="background: #fff; padding: 2px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.9em;">LastName_FirstName_GoodLifeDataLog_MJCRT</code><br />
+            &#9744; Filled in your column headers in row 1 (Date, Did the habit?, your two measurements, Notes)
+        </div>
+        <div style="font-size: 13px; color: #8B5E16; margin-top: 12px; font-style: italic;">M365 Skill You're Practicing: Entering Data and Using Basic Formulas (Excel)</div>
+    </div>
+
+    <!-- AI awareness -->
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND EXCEL</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If you have access to an AI assistant, it can write Excel formulas for you in seconds. Tempting. But the formulas in this lesson are MOS-certifiable skills you're building toward. If AI writes your formulas, you skip the learning. Use AI to <em>check</em> a formula you've written yourself, or to <em>explain</em> why a formula isn't working. Don't let it write the formulas for you.</div>
+    </div>
+
+    <!-- Widget 2: Spot the right file name -->
+    <div class="optima-widget" id="widget-fn">
+        <div class="widget-kicker">&#9889; TRY IT &middot; SPOT THE CORRECT FILE NAME</div>
+        <div class="widget-question">For each pair, which file name follows the Optima naming rule?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. Jane Smith naming her Good Life data log:</div>
+            <div class="widget-options">
+                <button onclick="fnPick(this, 0, 0)">data log.xlsx</button>
+                <button onclick="fnPick(this, 0, 1)">Smith_Jane_GoodLifeDataLog_MJCRT</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. Marcus Chen naming a Word document for an English IV essay:</div>
+            <div class="widget-options">
+                <button onclick="fnPick(this, 1, 0)">Chen_Marcus_NovelEssay_ELA12</button>
+                <button onclick="fnPick(this, 1, 1)">Marcus's essay - final final REAL final.docx</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. A second draft of a Critical Thinking written assignment:</div>
+            <div class="widget-options">
+                <button onclick="fnPick(this, 2, 0)">Smith_Jane_Assignment3_MJCRT (just overwrite Draft 1)</button>
+                <button onclick="fnPick(this, 2, 1)">Smith_Jane_Assignment3_MJCRT_Draft2 (keep Draft 1 too)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="fnReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 5: Calibrating Degrees of Belief</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Now that your data log is set up, you'll begin daily entries. Lesson 5 also covers your VR Data Collection Station &mdash; the in-VR counterpart to this spreadsheet.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Your daily habit, starting tonight</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">From today forward, add one row to your Excel log every day for the rest of the experiment. Three minutes a night. You'll thank yourself when it's time to write up your results in Lessons 7 and 8.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Excel is a tool. The real skill is keeping consistent, honest data on yourself for the length of the experiment. The spreadsheet just makes it easier to <em>see</em> what's there at the end. Set yours up today, add one row tonight, and you're already a real researcher.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Bridge Lesson</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 &middot; Tracking Your Experiment in Excel</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const xcResponses = [
+    "Perfect. This whole lesson is designed for you. By the end, you'll have a working spreadsheet.",
+    "Good baseline. We'll go slow on the parts you might not have seen, like saving to OneDrive and writing formulas.",
+    "Helpful! You can move quickly through Parts 4-6. Pay attention to Parts 5 (file naming) and 8 (formulas) &mdash; those are the Optima conventions and the MOS skills.",
+    "Then you can skim Parts 1-6 and focus on Part 8 (formulas) and Part 9 (charts). Make sure your file name follows the Optima rule (Part 5)."
+];
+function xcPick(btn, idx) {
+    document.querySelectorAll('#widget-xc .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-xc-fb');
+    fb.textContent = xcResponses[idx];
+    fb.classList.add('show');
+}
+function xcReset() {
+    document.querySelectorAll('#widget-xc .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-xc-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const fnFeedback = {
+    correct: [
+        'Right. LastName_FirstName_AssignmentName_CourseCode. Underscores, no spaces, no special characters.',
+        'Right. The Optima format makes it findable across 500 students. The other name is what loses a file forever.',
+        'Right. Every draft is a separate file. NEVER overwrite a previous draft &mdash; your teacher and your future self need to see the revision history.'
+    ],
+    hints: [
+        'Hint: the Optima rule is LastName_FirstName_AssignmentName_CourseCode. Which one fits?',
+        'Hint: "Final final REAL final.docx" is what happens without a naming rule. Look at the structured one.',
+        'Hint: the Optima rule says "Every draft is a separate file. Never overwrite." Which choice keeps Draft 1 intact?'
+    ]
+};
+function fnPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, fnFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, fnFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function fnReset() {
+    document.querySelectorAll('#widget-fn .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Lesson 5: Which Way, Westerner?</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .lk-very { background: #0E1C42; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+    .lk-some { background: #6b7aff; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+    .lk-un { background: #D0D9E8; color: #0E1C42; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Acting like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5 &#129517;</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Which Way, Westerner?</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 16px; color: #0e1c42;">Developing Soft Skills</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Which Way, Westerner? &#129517;</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Smart Choices &mdash; A Simple Way to Pick Wisely</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Have you ever had to choose between two good options &mdash; and felt stuck? Like whether to join the soccer team or audition for the school play? You can imagine some things going well&hellip; and others not so much.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">Making a smart decision doesn't mean predicting the future. It means thinking carefully about <strong>what could happen</strong>, <strong>how good or bad those things would be</strong>, and <strong>how likely they are</strong>.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use a five-step decision tool: options &rarr; outcomes &rarr; value &rarr; likelihood &rarr; pick.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply this tool to a real decision I'm currently facing.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A real decision you're currently facing &mdash; for <em>Assignment 5</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>2.5 VR Assignment</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Stuck decision check-in -->
+    <div class="optima-widget" id="widget-dec">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Is there a real decision you're currently stuck on?</div>
+        <div class="widget-options">
+            <button onclick="decPick(this, 0)">&#129488; Yes, and it's stressing me out</button>
+            <button onclick="decPick(this, 1)">&#129300; Yes, but it's low-stakes</button>
+            <button onclick="decPick(this, 2)">&#128526; Nothing huge right now</button>
+            <button onclick="decPick(this, 3)">&#129335; I'm always stuck on something</button>
+        </div>
+        <div class="widget-feedback" id="widget-dec-fb"></div>
+        <button class="widget-reset" onclick="decReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE DECISION TOOL (STEP-BY-STEP)</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>List Your Options.</strong> Write down each choice you're considering.</li>
+            <li><strong>List Possible Outcomes for Each.</strong> For each option, write down a few things that could happen &mdash; good or bad.</li>
+            <li><strong>Rate How Good or Bad Each Outcome Is.</strong> You can label them simply (you can use these ratings on multiple outcomes):
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>&#128522; Great outcome</li>
+                    <li>&#128528; Okay outcome</li>
+                    <li>&#9785;&#65039; Bad outcome</li>
+                </ul>
+            </li>
+            <li><strong>Estimate How Likely Each Outcome Is.</strong> Next to each one, mark (the strength of blue indicates the strength of likeliness; also, you can apply these likelihoods to more than one outcome):
+                <ul style="margin: 6px 0 0 18px;">
+                    <li><span class="lk-very">Very likely</span></li>
+                    <li><span class="lk-some">Somewhat likely</span></li>
+                    <li><span class="lk-un">Unlikely</span></li>
+                </ul>
+            </li>
+            <li><strong>Pick the Option with the Best Combo.</strong> Look for the option that has the best mix: outcomes that are good <strong>and</strong> more likely to happen. Avoid options with big downsides that are also likely.</li>
+        </ol>
+    </div>
+
+    <!-- Example: Soccer vs Play -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9917; STORY TIME &middot; SOCCER TEAM OR SCHOOL PLAY?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 16px 0;">Let's try the system with this common choice.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 14px 16px; margin-bottom: 14px;">
+            <div style="font-size: 16px; color: #0E1C42; font-weight: 600; margin-bottom: 10px;">Option 1: Try out for the Soccer Team</div>
+            <ul style="font-size: 15px; color: #1a2340; line-height: 1.55; margin: 0 0 0 18px;">
+                <li>&#128522; Great: Become a strong player and earn respect from teammates (<span class="lk-some">Somewhat likely</span>)</li>
+                <li>&#128528; Okay: Make the team and get to play in most games (<span class="lk-very">Very likely</span>)</li>
+                <li>&#9785;&#65039; Bad: Get a sprained ankle and miss the season (<span class="lk-un">Unlikely</span>)</li>
+            </ul>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 14px 16px; margin-bottom: 14px;">
+            <div style="font-size: 16px; color: #0E1C42; font-weight: 600; margin-bottom: 10px;">Option 2: Audition for the School Play</div>
+            <ul style="font-size: 15px; color: #1a2340; line-height: 1.55; margin: 0 0 0 18px;">
+                <li>&#128522; Great: Get the lead role and impress your classmates (<span class="lk-un">Unlikely</span>)</li>
+                <li>&#128528; Okay: Get a small part and enjoy performing (<span class="lk-some">Somewhat likely</span>)</li>
+                <li>&#9785;&#65039; Bad: Don't get a part and miss the chance to participate (<span class="lk-some">Somewhat likely</span>)</li>
+            </ul>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 8px 0;"><strong>Analysis:</strong> The soccer team has a good chance of steady success (making the team), and the best outcome (becoming a strong player) is more likely than the best play outcome. The bad outcome &mdash; injury &mdash; is possible but not very likely. With the play, the biggest success is harder to get, and the worst case (not being cast) could easily happen.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;"><strong>Conclusion:</strong> In this scenario, soccer offers a better mix of good chances and smaller risks. That makes it the smarter bet &mdash; <strong>not because it's "safe," but because it offers more likely gains with fewer likely losses</strong>.</p>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 16px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AS A DECISION SOUNDING BOARD</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If you ever ask an AI to help you decide between two options, notice what it's actually doing: it's listing possible outcomes and giving them rough probabilities. It's running this exact tool, just faster. The catch: the AI doesn't know <em>your</em> values, what you actually enjoy, or what your specific situation is. Use it to brainstorm outcomes you might not have thought of. Decide which ones matter to you yourself.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Best combo -->
+    <div class="optima-widget" id="widget-best">
+        <div class="widget-kicker">&#9889; TRY IT &middot; PICK THE BEST COMBO</div>
+        <div class="widget-question">Given the outcomes and likelihoods, which option is the smarter pick?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. Two restaurants for a celebration dinner. (A) Trusted favorite &mdash; almost certainly a good night, but never amazing. (B) New place &mdash; might be incredible, might be a disaster, no way to tell.</div>
+            <div class="widget-options">
+                <button onclick="bstPick(this, 0, 0)">A &mdash; reliable good is the better combo for a celebration that matters</button>
+                <button onclick="bstPick(this, 0, 1)">B &mdash; the small chance of amazing is worth the risk</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. Friday night plans. (A) Stay home &mdash; comfortable, nothing memorable. (B) Try a new local meetup for something you're into &mdash; mostly likely you have an OK time, decent chance you meet someone interesting, small chance it's awkward.</div>
+            <div class="widget-options">
+                <button onclick="bstPick(this, 1, 0)">A &mdash; the certain comfort is worth more than a chance at "OK + maybe interesting"</button>
+                <button onclick="bstPick(this, 1, 1)">B &mdash; the realistic upside (OK + maybe interesting) beats certain nothing</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. Shortcut vs. known route to school. (A) Known route &mdash; gets you there on time every day. (B) "Faster" shortcut &mdash; saves 5 min if it works, but a single locked gate makes you 20 min late.</div>
+            <div class="widget-options">
+                <button onclick="bstPick(this, 2, 0)">A &mdash; the worst-case on B (being 20 min late) is too costly for a 5-min upside</button>
+                <button onclick="bstPick(this, 2, 1)">B &mdash; faster is faster; take the shot</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="bstReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5: Decision Detective</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Pick a real decision you're facing. Use the five steps on paper or in a doc &mdash; options, outcomes, value rating, likelihood, choice with explanation.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>2.5 VR Assignment &mdash; Decision Detective, Round 2</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Take that same decision into VR. Use sticky notes for options and outcomes, then represent each outcome with 3D objects, images, drawings, or recorded walkthroughs. Record a video walking through your logic.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Smart decisions aren't just lucky guesses &mdash; they're the result of clear thinking. When you weigh what might happen, how good or bad it is, and how likely it is, you're not just hoping for the best&hellip; you're thinking like a strategist. And the more you practice, the better your decisions will get.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#127916; OPTIONAL VISUAL LESSON</div>
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; overflow: hidden; border-radius: 8px;"><iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;" src="https://www.canva.com/design/DAGtoCW3Vqo/q9rRONLsUdX_dunvMCSd9A/view?embed" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 2 Lesson 5 &middot; Which Way, Westerner?</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const decResponses = [
+    "Perfect timing &mdash; you'll use the tool below on a real decision in the assignments. Bring this one with you.",
+    "Low-stakes is the easiest place to practice the tool. You'll see how it works without anything riding on it.",
+    "Then bring a past decision &mdash; one you wish you'd thought about more carefully. The tool works retroactively too.",
+    "Pick the one that's been on your mind the longest. Those are usually the ones the tool helps the most with."
+];
+function decPick(btn, idx) {
+    document.querySelectorAll('#widget-dec .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-dec-fb');
+    fb.textContent = decResponses[idx];
+    fb.classList.add('show');
+}
+function decReset() {
+    document.querySelectorAll('#widget-dec .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-dec-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const bstFeedback = {
+    correct: [
+        'Right. A celebration where "good is guaranteed" matters more than "maybe amazing, maybe disaster." The reliable upside beats the gamble.',
+        'Right. Certain nothing is its own kind of loss. "OK + maybe interesting" is real value with low risk.',
+        'Right. The most likely outcome of B might be good, but the worst case is unacceptable on a school day. Smart decisions weight downside.'
+    ],
+    hints: [
+        'Hint: a celebration that matters &mdash; you want the upside to be reliable. Which option gives you that?',
+        'Hint: doing nothing has its own opportunity cost. Don\'t treat the safe option as "free."',
+        'Hint: a 20-minute late on a school day is much worse than 5 minutes saved. Weight the BAD outcome by how likely it is.'
+    ]
+};
+function bstPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, bstFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, bstFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function bstReset() {
+    document.querySelectorAll('#widget-best .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

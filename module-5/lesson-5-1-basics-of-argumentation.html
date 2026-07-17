@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 5 Lesson 1: Basics of Argumentation</title>
+<style>
+body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+.canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+.widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+.widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+.widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+.widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+.widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+.widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+.row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+.row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+.row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+.widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+.widget-reset:hover { background: #FDF3E3; }
+.arg-card { background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 14px 18px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 5</div><div style="font-size: 12px; color: #666;">Arguing like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 1</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Basics of Argumentation</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Arena + Thesis (Stage 1)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Basics of Argumentation</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Learning to argue doesn't mean learning to shout the loudest. It means using logic and evidence to build strong cases for your ideas.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Hey, high-level thinkers! You might think an "argument" is just a loud back-and-forth with your sibling about whose turn it is on the PlayStation. Today we're stepping into a much cooler kind of argument &mdash; <em>argumentation</em>, the skill of using logic and reason to convince someone of your point of view. This is the foundation for the Disputatio project.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the parts of an argument &mdash; premises and conclusion.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell the difference between deductive and inductive arguments.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> build my own argument with clear premises and a clear conclusion.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-arg">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">"School uniforms improve student focus." What is that sentence?</div>
+        <div class="widget-options">
+            <button onclick="argPick(this, 0)">A complete argument</button>
+            <button onclick="argPick(this, 1)">A conclusion looking for premises</button>
+            <button onclick="argPick(this, 2)">A premise looking for a conclusion</button>
+            <button onclick="argPick(this, 3)">An opinion that doesn't need an argument</button>
+        </div>
+        <div id="widget-arg-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="argReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT IS AN ARGUMENT?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">An argument is a collection of <strong>statements</strong> where some are used to support another. It's like building a case &mdash; but instead of "because I said so," you use facts and logic to back it up.</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Statements</strong> are sentences that can be true or false ("truth-apt"). "The earth orbits the sun." "The moon is made of cheese." (Both are statements.) "Give me the PlayStation" is NOT a statement &mdash; it's a command. "Runs fast to" isn't even a proper sentence.</li>
+            <li><strong>Premises</strong> are the statements that DO the supporting &mdash; the reasons or evidence.</li>
+            <li><strong>Conclusion</strong> is the statement that gets supported &mdash; the main point you're trying to prove.</li>
+        </ul>
+        <div class="arg-card">
+            <strong>Example argument:</strong>
+            <ol style="margin: 6px 0 0 18px;">
+                <li><em>Premise:</em> All humans need oxygen to live.</li>
+                <li><em>Premise:</em> Maria is a human.</li>
+                <li><em>Conclusion:</em> Maria needs oxygen to live.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; DEDUCTIVE vs. INDUCTIVE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">When one statement supports another, it does so in one of two main ways:</p>
+        <div class="arg-card">
+            <strong>Deductive:</strong> The premises FULLY support the conclusion. IF the premises are true, the conclusion MUST be true.<br />
+            <em>P1:</em> All birds have feathers. <em>P2:</em> A penguin is a bird. <em>Conclusion:</em> Penguins have feathers. (Inescapable.)
+        </div>
+        <div class="arg-card">
+            <strong>Inductive:</strong> The premises make the conclusion LIKELY, but not guaranteed.<br />
+            <em>P1:</em> Every penguin I've seen has feathers. <em>P2:</em> This animal looks like a penguin. <em>Conclusion:</em> This animal probably has feathers. (Likely &mdash; not certain. Maybe it's sick; maybe it's a 3D-printed penguin; maybe it's not a penguin at all.)
+        </div>
+    </div>
+
+    <!-- Widget 2: identify the type -->
+    <div class="optima-widget" id="widget-type">
+        <div class="widget-kicker">&#9889; TRY IT &middot; DEDUCTIVE OR INDUCTIVE?</div>
+        <div class="widget-question">For each argument, which type of support is happening?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"All squares have four sides. This shape is a square. Therefore, this shape has four sides."</div>
+            <div class="widget-options">
+                <button onclick="typePick(this, 0, 0)">Deductive</button>
+                <button onclick="typePick(this, 0, 1)">Inductive</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"Every swan I've ever seen is white. So all swans are white."</div>
+            <div class="widget-options">
+                <button onclick="typePick(this, 1, 0)">Deductive</button>
+                <button onclick="typePick(this, 1, 1)">Inductive</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"I've eaten at this restaurant five times and the food was always great. So the food will be great tonight."</div>
+            <div class="widget-options">
+                <button onclick="typePick(this, 2, 0)">Deductive</button>
+                <button onclick="typePick(this, 2, 1)">Inductive</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="typeReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; INDICATING TERMS &amp; SPOTTING ARGUMENTS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Certain words signal whether you're looking at a premise or a conclusion:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0;">
+            <div class="arg-card"><strong>Premise indicators:</strong><br />"because," "since," "for the reason that"</div>
+            <div class="arg-card"><strong>Conclusion indicators:</strong><br />"therefore," "thus," "consequently," "so"</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;">These are signposts on a road, guiding you through the structure of the argument. Watch for them in the curated topics you'll research for the Disputatio.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;"><strong>Heads up &mdash; arguments aren't the same as examples or illustrations.</strong> "Gotham had 132,000 violent crimes last year" is a stat, not an argument. "Jenny gets good grades because she does her homework on time" is an illustration of one person's habits, not an attempt to convince you to do the same.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; BUILDING YOUR OWN ARGUMENT</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Determine the topic / conclusion.</strong> What are you trying to convince someone of?</li>
+            <li><strong>Collect evidence.</strong> Facts or observations that support your point.</li>
+            <li><strong>Figure out how the evidence supports the conclusion.</strong> Is the link real?</li>
+            <li><strong>Compile your argument.</strong> Put premises and conclusion in clear order.</li>
+        </ol>
+        <div class="arg-card">
+            <em>Premise:</em> Students who study in quiet rooms focus better.<br />
+            <em>Premise:</em> Focusing better leads to better grades.<br />
+            <em>Conclusion:</em> Therefore, studying in a quiet room leads to better grades.
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND ARGUMENT STRUCTURE</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI-generated text often <em>sounds</em> like an argument but isn't structured like one &mdash; lots of confident sentences without clear premises and conclusion. When you read AI output, try to write the argument out as P1, P2, C. If you can't find premises that lead to the conclusion, the AI hasn't actually made an argument &mdash; it's made a claim with vibes. You'll spot this everywhere once you start looking.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.1: Build Your First Argument</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build an argument for the conclusion "School uniforms improve student focus." Write two premises. Analyze whether your argument is deductive or inductive, and whether you'd be convinced by it yourself.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>5.1 VR Assignment &mdash; Arena &amp; Thesis <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Disputatio, Stage 1 of 3)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Choose your disputatio topic. Build your VR Disputatio Arena (you pick the space). Post your thesis. List your starter premises. This is where the course final lives.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Learning to argue doesn't mean learning to shout the loudest. It means learning how to use logic and evidence to build strong cases for your ideas. By collecting evidence, making sure your premises support your conclusion, and reviewing your argument for weaknesses, you'll be well on your way to mastering the art of persuasion.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 5 Lesson 1 &middot; Basics of Argumentation</div>
+</div>
+
+</div>
+<script>
+const argResp = [
+    "Not yet. That's a CLAIM but not a complete argument. An argument needs premises to support that claim.",
+    "Right. It's a conclusion sitting there with no premises. To make it an argument, you'd add 1-2 reasons that support it.",
+    "Closer but not quite. Premises are statements that SUPPORT a conclusion. This sentence IS the conclusion &mdash; it's what needs support.",
+    "Common reaction &mdash; but every claim needs an argument if you want someone else to believe it. 'It's just an opinion' is how bad ideas survive."
+];
+function argPick(btn, idx) {
+    document.querySelectorAll('#widget-arg .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-arg-fb');
+    fb.textContent = argResp[idx]; fb.style.display = 'block';
+}
+function argReset() {
+    document.querySelectorAll('#widget-arg .widget-options button').forEach(b => b.classList.remove('selected'));
+    document.getElementById('widget-arg-fb').style.display = 'none';
+}
+const typeFb = {
+    correct: [
+        "Right. The premises guarantee the conclusion &mdash; if both are true, the conclusion has to be. Deductive.",
+        "Right. Every swan you've seen being white doesn't guarantee ALL swans are white. (Indeed, there are black swans.) Inductive.",
+        "Right. Past good experiences don't guarantee tonight's experience &mdash; they make it likely. Inductive."
+    ],
+    hints: [
+        "Hint: if the premises are true, can the conclusion possibly be false?",
+        "Hint: 'every swan I've seen' isn't 'every swan that exists.' What kind of leap is this?",
+        "Hint: the past makes the future LIKELY but doesn't guarantee it. Which type is that?"
+    ]
+};
+function typePick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, typeFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, typeFb.hints[rowIdx], 'incorrect'); }
+}
+function typeReset() {
+    document.querySelectorAll('#widget-type .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

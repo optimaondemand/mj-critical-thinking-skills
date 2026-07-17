@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 4: Collaborative Learning, Stress &amp; Test Prep</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Preparing like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Collaborative Learning, Stress &amp; Test Prep</div>
+        <div style="font-size: 12px; color: #666;">Course content (this page)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Preparing like an Intellectual</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Collaborative Learning, Stress Management, and Test Preparation Strategies</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Ace the exam &mdash; and stay sane while you do it</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Hey there, future scholars! &#127891; Today, we're diving into three crucial aspects of studying that will not only help you ace your exams but also keep you sane along the way. We're talking about Collaborative Learning, Stress Management, and Test Preparation Strategies. These skills will not only boost your academic performance but also equip you with the tools to handle any challenge that comes your way. Let's get started!</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> form effective study groups and use online platforms to learn collaboratively.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> manage academic stress with mindfulness, breaks, physical activity, and reaching out for support.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> prepare for tests by making study guides, taking practice tests, and reviewing past exams.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or digital doc for building a study guide.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A study buddy or two &mdash; classmates or friends in your courses.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">An online platform for group study (Google Classroom, Discord, Teams).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>1.4 VR Assignment</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A Word document, Google Doc, or PDF &mdash; for the paired <em>Assignment 4</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Stress level check-in -->
+    <div class="optima-widget" id="widget-stress">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">How stressed are you about school right now? (No wrong answer &mdash; just an honest read.)</div>
+        <div class="widget-options">
+            <button onclick="stressPick(this, 0)">&#128526; All good</button>
+            <button onclick="stressPick(this, 1)">&#129488; Manageable, a little behind</button>
+            <button onclick="stressPick(this, 2)">&#128552; A lot &mdash; feeling buried</button>
+            <button onclick="stressPick(this, 3)">&#129327; Honestly avoiding even thinking about it</button>
+        </div>
+        <div class="widget-feedback" id="widget-stress-fb"></div>
+        <button class="widget-reset" onclick="stressReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 1 â€” Collaborative Learning -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128101; PART 1 &middot; COLLABORATIVE LEARNING</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Study Groups and Peer Teaching</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">You've probably heard the saying, "Two heads are better than one." Well, when it comes to studying, that can be true! Study groups allow you to pool your knowledge, tackle difficult concepts together, and teach each other. Teaching is one of the best ways to learn&mdash;explaining a concept to a friend can help solidify your understanding.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Tips for Effective Study Groups:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Choose your group wisely:</strong> Work with peers who are motivated and focused.</li>
+            <li><strong>Set clear goals:</strong> Decide what topics you'll cover in each session.</li>
+            <li><strong>Rotate roles:</strong> Take turns teaching different concepts to the group.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Utilizing Online Platforms for Discussion</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In today's digital age, you're not limited to face-to-face interactions. Online platforms like Google Classroom, Discord, or even specialized apps like StudyBlue offer spaces to discuss topics, share resources, and ask questions.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>How to Maximize Online Study Platforms:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Create dedicated channels</strong> or threads for specific subjects or topics.</li>
+            <li><strong>Use video calls</strong> for real-time discussions and group study sessions.</li>
+            <li><strong>Share and collaborate</strong> on documents and study guides.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Engaging in Group Projects</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Group projects can be a fantastic way to learn from others and contribute your unique skills. It's not just about dividing the work; it's about learning to communicate, manage time, and merge ideas into a cohesive final product.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Strategies for Successful Group Projects:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Assign roles</strong> based on each member's strengths.</li>
+            <li><strong>Set deadlines</strong> to keep everyone on track.</li>
+            <li><strong>Communicate regularly</strong> to ensure everyone is on the same page.</li>
+        </ul>
+    </div>
+
+    <!-- Content card: Part 2 â€” Stress Management -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127807; PART 2 &middot; STRESS MANAGEMENT</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Mindfulness and Relaxation Techniques</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Stress is a natural part of life, especially in high school and college. But you can manage it! Mindfulness practices like deep breathing, meditation, and progressive muscle relaxation can help you stay calm and focused when you need it most (like just before a big exam or a presentation).</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Simple Mindfulness Exercise:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Take 5 deep breaths</strong>, focusing on your inhale and exhale.</li>
+            <li><strong>Close your eyes</strong> and picture a place where you feel calm and happy.</li>
+            <li><strong>Scan your body</strong> for tension and consciously relax those muscles.</li>
+        </ul>
+
+        <!-- Box Breathing visual -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#129303; BOX BREATHING &mdash; A 30-SECOND CALM-DOWN</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 14px;">Used by Navy SEALs before high-stress moments. Works just as well before a test or a presentation.</div>
+            <div style="display: flex; justify-content: center; padding: 8px 0;">
+                <div style="position: relative; width: 280px; height: 220px;">
+                    <div style="position: absolute; top: 30px; left: 20px; right: 20px; bottom: 30px; border: 3px solid #0E1C42; border-radius: 8px; background: #EEF1F8;"></div>
+                    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: #0E1C42; color: #fff; padding: 4px 12px; border-radius: 6px; font-size: 13px; white-space: nowrap;">&#11167; INHALE 4s</div>
+                    <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); background: #0E1C42; color: #fff; padding: 4px 12px; border-radius: 6px; font-size: 13px; white-space: nowrap;">&#11165; EXHALE 4s</div>
+                    <div style="position: absolute; top: 50%; left: -10px; transform: translateY(-50%) rotate(-90deg); background: #C7922C; color: #fff; padding: 4px 12px; border-radius: 6px; font-size: 13px; white-space: nowrap;">HOLD 4s</div>
+                    <div style="position: absolute; top: 50%; right: -10px; transform: translateY(-50%) rotate(90deg); background: #C7922C; color: #fff; padding: 4px 12px; border-radius: 6px; font-size: 13px; white-space: nowrap;">HOLD 4s</div>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                        <div style="font-size: 22px; color: #0E1C42;">&#129303;</div>
+                        <div style="font-size: 13px; color: #0E1C42; font-style: italic; margin-top: 4px;">Repeat 4 times</div>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 6px; font-style: italic; text-align: center;">Inhale for 4 seconds &middot; hold 4 &middot; exhale 4 &middot; hold 4 &middot; repeat.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Time for Breaks and Physical Activity</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Your brain is like a muscle&mdash;it needs breaks to function at its best. Integrating short breaks and physical activity into your study routine can improve focus and reduce stress.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Break Ideas:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>5-minute walks</strong> around your house or school.</li>
+            <li><strong>Stretching exercises</strong> to relieve tension.</li>
+            <li><strong>Quick bursts</strong> of physical activity like jumping jacks or dancing.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Managing Academic Pressure</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Feeling overwhelmed by assignments and exams? It's essential to prioritize and manage your time effectively. Remember, you're not alone&mdash;talk to teachers, counselors, or friends when you feel the pressure is too much.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Pressure Management Tips:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Prioritize tasks:</strong> Focus on the most critical assignments first. (Remember the Eisenhower Matrix from a previous lesson!)</li>
+            <li><strong>Break tasks into smaller steps:</strong> Tackling smaller chunks can make big projects feel less daunting. (Remember how to set SMART goals!)</li>
+            <li><strong>Seek support:</strong> Don't hesitate to ask for help when you need it.</li>
+        </ul>
+    </div>
+
+    <!-- Widget 2: Stress technique matcher -->
+    <div class="optima-widget" id="widget-cope">
+        <div class="widget-kicker">&#9889; TRY IT &middot; WHAT WOULD HELP MOST?</div>
+        <div class="widget-question">For each situation, which stress strategy fits best?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. You've been doing homework for two hours straight and you literally can't focus on the next sentence.</div>
+            <div class="widget-options">
+                <button onclick="copePick(this, 0, 0)">Try box breathing</button>
+                <button onclick="copePick(this, 0, 1)">Take a 5-minute walk or stretch</button>
+                <button onclick="copePick(this, 0, 2)">Reach out to a teacher or counselor</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">2. You're three weeks behind in math and have no idea where to even start catching up.</div>
+            <div class="widget-options">
+                <button onclick="copePick(this, 1, 0)">Try box breathing</button>
+                <button onclick="copePick(this, 1, 1)">Take a 5-minute walk or stretch</button>
+                <button onclick="copePick(this, 1, 2)">Reach out to a teacher or counselor</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. Your hands are shaking and your stomach's flipping five minutes before a presentation.</div>
+            <div class="widget-options">
+                <button onclick="copePick(this, 2, 0)">Try box breathing</button>
+                <button onclick="copePick(this, 2, 1)">Take a 5-minute walk or stretch</button>
+                <button onclick="copePick(this, 2, 2)">Reach out to a teacher or counselor</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="copeReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 3 â€” Test Preparation Strategies -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128221; PART 3 &middot; TEST PREPARATION STRATEGIES</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Practice Tests and Quizzes</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the best ways to prepare for a test is to simulate the testing environment. Practice tests help you identify areas where you need more review and get you used to the format of the actual exam.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Creating Effective Practice Tests:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Use past exams</strong> or online resources to find practice questions.</li>
+            <li><strong>Time yourself</strong> to get used to working under exam conditions.</li>
+            <li><strong>Review your answers</strong> and focus on the questions you got wrong.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Reviewing Past Exams</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Past exams are goldmines of information. They often reveal patterns in the types of questions teachers like to ask and the key concepts they emphasize.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>How to Review Past Exams:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Identify recurring themes</strong> or topics that are frequently tested.</li>
+            <li><strong>Analyze your mistakes</strong> to understand where you went wrong.</li>
+            <li><strong>Discuss tricky questions</strong> with your study group or teacher.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Creating Study Guides</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A well-organized study guide can be your best friend come exam time. Study guides should summarize key concepts, formulas, dates, and any other crucial information.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 8px 0;"><strong>Steps to Create an Effective Study Guide:</strong></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Organize information</strong> by topic or chapter.</li>
+            <li><strong>Highlight key points</strong> using different colors or symbols.</li>
+            <li><strong>Include practice questions</strong> or summaries at the end of each section.</li>
+            <li><strong>Include things that you recall</strong> the instructor emphasizing&mdash;or even explicitly telling you is going to be on the test!</li>
+            <li><strong>It can also be helpful</strong> to anticipate questions you might find on the exam then answering those.</li>
+        </ul>
+
+        <!-- Sample Study Guide mockup -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128221; SAMPLE STUDY GUIDE &mdash; WHAT A GOOD ONE LOOKS LIKE</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 14px;">Sample: The American Revolution &middot; Test Friday</div>
+            <div style="border: 1.5px solid #0E1C42; border-radius: 6px; overflow: hidden;">
+                <div style="background: #0E1C42; color: #fff; padding: 10px 14px; font-size: 15px;">Study Guide &middot; <em>The American Revolution</em></div>
+                <div style="padding: 14px 16px;">
+                    <div style="margin-bottom: 14px;">
+                        <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px; letter-spacing: 0.5px;">&#128218; KEY CONCEPTS</div>
+                        <ul style="font-size: 14px; color: #1a2340; line-height: 1.55; margin: 0 0 0 18px;">
+                            <li>"No taxation without representation" &mdash; the core grievance.</li>
+                            <li>Stamp Act (1765), Boston Tea Party (1773), Lexington &amp; Concord (1775).</li>
+                            <li>Declaration of Independence (1776) &mdash; written mostly by Jefferson.</li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 14px; background: #FDF3E3; border-left: 4px solid #C7922C; padding: 10px 14px; border-radius: 4px;">
+                        <div style="font-size: 11px; color: #8B5E16; margin-bottom: 6px; letter-spacing: 0.5px;">&#128172; FROM MR. SMITH (he said this 3 times)</div>
+                        <div style="font-size: 14px; color: #1a2340; line-height: 1.55;">"The Revolution was not just about taxes &mdash; it was about who has the right to govern. Know the difference."</div>
+                    </div>
+                    <div style="margin-bottom: 4px;">
+                        <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px; letter-spacing: 0.5px;">&#10067; LIKELY QUESTIONS I'M ANTICIPATING</div>
+                        <ul style="font-size: 14px; color: #1a2340; line-height: 1.55; margin: 0 0 0 18px;">
+                            <li>Explain the colonists' main argument against British rule.</li>
+                            <li>Why was the Declaration of Independence a turning point?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic;">Notice what the teacher emphasized has its own section. That's usually where the points are.</div>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND STUDY GUIDES</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI tools can generate a "study guide" for any topic in seconds. But here's the catch: the <em>act</em> of building your own study guide is half of how it teaches you. Picking what's important, organizing it, deciding what your teacher emphasized &mdash; that thinking is what actually moves the material into your memory. If AI makes the study guide for you, you skip the part that does the learning. Use AI to quiz yourself on YOUR guide after you've built it. Don't outsource the building.</div>
+        </div>
+    </div>
+
+    <!-- Widget 3: Test prep scenarios -->
+    <div class="optima-widget" id="widget-testprep">
+        <div class="widget-kicker">&#9889; TRY IT &middot; PICK YOUR TEST-PREP MOVE</div>
+        <div class="widget-question">For each situation, what's the best test-prep strategy?</div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">1. It's the first test in a new subject. You have no idea what kinds of questions to expect.</div>
+            <div class="widget-options">
+                <button onclick="prepPick(this, 0, 0)">Build a study guide</button>
+                <button onclick="prepPick(this, 0, 1)">Take a timed practice test</button>
+                <button onclick="prepPick(this, 0, 2)">Find and review past exams</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. It's 2 days before a big test. You've already made a study guide and reviewed the material. What's next?</div>
+            <div class="widget-options">
+                <button onclick="prepPick(this, 1, 0)">Build a study guide</button>
+                <button onclick="prepPick(this, 1, 1)">Take a timed practice test</button>
+                <button onclick="prepPick(this, 1, 2)">Find and review past exams</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. You have a test in a week on a chapter you found confusing. Where do you start?</div>
+            <div class="widget-options">
+                <button onclick="prepPick(this, 2, 0)">Build a study guide</button>
+                <button onclick="prepPick(this, 2, 1)">Take a timed practice test</button>
+                <button onclick="prepPick(this, 2, 2)">Find and review past exams</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="prepReset()">Reset</button>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>1.4 VR Assignment &mdash; Inner Sanctum of Silence and Isolation</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Go into VR and build yourself a quiet, isolated place you can retreat to for breaks. Pick a space, decorate it with props, images, 3D spheres, and audio, and submit a snapshot of your Sanctum.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 4: Collaborative Learning, Stress Management, and Test Preparation Strategies</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Write 2&ndash;4 sentences on each: (1) a past study group or group project &mdash; what worked and what to improve; (2) a recent stressful school moment &mdash; what you did, and what you might try next time; (3) your last test &mdash; how you prepared, what worked, what to change.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; YOU'VE GOT THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">By mastering Collaborative Learning, Stress Management, and Test Preparation Strategies, you'll be well on your way to academic success. Remember, these skills are not just for school&mdash;they're life skills that will serve you well in college, your career, and beyond.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Now, take a deep breath, gather your study buddies, and tackle your next exam with confidence. You've got this!</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4 &middot; Collaborative Learning, Stress Management, and Test Preparation Strategies</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+// --- Widget 1: Stress level check-in ---
+const stressResponses = [
+    "Nice. Stay tuned for techniques that'll help you keep it that way â€” especially before high-stakes moments like big tests.",
+    "Normal. Most students live here most of the time. Part 2 has the techniques (box breathing, breaks) and Part 3 has the test-prep moves that'll narrow the gap.",
+    "That's a signal, not a problem. Buried usually means too much in your head at once. Part 2 covers what to do RIGHT NOW (breathe, walk), and you'll want to talk to someone â€” see \"Seek support\" near the end of Part 2.",
+    "Honest answer. Avoidance is your brain trying to protect you, but it tends to grow the pile. The fastest way out is one tiny step â€” pick ONE thing from Part 3 to do today. That's it."
+];
+function stressPick(btn, idx) {
+    document.querySelectorAll('#widget-stress .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-stress-fb');
+    fb.textContent = stressResponses[idx];
+    fb.classList.add('show');
+}
+function stressReset() {
+    document.querySelectorAll('#widget-stress .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-stress-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+// --- Widget 2: Stress technique matcher ---
+const copeFeedback = {
+    correct: [
+        "Right. After two hours straight, your brain is fried â€” a 5-minute walk or stretch gives your focus a chance to come back. Box breathing helps in acute panic, not chronic fatigue.",
+        "Right. Three weeks behind on a subject isn't a breathing problem â€” it's a structural problem. You need a teacher or counselor to help you build a plan. Asking for help isn't weakness; it's the move.",
+        "Right. Shaky hands and a flipping stomach = acute stress. Box breathing (or 5 slow breaths) literally slows your nervous system in under a minute. Perfect for right-before-the-thing moments."
+    ],
+    hints: [
+        "Hint: you're not in acute panic, and the problem isn't structural â€” you're just mentally fried. Which option resets your focus?",
+        "Hint: this isn't a 5-minute fix. You need someone to help you plan a way through. Which option is that?",
+        "Hint: this is acute, in-the-moment stress. Which technique calms your body in under a minute?"
+    ]
+};
+function copePick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, copeFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, copeFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function copeReset() {
+    document.querySelectorAll('#widget-cope .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Widget 3: Test prep scenarios ---
+const prepFeedback = {
+    correct: [
+        "Right. When you don't know the format, past exams are pure gold â€” they show you the kinds of questions your teacher tends to ask.",
+        "Right. After the material is in your head, the next thing is to simulate the conditions: timed, no notes. That's where you find out what you actually know.",
+        "Right. When a chapter is confusing, building a study guide forces you to organize what you know vs. what you don't. That's how the confusion turns into structure."
+    ],
+    hints: [
+        "Hint: you don't know what to expect on the test. Which option shows you what your teacher's questions look like?",
+        "Hint: you've already organized the material. What's left? Testing yourself under real conditions. Try again.",
+        "Hint: you're confused about the chapter. Which option forces you to figure out what's actually in it and what you don't yet understand?"
+    ]
+};
+function prepPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, prepFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, prepFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function prepReset() {
+    document.querySelectorAll('#widget-testprep .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Shared row feedback renderer ---
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 4: Degrees of Belief</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div><div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 4</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Degrees of Belief</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Place your starting confidence</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Degrees of Belief, aka Credences, aka Confidence Levels</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Belief isn't a light switch &mdash; it's a dimmer.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today, we're diving into a topic that will help you understand not just what you believe, but <em>how strongly</em> you believe it. It's about degrees of belief &mdash; a fancy way of saying how sure you are that something is true. Ever noticed that sometimes you're absolutely certain about something, while other times you're just leaning towards a conclusion? Let's explore this idea in more detail and see how it connects to the way we think, argue, and make decisions.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell the difference between binary belief (yes/no) and graded belief (a percentage).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> assign a credence (percentage) to my own beliefs and explain why.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document or notebook for the paired <em>Assignment 4: Degrees of Belief</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for <em>3.4 VR Confidence Scale</em>, where you'll lock in your starting belief about your Good Life Experiment.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Check-in -->
+    <div class="optima-widget" id="widget-cr">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Right now, what's your credence (0-100%) that you'll do your Good Life habit every day this week?</div>
+        <div class="widget-options">
+            <button onclick="crPick(this, 0)">95-100% &mdash; I've got this</button>
+            <button onclick="crPick(this, 1)">70-90% &mdash; pretty confident</button>
+            <button onclick="crPick(this, 2)">40-70% &mdash; honestly unsure</button>
+            <button onclick="crPick(this, 3)">Under 40% &mdash; rough week incoming</button>
+        </div>
+        <div class="widget-feedback" id="widget-cr-fb"></div>
+        <button class="widget-reset" onclick="crReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; TWO WAYS TO THINK ABOUT BELIEF</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">When you think about your belief in a statement like, "The sun will rise tomorrow," you can have two different types of attitudes:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Binary Belief:</strong> This is all or nothing. You either <em>believe</em> that the sun will rise tomorrow, or you <em>don't</em>. It's like a switch that's either on or off.</li>
+            <li><strong>Graded Belief (aka Credence, aka Confidence):</strong> This is more like a dimmer switch. It's not just on or off; it has levels. Maybe you're 99% sure the sun will rise tomorrow, but not 100% (after all, who knows, right?). We call this level of certainty your credence (or confidence level).</li>
+        </ol>
+    </div>
+
+    <!-- Visual: dimmer/scale -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128202; THE CREDENCE DIMMER</div>
+        <div style="position: relative; height: 50px; background: linear-gradient(to right, #FDECEC 0%, #FDF3E3 50%, #D8F0DD 100%); border-radius: 8px; border: 1px solid #D0D9E8;">
+            <div style="position: absolute; top: -22px; left: 0; font-size: 11px; color: #8A1F16; font-weight: 600;">0% &mdash; definitely false</div>
+            <div style="position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #8B5E16; font-weight: 600;">50% &mdash; no idea</div>
+            <div style="position: absolute; top: -22px; right: 0; font-size: 11px; color: #1A6B3D; font-weight: 600;">100% &mdash; definitely true</div>
+            <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); padding-left: 8px; font-size: 13px; color: #555;">&larr;</div>
+            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); padding-right: 8px; font-size: 13px; color: #555;">&rarr;</div>
+        </div>
+        <div style="font-size: 13px; color: #555; margin-top: 10px; font-style: italic;">Every belief you hold lives somewhere on this scale. The job of a careful thinker is to place each one in the right spot.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; INTERPRETING CREDENCES</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">So, what does it mean when someone says, "My credence that the sun will rise tomorrow is 0.99"? Roughly, it's their way of saying, "I'm 99% sure this will happen." In a little more detail, there are two main ways people think about what it means to have a credence in a statement:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li>"I think there's a 99% chance that the sun will rise tomorrow."</li>
+            <li>"Out of 100 similar situations where I thought like this, I'd expect to be right about 99 times."</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Both interpretations help you understand how strongly you believe something. And being clear about this helps us communicate and make decisions better.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WHY GRADED BELIEF IS BETTER</div>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 0 0 6px 0;">It matches everyday speech</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Think about how people talk:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>"I <em>knew</em> it was going to rain!"</li>
+            <li>"I <em>think</em> she might show up."</li>
+            <li>"That'll happen <em>when pigs fly!"</em></li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">We rarely speak in binary terms &mdash; like saying we absolutely know something or we absolutely don't. Using graded beliefs makes more sense and aligns better with our everyday experience.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">It matches our actions</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">You might <em>believe</em> both that your brakes will work and that a complex scientific theory is true. But here's the thing: you'll bet your life on the brakes (by driving to the gym every day, say), while you probably wouldn't do the same for that scientific theory. This shows that you have a much higher credence in your brakes than in the scientific theory.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">If beliefs were only binary, it wouldn't make sense that you're willing to act on one belief and not the other. But with graded beliefs, you can understand the difference: you're more confident in one than the other.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">It helps us adjust to new evidence</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Think about how people react to new information:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If you <em>just believe</em> something, more evidence can't really change your mind.</li>
+            <li>But if you have a credence &mdash; a level or degree of confidence &mdash; new evidence can shift that confidence up or down.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">For example, if you hear a convincing argument from someone on the other side of a political debate, it might make you a little less certain of your own position, even if you don't completely change your mind. This kind of adjustment is impossible with binary beliefs.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHY USE PROBABILITIES?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">This is where it gets a little technical, but let's keep it simple. For now, let's agree that credences work like probabilities. Just like you might say there's a 50% chance a coin flip lands heads, you can say your credence in something happening is 50% (or 0.5).</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Why do we use probabilities? Because it gives us a systematic way to handle uncertainty and make decisions based on our beliefs. If you're curious and want to dig deeper, classes in philosophy or epistemology (the study of knowledge) might be up your alley.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; HOW TO DETERMINE CREDENCES</h2>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">So, where do you get the numbers for your credences / confidence levels? How do you decide that you're 70% sure about something? Well, there's a pretty sophisticated way to track your credences that we'll look at in the next few lessons. But for now, here's a very general guide:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Start with Your Total Evidence and Background Knowledge:</strong> You use what you know and have experienced. If you've seen cloudy skies all morning, you might have a high credence that it will rain later since, in your experience, rain usually follows cloudy skies.</li>
+            <li><strong>Update as You Get New Evidence:</strong> Let's say you check the weather app and see a 0% chance of rain. This new evidence might lower your credence in rain happening today. The more evidence you collect, the better your credence will reflect reality.</li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI'S "FALSE CONFIDENCE" PROBLEM</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI assistants speak with confidence even when they're guessing. They almost never say "I'm only 40% sure of this." Always ask the AI: <em>"On a scale of 0 to 100, how confident are you in that answer, and what would lower your confidence?"</em> If it can't give you a credence with a reason, the answer is just a guess in a confident voice.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Place the credence -->
+    <div class="optima-widget" id="widget-pl">
+        <div class="widget-kicker">&#9889; TRY IT &middot; PLACE THE CREDENCE</div>
+        <div class="widget-question">For each statement, what's the most honest credence range?</div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">1. "The sun will rise tomorrow."</div>
+            <div class="widget-options">
+                <button onclick="plPick(this, 0, 0)">25%</button>
+                <button onclick="plPick(this, 0, 1)">50%</button>
+                <button onclick="plPick(this, 0, 2)">75%</button>
+                <button onclick="plPick(this, 0, 3)">99%+</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. "A coin I'm about to flip will land heads."</div>
+            <div class="widget-options">
+                <button onclick="plPick(this, 1, 0)">25%</button>
+                <button onclick="plPick(this, 1, 1)">50%</button>
+                <button onclick="plPick(this, 1, 2)">75%</button>
+                <button onclick="plPick(this, 1, 3)">99%</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. "It will rain at exactly 3:14 PM on June 14, 2030 in my hometown."</div>
+            <div class="widget-options">
+                <button onclick="plPick(this, 2, 0)">Very low &mdash; under 10%</button>
+                <button onclick="plPick(this, 2, 1)">50%</button>
+                <button onclick="plPick(this, 2, 2)">80%</button>
+                <button onclick="plPick(this, 2, 3)">99%</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="plReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 4: Degrees of Belief</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Choose five statements you hear or think about in your daily life. For each, write your credence as a percentage and explain why. After a week, come back and reflect: did outcomes match your credences? What updated your thinking?</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.4 VR Assignment &mdash; Confidence Scale <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 4 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Return to your VR lab. Build a long 0-100% scale on a wall. Place your top hypothesis from the Hub on the scale at your starting credence. Audio: defend the number you picked.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Understanding credence and degrees of belief helps us think more clearly about what we believe and how strongly we believe it. Instead of just saying "I believe this" or "I don't believe that," you can now express how <em>confident</em> you are. This will help you make better decisions, understand different perspectives, and keep your mind open when new evidence comes along.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 4 &middot; Degrees of Belief</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const crResponses = [
+    "High confidence is fine &mdash; but be honest about WHY. Most overconfident predictions about ourselves come from not actually accounting for the days when life gets in the way.",
+    "Reasonable range. Now ask yourself: what would push that down to 50%? That answer tells you the real risks in your week.",
+    "That's honest. A 50/50 read on yourself is a sign you're paying attention to your own track record, not just hoping.",
+    "Good honest call. The lesson below explains why graded belief beats wishful binary belief &mdash; even when the number's low."
+];
+function crPick(btn, idx) {
+    document.querySelectorAll('#widget-cr .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-cr-fb');
+    fb.textContent = crResponses[idx];
+    fb.classList.add('show');
+}
+function crReset() {
+    document.querySelectorAll('#widget-cr .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-cr-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const plFeedback = {
+    correct: [
+        'Right. Near-certainty &mdash; 99% or higher. Notice it\'s not literally 100%; a strict thinker leaves a sliver for the unknown.',
+        'Right. A fair coin is the textbook 50/50 case. Anything else is overconfidence in one direction or the other.',
+        'Right. Tons of specificity &mdash; exact date, exact time, exact place. Very low credence is the honest answer for any single prediction that detailed.'
+    ],
+    hints: [
+        'Hint: this is one of the most reliable predictions a human has ever made. Almost-certain.',
+        'Hint: with a fair coin, no other information &mdash; what\'s the probability?',
+        'Hint: the more specific the prediction (exact date AND exact time AND exact place), the lower the credence has to be.'
+    ]
+};
+function plPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, plFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, plFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function plReset() {
+    document.querySelectorAll('#widget-pl .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

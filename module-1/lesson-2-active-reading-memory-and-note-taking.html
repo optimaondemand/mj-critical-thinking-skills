@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 2: Active Reading, Memory &amp; Note-Taking</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* --- Interactive widget styles --- */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Preparing like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Active Reading, Memory &amp; Note-Taking</div>
+        <div style="font-size: 12px; color: #666;">Course content (this page)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Preparing like an Intellectual</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Active Reading, Memory Techniques, and Note-Taking</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Your Guide to Becoming a Study Pro</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Hey there, future study expert! Today, we're diving into three super important study skills that will help you understand, remember, and organize information like a pro. By mastering Active Reading Strategies, Memory Techniques, and Note-Taking Skills, you'll set yourself up for success in every subject. Ready? Let's get started!</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> read actively by annotating, summarizing, and identifying key ideas in a text.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> take effective notes using the Cornell, outlining, and mind-mapping methods.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use memory techniques (mnemonics, chunking, spaced repetition) to remember what I study.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A pen or pencil and a notebook (or a digital tool you can take notes in).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A reading assignment or textbook chapter from another class to practice on.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>1.2 VR Assignment</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A Word document, Google Doc, or PDF &mdash; for the paired <em>Assignment 2</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Study habits check-in -->
+    <div class="optima-widget" id="widget-habits">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Be honest &mdash; how do you usually study right now? (No wrong answer.)</div>
+        <div class="widget-options">
+            <button onclick="habitsPick(this, 0)">&#128221; Re-reading my notes</button>
+            <button onclick="habitsPick(this, 1)">&#127912; Highlighting everything</button>
+            <button onclick="habitsPick(this, 2)">&#128260; Flashcards / self-quiz</button>
+            <button onclick="habitsPick(this, 3)">&#129310; Cramming the night before</button>
+        </div>
+        <div class="widget-feedback" id="widget-habits-fb"></div>
+        <button class="widget-reset" onclick="habitsReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 1 â€” Active Reading -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; ACTIVE READING STRATEGIES</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Active reading is all about making the text come alive in your mind. It's not just about passively reading the words on the page, but engaging with them to understand and retain information better. Here are three key strategies:</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">1. Annotation and Note-Taking</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>FORGET THE HIGHLIGHTER!</strong> As you read, grab a pen or digital tool to jot down notes in the margins AND/or in a notebook. Underlining or highlighting important phrases is nice to refer to later, but it does not get the info <em>in</em> your head. Instead, scribble summaries, write down questions, and make connections to other concepts you've learned. These annotations will help you engage more deeply with the material and make reviewing a breeze.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">2. Summarizing and Paraphrasing</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">After reading a section, take a moment to summarize the main ideas in your own words. This helps ensure you truly understand the material. Paraphrasing (restating information in your own words) also reinforces learning and makes it easier to remember.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">3. Identifying Key Ideas and Details</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Not all information in a text is equally important. Focus on identifying the key ideas&mdash;these are the main points or arguments the author is making. Supporting details are also important, but your first goal is to see how they connect to the bigger picture. Later you can go back and start attaching those details to the big-picture scaffolding of understanding you've built.</p>
+    </div>
+
+    <!-- Content card: Part 2 â€” Note-Taking -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; PART 2 &middot; NOTE-TAKING SKILLS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Effective note-taking isn't just about writing everything down; it's about organizing information in a way that makes sense to you and helps you review it later. Here are three popular note-taking methods:</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">1. Cornell Method</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The Cornell method divides your note page into three sections: a narrow column on the left for cues, a larger right-hand section for notes, and a summary area at the bottom. While your teacher is lecturing or the class is discussing content during class or while you're reading, write your notes in the large right section. Afterward, jot down keywords or questions in the left column, and summarize the main points at the bottom. This structure makes it easy to review your notes and quiz yourself.</p>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Leave space between each idea so you can go back and elaborate, clarify, or make connections later. Here's a sort-of template you can model your Cornell notes on: <a href="../images/CornellNotesTemplate.pdf" target="_blank">CornellNotesTemplate.pdf</a></div>
+        </div>
+
+        <!-- Cornell Notes mockup -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 18px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128221; CORNELL NOTES &mdash; WHAT A FILLED PAGE LOOKS LIKE</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 14px;">Sample: Photosynthesis &middot; Tuesday, April 12</div>
+            <div style="border: 1.5px solid #0E1C42; border-radius: 6px; overflow: hidden;">
+                <div style="display: flex; min-height: 240px;">
+                    <div style="width: 32%; background: #F4F6FA; border-right: 1.5px solid #0E1C42; padding: 14px 14px;">
+                        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px; letter-spacing: 0.5px;">CUES &amp; QUESTIONS</div>
+                        <div style="font-size: 14px; color: #0E1C42; line-height: 1.55; margin-bottom: 16px;">What IS photosynthesis?</div>
+                        <div style="font-size: 14px; color: #0E1C42; line-height: 1.55; margin-bottom: 16px;">Inputs?</div>
+                        <div style="font-size: 14px; color: #0E1C42; line-height: 1.55; margin-bottom: 16px;">Where in the plant?</div>
+                        <div style="font-size: 14px; color: #0E1C42; line-height: 1.55; margin-bottom: 16px;">Why are plants green?</div>
+                    </div>
+                    <div style="flex: 1; padding: 14px 16px;">
+                        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px; letter-spacing: 0.5px;">NOTES</div>
+                        <div style="font-size: 14px; color: #1a2340; line-height: 1.55; margin-bottom: 12px;">Photosynthesis = how plants turn sunlight into energy (glucose).</div>
+                        <div style="font-size: 14px; color: #1a2340; line-height: 1.55; margin-bottom: 12px;">Inputs: CO&#8322; + H&#8322;O + sunlight &nbsp;&rarr;&nbsp; Outputs: glucose (C&#8326;H&#8321;&#8322;O&#8326;) + O&#8322;</div>
+                        <div style="font-size: 14px; color: #1a2340; line-height: 1.55; margin-bottom: 12px;">Happens in <em>chloroplasts</em> &mdash; the green structures inside plant cells.</div>
+                        <div style="font-size: 14px; color: #1a2340; line-height: 1.55; margin-bottom: 12px;">Chlorophyll = the green pigment that captures the sunlight.</div>
+                    </div>
+                </div>
+                <div style="background: #EEF1F8; border-top: 1.5px solid #0E1C42; padding: 12px 16px;">
+                    <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px; letter-spacing: 0.5px;">SUMMARY</div>
+                    <div style="font-size: 14px; color: #0E1C42; line-height: 1.55;">Plants use sunlight, water, and CO&#8322; in their chloroplasts to make their own food (glucose). Chlorophyll is the pigment that captures the sunlight &mdash; which is why most plants are green.</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">2. Outlining</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Outlining is a classic method where you organize information hierarchically, using headings and subheadings to show the relationship between ideas. Start with the main topic, followed by subtopics indented beneath it, and further details indented under those. Outlining helps you see the structure of the material and is great for subjects with lots of facts and details to remember. This is less handy during a live class, but super effective while reading. Here's an example of an outline and the text it outlines:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Essay on Outlining: <a href="../images/essay%20on%20outlining.pdf" target="_blank">essay on outlining.pdf</a></li>
+            <li>Outline of Essay on Outlining: <a href="../images/outline%20of%20essay%20on%20outlining.pdf" target="_blank">outline of essay on outlining.pdf</a></li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">3. Mind Mapping</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">If you're a visual learner, mind mapping might be your go-to method. Start by writing the main topic in the center of your page. Then, branch out with subtopics and supporting details, using lines to connect related ideas. Mind maps can help you see the relationships between concepts and keep your notes organized in a visual format. Here, for example, is a mind map summarizing the philosopher Aristotle's views on friendship:</p>
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="../images/arty%20friendship%20mm.png" alt="Aristotle friendship mind map" style="max-width: 100%; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+    </div>
+
+    <!-- Widget 2: Match the note-taking method -->
+    <div class="optima-widget" id="widget-notes">
+        <div class="widget-kicker">&#9889; TRY IT &middot; PICK THE BEST METHOD</div>
+        <div class="widget-question">For each situation, which note-taking method fits best?</div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">1. You're brainstorming ideas for a creative writing project &mdash; lots of connections, no clear order yet.</div>
+            <div class="widget-options">
+                <button onclick="notesPick(this, 0, 0)">Cornell Method</button>
+                <button onclick="notesPick(this, 0, 1)">Outlining</button>
+                <button onclick="notesPick(this, 0, 2)">Mind Mapping</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. Your teacher is giving a fast-paced live lecture on the causes of WWII.</div>
+            <div class="widget-options">
+                <button onclick="notesPick(this, 1, 0)">Cornell Method</button>
+                <button onclick="notesPick(this, 1, 1)">Outlining</button>
+                <button onclick="notesPick(this, 1, 2)">Mind Mapping</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. You're reading a dense textbook chapter on photosynthesis with lots of facts and sub-facts.</div>
+            <div class="widget-options">
+                <button onclick="notesPick(this, 2, 0)">Cornell Method</button>
+                <button onclick="notesPick(this, 2, 1)">Outlining</button>
+                <button onclick="notesPick(this, 2, 2)">Mind Mapping</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="notesReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 3 â€” Memory Techniques -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; MEMORY TECHNIQUES</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Memory is a tricky thing&mdash;it can be hard to remember everything you read or study. But with the right techniques, you can boost your memory and recall information when you need it most. Here are three powerful strategies:</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">1. Mnemonics</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Mnemonics are memory aids that help you recall information. They can be acronyms, like using "HOMES" to remember the Great Lakes (Huron, Ontario, Michigan, Erie, Superior), or phrases, like "Please Excuse My Dear Aunt Sally" for the order of operations in math (Parentheses, Exponents, Multiplication, Division, Addition, Subtraction). Another trick is to picture vivid and bizarre scenes relating key concepts you want to remember. For example, to remember that '<em>doler</em>' in Spanish means 'to suffer' in English, you might picture a giant dollar bill doubled over in pain. There are even tricks to remembering numbers and formulae (good for math and science), lists, dates, even names and faces! Check out books by Harry Lorayne for more.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">2. Chunking Information</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Breaking down large amounts of information into smaller, manageable chunks can make it easier to remember. For example, instead of trying to memorize a long list of words, group them into categories. This method works wonders for phone numbers, vocabulary lists, and more.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">3. Spaced Repetition</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Spacing out your study sessions over time (instead of cramming) is one of the most effective ways to move information into long-term memory. Review your notes or flashcards at increasing intervals&mdash;like one day, three days, and one week after first learning the material. This reinforces the information and helps it stick.</p>
+
+        <!-- Spaced repetition timeline mockup -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 18px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128197; SPACED REPETITION SCHEDULE &mdash; WHAT IT LOOKS LIKE</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 14px;">When to review what you learned today, so it actually sticks.</div>
+            <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+                <div style="background: #0E1C42; color: #fff; padding: 10px 14px; border-radius: 6px; text-align: center; min-width: 100px;">
+                    <div style="font-size: 10px; color: #55C8E8; letter-spacing: 0.5px;">TODAY</div>
+                    <div style="font-size: 14px; font-weight: bold; margin-top: 2px;">First learn</div>
+                </div>
+                <div style="color: #C7922C; font-size: 22px; padding: 0 2px;">&rarr;</div>
+                <div style="background: #EEF1F8; color: #0E1C42; padding: 10px 14px; border-radius: 6px; text-align: center; min-width: 100px;">
+                    <div style="font-size: 10px; color: #c7922c; letter-spacing: 0.5px;">+1 DAY</div>
+                    <div style="font-size: 14px; margin-top: 2px;">Review 1</div>
+                </div>
+                <div style="color: #C7922C; font-size: 22px; padding: 0 2px;">&rarr;</div>
+                <div style="background: #EEF1F8; color: #0E1C42; padding: 10px 14px; border-radius: 6px; text-align: center; min-width: 100px;">
+                    <div style="font-size: 10px; color: #c7922c; letter-spacing: 0.5px;">+3 DAYS</div>
+                    <div style="font-size: 14px; margin-top: 2px;">Review 2</div>
+                </div>
+                <div style="color: #C7922C; font-size: 22px; padding: 0 2px;">&rarr;</div>
+                <div style="background: #EEF1F8; color: #0E1C42; padding: 10px 14px; border-radius: 6px; text-align: center; min-width: 100px;">
+                    <div style="font-size: 10px; color: #c7922c; letter-spacing: 0.5px;">+1 WEEK</div>
+                    <div style="font-size: 14px; margin-top: 2px;">Review 3</div>
+                </div>
+                <div style="color: #C7922C; font-size: 22px; padding: 0 2px;">&rarr;</div>
+                <div style="background: #EEF1F8; color: #0E1C42; padding: 10px 14px; border-radius: 6px; text-align: center; min-width: 100px;">
+                    <div style="font-size: 10px; color: #c7922c; letter-spacing: 0.5px;">+2 WEEKS</div>
+                    <div style="font-size: 14px; margin-top: 2px;">Review 4</div>
+                </div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic;">Each review takes less time than the last &mdash; you're just reminding your brain, not relearning.</div>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND YOUR MEMORY</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Some apps now offer to summarize your readings or generate flashcards using AI. Watch out: when AI does the summarizing for you, <em>you</em> don't get the memory benefit. The active work&mdash;summarizing in your own words, retrieving an answer, struggling a little&mdash;is what actually moves information into your long-term memory. AI can help you <em>check</em> your work after you've done it. It cannot do the remembering for you.</div>
+        </div>
+    </div>
+
+    <!-- Widget 3: Match the memory technique -->
+    <div class="optima-widget" id="widget-memory">
+        <div class="widget-kicker">&#9889; TRY IT &middot; NAME THE MEMORY TECHNIQUE</div>
+        <div class="widget-question">For each example, which memory technique is being used?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. Splitting 12 vocab words into 4 themed groups of 3 to learn over a few days.</div>
+            <div class="widget-options">
+                <button onclick="memPick(this, 0, 0)">Mnemonic</button>
+                <button onclick="memPick(this, 0, 1)">Chunking</button>
+                <button onclick="memPick(this, 0, 2)">Spaced Repetition</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">2. Reviewing your notes today, in 3 days, in a week, and in two weeks.</div>
+            <div class="widget-options">
+                <button onclick="memPick(this, 1, 0)">Mnemonic</button>
+                <button onclick="memPick(this, 1, 1)">Chunking</button>
+                <button onclick="memPick(this, 1, 2)">Spaced Repetition</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. Making up "HOMES" to remember the names of the Great Lakes.</div>
+            <div class="widget-options">
+                <button onclick="memPick(this, 2, 0)">Mnemonic</button>
+                <button onclick="memPick(this, 2, 1)">Chunking</button>
+                <button onclick="memPick(this, 2, 2)">Spaced Repetition</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="memReset()">Reset</button>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>1.2 VR Assignment</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Learn advanced mnemonic techniques (the Harry Lorayne system &mdash; link stories, substitute words, face-name memory, number memory). Then go into VR and build your own mnemonic device using images, sticky notes, 3D objects, drawings, or sounds.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 2: Active Reading, Memory Techniques, and Note-Taking</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Take Cornell-style notes during one of your other classes (live lecture, discussion, or a video). Then create outline-style notes from a reading assignment in another class.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; YOU'VE GOT THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Now that you've got a solid grasp of active reading, memory techniques, and note-taking skills, it's time to put them into practice. The next time you sit down to study, try combining these strategies:</p>
+        <ul style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Start with Active Reading:</strong> Annotate and summarize as you go.</li>
+            <li><strong>Take Notes Effectively:</strong> Choose the note-taking method that works best for you, whether it's the Cornell method, mind mapping, or outlining.</li>
+            <li><strong>Use Memory Techniques:</strong> Create mnemonics, chunk information, and plan your review sessions using spaced repetition.</li>
+        </ul>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Remember, these skills take time to develop, so be patient with yourself as you practice. The more you use them, the more natural they'll become&mdash;and the better you'll do in your studies. Keep practicing, and you'll be amazed at how much easier learning becomes!</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2 &middot; Active Reading, Memory Techniques, and Note-Taking</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+// --- Widget 1: Study Habits Check-In ---
+const habitsResponses = [
+    "Re-reading FEELS like studying, but research shows it's one of the weakest ways to remember. By the end of this lesson, you'll have stronger options.",
+    "Highlighting is comforting, but the highlighter doesn't get the info into your head. Read the annotation section below â€” it's a game changer.",
+    "Excellent. Flashcards work because they make you RETRIEVE, not just re-read. Pair them with spaced repetition (Part 3) and you're set.",
+    "Honest answer. Cramming gets you through the test but the info evaporates a week later. Spaced repetition (Part 3) is the cure."
+];
+function habitsPick(btn, idx) {
+    document.querySelectorAll('#widget-habits .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-habits-fb');
+    fb.textContent = habitsResponses[idx];
+    fb.classList.add('show');
+}
+function habitsReset() {
+    document.querySelectorAll('#widget-habits .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-habits-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+// --- Widget 2: Note-Taking Method Match ---
+const notesFeedback = {
+    correct: [
+        "Right. Mind mapping is built for brainstorming â€” it lets you connect ideas in any order and see relationships as they form.",
+        "Right. Cornell is built for live lectures. The right column captures notes fast; the left column and summary get filled in afterward.",
+        "Right. Outlining handles dense, hierarchical material â€” main ideas, subtopics, supporting details â€” without losing the structure."
+    ],
+    hints: [
+        "Hint: you don't know the order yet, and you need to see how ideas connect. Which method is most visual?",
+        "Hint: the lecture is fast. You need a method that lets you capture notes quickly and review them later. Try again.",
+        "Hint: a textbook chapter has clear structure â€” main ideas, then sub-ideas, then details. Which method shows that hierarchy?"
+    ]
+};
+function notesPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, notesFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, notesFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function notesReset() {
+    document.querySelectorAll('#widget-notes .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Widget 3: Memory Technique Match ---
+const memFeedback = {
+    correct: [
+        "Right. Chunking â€” grouping 12 items into 4 themed groups of 3 makes them way easier to hold in working memory.",
+        "Right. Spaced repetition â€” reviews at growing intervals are the gold standard for moving info into long-term memory.",
+        "Right. Mnemonic â€” \"HOMES\" is an acronym mnemonic, one of the oldest and most reliable memory tricks."
+    ],
+    hints: [
+        "Hint: you're not making a memorable phrase, and you're not spacing out your reviews. You're regrouping items. Which technique?",
+        "Hint: you're spreading the reviews out over time with growing gaps. That's the heart of which technique?",
+        "Hint: H-O-M-E-S is a memorable word made from first letters. That's a classic example of which technique?"
+    ]
+};
+function memPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, memFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, memFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function memReset() {
+    document.querySelectorAll('#widget-memory .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Shared row feedback renderer ---
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>
+

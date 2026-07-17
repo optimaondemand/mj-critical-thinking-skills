@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 4 Lesson 5: Reading between the Lines</title>
+<style>
+body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+.canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+.widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+.widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+.widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+.widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+.widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+.widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+.row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+.row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+.row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+.widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+.widget-reset:hover { background: #FDF3E3; }
+.example-card { background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 14px 18px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 4</div><div style="font-size: 12px; color: #666;">Reading like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 5</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading between the Lines</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Inference Board (Stage 5)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Reading between the Lines</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What's on the surface isn't always the whole picture.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Last lesson, you learned to resolve ambiguity &mdash; figuring out what something <em>actually</em> means. Today, we go further: what isn't being said? What does the author <em>assume</em> you already know? What's being <em>implied</em>? What might be <em>hidden</em>?</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify what a text <em>assumes</em> the reader already knows.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> spot what's being <em>implied</em> without being stated.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> notice what an author might be <em>hiding</em> or has forgotten to mention.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-imp">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">A friend says, "The captain was <em>not</em> drunk today." What's your first reaction?</div>
+        <div class="widget-options">
+            <button onclick="impPick(this, 0)">Good for the captain &mdash; sober today</button>
+            <button onclick="impPick(this, 1)">Wait, was the captain drunk other days?</button>
+            <button onclick="impPick(this, 2)">Why mention drunkenness at all?</button>
+            <button onclick="impPick(this, 3)">Something feels off about this sentence</button>
+        </div>
+        <div id="widget-imp-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="impReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE CASE OF SOCRATES (WHAT'S ASSUMED)</div>
+        <div class="example-card">
+            <strong>Argument:</strong> "All mortals eventually die. So, Socrates will one day be dead."
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 12px 0;">Seems simple, right? It's just saying that Socrates, like everyone else, will die. But look closer: the sentence <em>assumes</em> Socrates is a mortal. The author doesn't spell it out, because they assume you already <em>know</em> Socrates is a mortal human.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Texts are full of these hidden assumptions, and being aware of them helps you see the full picture. Without knowing Socrates is mortal, the conclusion doesn't follow. (Socrates could be a divine being, a fictional character, or an inanimate object &mdash; and then he wouldn't be subject to death.)</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; LETTER OF RECOMMENDATION (WHAT'S IMPLIED)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine you're on the admissions committee for a top-tier graduate program in astrophysics. You receive a letter of recommendation for a student. It says:</p>
+        <div class="example-card"><strong>"Student X has wonderful penmanship."</strong></div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">Okay, that's nice&hellip; but is that really the most important thing for a future astrophysicist? By focusing on the student's handwriting, the letter writer is <em>implying</em> that there isn't much else to say. The letter isn't just saying "X has good penmanship." It's indirectly saying "X is not a great fit for astrophysics." Reading between the lines is how you catch that.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WHY DON'T AUTHORS SPELL EVERYTHING OUT?</div>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Saving Time.</strong> Many things are common knowledge; explaining all of them is tedious. The author expects you to fill in the blanks.</li>
+            <li><strong>Mistakes.</strong> The author thinks something is common knowledge but it actually isn't &mdash; either because it's not true, or because you don't happen to know it.</li>
+            <li><strong>Intentional Misleading.</strong> Some people <em>want</em> to hide things. If they spell out all the details, you might disagree or catch on to a hidden agenda.</li>
+        </ul>
+    </div>
+
+    <!-- Widget 2 -->
+    <div class="optima-widget" id="widget-aih">
+        <div class="widget-kicker">&#9889; TRY IT &middot; ASSUMED, IMPLIED, OR HIDDEN?</div>
+        <div class="widget-question">For each statement, what's the most interesting "between-the-lines" move happening?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"Since everyone loves pizza, no one will complain if we serve it at this event."</div>
+            <div class="widget-options">
+                <button onclick="aihPick(this, 0, 0)">Assumed: that everyone really loves pizza</button>
+                <button onclick="aihPick(this, 0, 1)">Implied: someone will complain anyway</button>
+                <button onclick="aihPick(this, 0, 2)">Hidden: there's no pizza budget</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"John hasn't responded to my text for an hour. He must be ignoring me."</div>
+            <div class="widget-options">
+                <button onclick="aihPick(this, 1, 0)">Assumed: John always responds within an hour</button>
+                <button onclick="aihPick(this, 1, 1)">Implied: relationship anxiety is driving the conclusion</button>
+                <button onclick="aihPick(this, 1, 2)">Hidden: John's phone is on silent (could be)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">"There is no lawsuit between that man and our client."</div>
+            <div class="widget-options">
+                <button onclick="aihPick(this, 2, 0)">Assumed: there was never a dispute</button>
+                <button onclick="aihPick(this, 2, 1)">Implied: lawsuits are usually friendly</button>
+                <button onclick="aihPick(this, 2, 2)">Hidden: there might be a SETTLEMENT (which isn't a lawsuit)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="aihReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; PRACTICAL STEPS</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li><strong>Ask questions.</strong> "What's not being said?" "What does the author assume I know?"</li>
+            <li><strong>Look for implications.</strong> "What else follows from this?" Like the astrophysics letter &mdash; what's being suggested without being stated?</li>
+            <li><strong>Challenge assumptions.</strong> Just because something is assumed doesn't mean it's true. Ask: "Is this really the case? Does this hold up from another perspective?"</li>
+            <li><strong>Practice, practice, practice.</strong> The more you read critically, the better you get at it.</li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND HIDDEN ASSUMPTIONS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI tools bring HUGE numbers of hidden assumptions into every answer &mdash; based on what's in their training data, what's popular online, and what's missing. When an AI gives you an answer, ask: <em>"What assumptions is this answer making? Whose perspective is missing?"</em> The same between-the-lines skill that catches a sneaky letter of recommendation also catches the sneaky biases baked into an AI's response.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5: Reading between the Lines</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For 8 statements, identify what's <em>assumed</em>, what's <em>implied</em>, and whether the author might be hiding or forgetting something. The second of two formal graded assignments in Module 4.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>4.5 VR Assignment &mdash; Inference Board <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(VR Research Library, Stage 5 of 8)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For each curated source, post 1-2 stickies listing INFERRED claims &mdash; what's implied but not stated outright. This is the between-the-lines layer of your library.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">This isn't something you'll master overnight. But every time you stop and ask questions, challenge assumptions, or look deeper, you're training your brain to think more critically. That's what's going to set you up for success in everything you do.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 4 Lesson 5 &middot; Reading between the Lines</div>
+</div>
+
+</div>
+<script>
+const impResponses = [
+    "Surface reading: just glad the captain was sober. But the sentence is doing more work than that.",
+    "Right &mdash; the way 'not today' is phrased IMPLIES the captain HAS been drunk other days. Classic between-the-lines move.",
+    "Good instinct. Why mention drunkenness at all unless it's been an issue? That's the implication.",
+    "Trust that instinct. The 'not&hellip;today' phrasing is implying something the speaker didn't quite say."
+];
+function impPick(btn, idx) {
+    document.querySelectorAll('#widget-imp .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-imp-fb');
+    fb.textContent = impResponses[idx]; fb.style.display = 'block';
+}
+function impReset() {
+    document.querySelectorAll('#widget-imp .widget-options button').forEach(b => b.classList.remove('selected'));
+    document.getElementById('widget-imp-fb').style.display = 'none';
+}
+const aihFb = {
+    correct: [
+        "Right. The whole argument falls apart if everyone DOESN'T love pizza. Big hidden assumption.",
+        "Right. The leap from 'an hour' to 'must be ignoring' is driven by emotion, not evidence. It's an implication of anxiety.",
+        "Right. The lawyer phrased it precisely to leave out a SETTLEMENT &mdash; technically true but hiding what matters."
+    ],
+    hints: [
+        "Hint: what does the argument NEED to be true to work? That's the assumption.",
+        "Hint: where's the emotional leap happening?",
+        "Hint: lawyers pick words carefully. What might 'no lawsuit' technically allow?"
+    ]
+};
+function aihPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, aihFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, aihFb.hints[rowIdx], 'incorrect'); }
+}
+function aihReset() {
+    document.querySelectorAll('#widget-aih .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

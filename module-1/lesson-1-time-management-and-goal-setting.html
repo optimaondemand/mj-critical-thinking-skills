@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 1: Time Management &amp; Goal Setting</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* --- Interactive widget styles --- */
+    .optima-widget {
+        background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%);
+        border: 1px solid #C5DCE5;
+        border-left: 5px solid #2196D0;
+        border-radius: 8px;
+        padding: 18px 22px;
+        margin: 18px 0;
+    }
+    .widget-kicker {
+        font-size: 11px;
+        color: #1B6A94;
+        margin-bottom: 10px;
+        letter-spacing: 0.4px;
+    }
+    .widget-question {
+        font-size: 17px;
+        color: #0E1C42;
+        margin-bottom: 14px;
+        line-height: 1.55;
+    }
+    .widget-row {
+        background: #FFFFFF;
+        border: 1px solid #D0D9E8;
+        border-radius: 6px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+    }
+    .widget-row-prompt {
+        font-size: 15px;
+        color: #0E1C42;
+        margin-bottom: 8px;
+        line-height: 1.5;
+        font-style: italic;
+    }
+    .widget-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .widget-options button {
+        background: #FFFFFF;
+        border: 1.5px solid #D0D9E8;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 14px;
+        color: #0E1C42;
+        cursor: pointer;
+        transition: all 0.15s;
+        font-family: inherit;
+    }
+    .widget-options button:hover {
+        background: #F4F6FA;
+        border-color: #55C8E8;
+    }
+    .widget-options button.selected {
+        background: #0E1C42;
+        color: #FFFFFF;
+        border-color: #0E1C42;
+    }
+    .widget-options button.correct {
+        background: #D8F0DD;
+        border-color: #2A9D5C;
+        color: #1A6B3D;
+    }
+    .widget-options button.incorrect {
+        background: #FDECEC;
+        border-color: #C0392B;
+        color: #8A1F16;
+    }
+    .widget-feedback {
+        background: #FFFFFF;
+        border-left: 3px solid #C7922C;
+        padding: 10px 14px;
+        font-size: 15px;
+        color: #1a2340;
+        line-height: 1.55;
+        margin: 10px 0;
+        display: none;
+        border-radius: 4px;
+    }
+    .widget-feedback.show {
+        display: block;
+    }
+    .row-feedback {
+        padding: 8px 12px;
+        margin-top: 8px;
+        font-size: 14px;
+        border-radius: 4px;
+        line-height: 1.5;
+    }
+    .row-feedback.correct {
+        background: #D8F0DD;
+        border-left: 3px solid #2A9D5C;
+        color: #1A6B3D;
+    }
+    .row-feedback.incorrect {
+        background: #FDECEC;
+        border-left: 3px solid #C0392B;
+        color: #8A1F16;
+    }
+    .widget-reset {
+        background: transparent;
+        border: 1px solid #C7922C;
+        color: #C7922C;
+        border-radius: 6px;
+        padding: 6px 12px;
+        font-size: 12px;
+        cursor: pointer;
+        font-family: inherit;
+        margin-top: 6px;
+    }
+    .widget-reset:hover {
+        background: #FDF3E3;
+    }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Preparing like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Time Management &amp; Goal Setting</div>
+        <div style="font-size: 12px; color: #666;">Course content (this page)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Preparing like an Intellectual</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Time Management &amp; Goal Setting</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Taking Control of Your Academic Life</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Hey there, scholars! &#128218; Today, we're diving into two key skills that will level up your academic game: Time Management and Goal Setting. Mastering these skills is like having a superpower&mdash;you'll get more done, feel less stressed, and achieve your dreams faster. Ready to get started? Let's go!</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> prioritize tasks using the Eisenhower Matrix.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> build a weekly study schedule using time blocks and scheduled breaks.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A weekly planner &mdash; paper or digital, whichever you'll actually open.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Sticky notes (physical or digital) for listing your tasks.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>1.1 VR Assignment</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A Word document, Google Doc, or PDF &mdash; for the paired <em>Assignment 1</em>.</div>
+        </div>
+    </div>
+
+    <!-- Content card: Part 1 â€” Time Management -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; TIME MANAGEMENT</div>
+
+        <!-- Widget 1: Emoji Check-in -->
+        <div class="optima-widget" id="widget-emoji">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">How does your current task list feel right now? (No wrong answer &mdash; just check in with yourself.)</div>
+            <div class="widget-options">
+                <button onclick="emojiPick(this, 0)">&#128552; Overwhelmed</button>
+                <button onclick="emojiPick(this, 1)">&#128564; Procrastinating</button>
+                <button onclick="emojiPick(this, 2)">&#128526; Got this</button>
+                <button onclick="emojiPick(this, 3)">&#129300; Not sure where to start</button>
+            </div>
+            <div class="widget-feedback" id="widget-emoji-fb"></div>
+            <button class="widget-reset" onclick="emojiReset()">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Prioritizing Tasks</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Imagine you've got a mountain of homework, a test to study for, and a project due next week. It can feel overwhelming, right? That's where prioritizing comes in. Prioritizing tasks means deciding what needs your attention first. Here's how to do it:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Make a List:</strong> Write down everything you need to do. Don't worry about the order yet&mdash;just get it all on paper.</li>
+            <li><strong>Rank by Importance:</strong> Decide which tasks are most critical. Ask yourself: Which deadline is closest? Which task will have the biggest impact on my grade?</li>
+            <li><strong>Consider the Effort:</strong> Some tasks might be more time-consuming than others. Balance the importance with the effort required. For example, if a project is worth 30% of your grade, but it'll take five hours to complete, start working on it well ahead of time.</li>
+        </ul>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Use the Eisenhower Matrix&mdash;a tool to help you sort tasks into four categories: Urgent and Important (Do now!), Important but Not Urgent (Schedule it for later), Urgent but Not Important (Schedule it for soon), and Not Urgent or Important (Do it whenever or&mdash;even better&mdash;avoid it all together). Focus on tasks that are both Urgent and Important first.</div>
+        </div>
+
+        <div style="text-align: center; margin: 16px 0;">
+            <img src="../images/My%20Eisenhower%20Matrix.png" alt="My Eisenhower Matrix.png" width="400" style="max-width: 100%; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+
+        <!-- Widget 2: Eisenhower Sort -->
+        <div class="optima-widget" id="widget-eisenhower">
+            <div class="widget-kicker">&#9889; TRY IT &middot; SORT INTO THE RIGHT QUADRANT</div>
+            <div class="widget-question">For each task, click the quadrant where it belongs. You'll get instant feedback.</div>
+            <div class="widget-row" data-correct="1">
+                <div class="widget-row-prompt">1. Researching what colleges you might want to apply to next year.</div>
+                <div class="widget-options">
+                    <button onclick="eisenPick(this, 0, 0)">Q1: Urgent + Important</button>
+                    <button onclick="eisenPick(this, 0, 1)">Q2: Important, Not Urgent</button>
+                    <button onclick="eisenPick(this, 0, 2)">Q3: Urgent, Not Important</button>
+                    <button onclick="eisenPick(this, 0, 3)">Q4: Neither</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="3">
+                <div class="widget-row-prompt">2. Scrolling social media for 45 minutes.</div>
+                <div class="widget-options">
+                    <button onclick="eisenPick(this, 1, 0)">Q1: Urgent + Important</button>
+                    <button onclick="eisenPick(this, 1, 1)">Q2: Important, Not Urgent</button>
+                    <button onclick="eisenPick(this, 1, 2)">Q3: Urgent, Not Important</button>
+                    <button onclick="eisenPick(this, 1, 3)">Q4: Neither</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="0">
+                <div class="widget-row-prompt">3. Studying for tomorrow's history test.</div>
+                <div class="widget-options">
+                    <button onclick="eisenPick(this, 2, 0)">Q1: Urgent + Important</button>
+                    <button onclick="eisenPick(this, 2, 1)">Q2: Important, Not Urgent</button>
+                    <button onclick="eisenPick(this, 2, 2)">Q3: Urgent, Not Important</button>
+                    <button onclick="eisenPick(this, 2, 3)">Q4: Neither</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="2">
+                <div class="widget-row-prompt">4. Texting a friend back the second they message you.</div>
+                <div class="widget-options">
+                    <button onclick="eisenPick(this, 3, 0)">Q1: Urgent + Important</button>
+                    <button onclick="eisenPick(this, 3, 1)">Q2: Important, Not Urgent</button>
+                    <button onclick="eisenPick(this, 3, 2)">Q3: Urgent, Not Important</button>
+                    <button onclick="eisenPick(this, 3, 3)">Q4: Neither</button>
+                </div>
+            </div>
+            <button class="widget-reset" onclick="eisenReset()">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Creating a Study Schedule</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Now that you've prioritized your tasks, it's time to fit them into your day-to-day life. A study schedule helps you plan when to tackle each task.</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Set Specific Times:</strong> Look at your weekly calendar and block out time for each task. Be realistic&mdash;don't cram too much into one day.</li>
+            <li><strong>Be Consistent:</strong> Try to study at the same time every day. Your brain likes routines, and you'll get into the habit of studying without even thinking about it.</li>
+            <li><strong>Include Breaks:</strong> Don't forget to schedule breaks! Studying for hours without a break can lead to burnout. Try the Pomodoro Technique: Study for 25 minutes, then take a 5-minute break.</li>
+        </ul>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Use tools like Google Calendar or apps like Trello to create and manage your study schedule digitally. These tools can send reminders, so you never forget what's next on your list.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Using a Planner or Digital Tools</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Whether you prefer paper or pixels, a planner is your best friend in managing your time effectively.</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Traditional Planners:</strong> If you like the feel of writing things down, a physical planner might be for you. You can easily flip through the pages and see your week at a glance.</li>
+            <li><strong>Digital Tools:</strong> If you're always on your phone or laptop, digital tools might be more convenient. Apps like Notion, Todoist, or Microsoft To Do allow you to set tasks, deadlines, and reminders, and they sync across all your devices.</li>
+        </ul>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Whichever tool you choose, make it a habit to check it at the start and end of each day. This way, you'll always be on top of what's coming up.</div>
+        </div>
+
+        <!-- Planner mockup -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 18px 0 6px;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128197; SAMPLE AFTER-SCHOOL SCHEDULE</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.5; margin-bottom: 14px;">Here's what an after-school block looks like when you've used the Pomodoro pattern. Two subjects, scheduled breaks, dinner protected. A real schedule &mdash; no chaos.</div>
+            <div style="border-top: 1px solid #EEF1F8;">
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">3:30 PM</div>
+                    <div style="width: 5px; height: 28px; background: #C7922C; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Snack &amp; quick task review</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">15 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">3:45 PM</div>
+                    <div style="width: 5px; height: 28px; background: #0E1C42; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Math homework &mdash; Pomodoro 1</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">25 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">4:10 PM</div>
+                    <div style="width: 5px; height: 28px; background: #C7922C; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Break &mdash; stretch &amp; water</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">5 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">4:15 PM</div>
+                    <div style="width: 5px; height: 28px; background: #0E1C42; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Math homework &mdash; Pomodoro 2</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">25 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">4:40 PM</div>
+                    <div style="width: 5px; height: 28px; background: #55C8E8; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Free time &mdash; phone, snack, walk</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">20 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">5:00 PM</div>
+                    <div style="width: 5px; height: 28px; background: #0E1C42; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">History reading &mdash; Pomodoro 1</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">25 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">5:25 PM</div>
+                    <div style="width: 5px; height: 28px; background: #C7922C; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Break</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">5 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0; border-bottom: 1px solid #F4F6FA;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">5:30 PM</div>
+                    <div style="width: 5px; height: 28px; background: #0E1C42; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">History reading &mdash; Pomodoro 2</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">25 min</div>
+                </div>
+                <div style="display: flex; align-items: center; padding: 9px 0;">
+                    <div style="width: 78px; font-size: 13px; color: #6b7a99; font-family: Consolas, Monaco, monospace; text-align: right; padding-right: 12px; flex-shrink: 0;">5:55 PM</div>
+                    <div style="width: 5px; height: 28px; background: #55C8E8; border-radius: 3px; margin-right: 14px; flex-shrink: 0;"></div>
+                    <div style="flex: 1; font-size: 15px; color: #1a2340; line-height: 1.45;">Dinner &amp; family time &mdash; you're done!</div>
+                    <div style="font-size: 12px; color: #888; margin-left: 8px; flex-shrink: 0;">&mdash;</div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 18px; margin-top: 14px; font-size: 13px; color: #555; flex-wrap: wrap;">
+                <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 12px; height: 12px; background: #0E1C42; border-radius: 2px;"></span> Schoolwork</span>
+                <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 12px; height: 12px; background: #C7922C; border-radius: 2px;"></span> Break</span>
+                <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="display: inline-block; width: 12px; height: 12px; background: #55C8E8; border-radius: 2px;"></span> Free time / meal</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content card: Part 2 â€” Goal Setting -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; PART 2 &middot; GOAL SETTING</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Setting SMART Goals</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Setting goals is like having a roadmap for your success. But not just any goals&mdash;SMART goals. SMART stands for Specific, Measurable, Achievable, Relevant, and Time-bound.</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Specific:</strong> Be clear about what you want to achieve. Instead of saying, "I want to do well in math," say, "I want to raise my math grade from a B to an A."</li>
+            <li><strong>Measurable:</strong> How will you know when you've achieved your goal? Add a number or a deadline. For example, "I want to score at least 90% on my next math test."</li>
+            <li><strong>Achievable:</strong> Your goal should challenge you but still be possible. If you're currently getting a D in math, aiming for an A by the next test might not be realistic. Maybe start with aiming for a B.</li>
+            <li><strong>Relevant:</strong> Make sure your goal matters to you. Ask yourself, "Why is this goal important? How does it fit into my bigger picture?"</li>
+            <li><strong>Time-bound:</strong> Set a deadline. For example, "I want to raise my grade by the end of the semester."</li>
+        </ul>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Write down your goals and keep them somewhere you'll see them every day. This constant reminder keeps you focused and motivated.</div>
+        </div>
+
+        <!-- Widget 3: SMART Goal Audit -->
+        <div class="optima-widget" id="widget-smart">
+            <div class="widget-kicker">&#9889; TRY IT &middot; SMART GOAL AUDIT</div>
+            <div class="widget-question">For each goal below, which SMART letter is most clearly missing? (Or is it already SMART?)</div>
+            <div class="widget-row" data-correct="0">
+                <div class="widget-row-prompt">1. "I want to do better at math this semester."</div>
+                <div class="widget-options">
+                    <button onclick="smartPick(this, 0, 0)">Missing M (Measurable)</button>
+                    <button onclick="smartPick(this, 0, 1)">Missing T (Time-bound)</button>
+                    <button onclick="smartPick(this, 0, 2)">Missing S (Specific)</button>
+                    <button onclick="smartPick(this, 0, 3)">It's already SMART</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="1">
+                <div class="widget-row-prompt">2. "I will write 200 words a day on my essay."</div>
+                <div class="widget-options">
+                    <button onclick="smartPick(this, 1, 0)">Missing M (Measurable)</button>
+                    <button onclick="smartPick(this, 1, 1)">Missing T (Time-bound)</button>
+                    <button onclick="smartPick(this, 1, 2)">Missing S (Specific)</button>
+                    <button onclick="smartPick(this, 1, 3)">It's already SMART</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="3">
+                <div class="widget-row-prompt">3. "I will run one mile three times a week for the next four weeks to be faster for tryouts."</div>
+                <div class="widget-options">
+                    <button onclick="smartPick(this, 2, 0)">Missing M (Measurable)</button>
+                    <button onclick="smartPick(this, 2, 1)">Missing T (Time-bound)</button>
+                    <button onclick="smartPick(this, 2, 2)">Missing S (Specific)</button>
+                    <button onclick="smartPick(this, 2, 3)">It's already SMART</button>
+                </div>
+            </div>
+            <button class="widget-reset" onclick="smartReset()">Reset</button>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND YOUR GOALS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI assistants (Microsoft Copilot, ChatGPT, Gemini, and others) can polish a goal's wording or check whether it's formatted as SMART. They <em>cannot</em> tell you what matters to you. The "R" in SMART&mdash;<em>Relevant</em>&mdash;is always your job. If an AI ever writes your goals for you, they'll be someone else's goals, and you won't keep them. This is true now. It will still be true when you start using these tools for bigger work.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Breaking Down Long-Term Goals into Manageable Tasks</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Long-term goals can be intimidating&mdash;especially if they feel like they're miles away. The trick is to break them down into smaller, manageable tasks.</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Start with the End in Mind:</strong> Picture where you want to be in six months or a year. Then, work backward to figure out what you need to do each month, week, and day to get there.</li>
+            <li><strong>Create Milestones:</strong> Set mini-goals or milestones along the way. For example, if your goal is to get an A in math by the end of the semester, a milestone might be to get an A on the next big test.</li>
+            <li><strong>Stay Flexible:</strong> Life happens, and sometimes things don't go as planned. If you miss a milestone, don't get discouraged. Adjust your plan and keep moving forward.</li>
+        </ul>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; PRO TIP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Reward yourself when you hit a milestone. It doesn't have to be big&mdash;maybe treat yourself to a favorite snack or an extra hour of free time. Rewards help keep you motivated!</div>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>1.1 VR Assignment</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build an Eisenhower Matrix in VR. Sort your real tasks into the four quadrants using sticky notes, then take a picture of your work.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 1: Time Management &amp; Goal Setting</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Turn your top Quadrant 1 task into a SMART goal, break it into manageable steps, and build a weekly schedule.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; YOU'VE GOT THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">There you have it&mdash;a solid foundation for managing your time and setting goals like a pro. By prioritizing tasks, creating a study schedule, and using SMART goals, you'll be on the fast track to academic success. Remember, these skills take practice, so start small, be consistent, and watch your productivity soar. You've got this! &#128170;</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Now, take out your planner, set some goals, and start planning your week. Your future self will thank you!</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1 &middot; Time Management &amp; Goal Setting</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+// --- Widget 1: Emoji Check-in ---
+const emojiResponses = [
+    "That feeling makes total sense â€” most students feel it. The Eisenhower Matrix is the move. It gives you a way to figure out what to start.",
+    "Procrastination usually means you don't have a clear next step. Try writing down ONE specific thing you can do in the next 10 minutes.",
+    "Nice. Quick check though â€” are you sure you've sorted by what's important, or just by what's loud?",
+    "Totally normal. The whole point of this lesson is to give you a way to figure out where to start. Read on."
+];
+function emojiPick(btn, idx) {
+    document.querySelectorAll('#widget-emoji .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-emoji-fb');
+    fb.textContent = emojiResponses[idx];
+    fb.classList.add('show');
+}
+function emojiReset() {
+    document.querySelectorAll('#widget-emoji .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-emoji-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+// --- Widget 2: Eisenhower Sort ---
+const eisenFeedback = {
+    correct: [
+        "Right. Important for your future, but no deadline this week. Quadrant 2 work is the kind students skip and regret â€” block time for it.",
+        "Right. Quadrant 4 â€” and noticing it is the first step. This is the quadrant to shrink, not grow.",
+        "Right. Deadline tomorrow + affects your grade = Quadrant 1. Do it now.",
+        "Right. Feels urgent (notification!) but answering this second isn't important. The friend can wait an hour."
+    ],
+    hints: [
+        "Not quite. It matters for your future, but you don't have to do it today. Try again.",
+        "Not quite. No real deadline, no real importance. Which quadrant?",
+        "Not quite. Deadline is tomorrow, and the grade matters. Try again.",
+        "Not quite. It feels like you must reply now, but is it actually important? Try again."
+    ]
+};
+function eisenPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, eisenFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, eisenFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function eisenReset() {
+    document.querySelectorAll('#widget-eisenhower .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Widget 3: SMART Goal Audit ---
+const smartFeedback = {
+    correct: [
+        "Right. \"This semester\" gives you Time-bound, and \"math\" is Specific, but there's no Measurable number. What does \"better\" actually look like? A letter grade? A test score?",
+        "Right. 200 words a day IS measurable, and the goal is specific. But there's no end point. Until when? Until the essay is done? Until Friday?",
+        "Right. All five letters â€” Specific (run one mile), Measurable (3x/week), Achievable (probably), Relevant (tryouts), Time-bound (4 weeks). That's a SMART goal."
+    ],
+    hints: [
+        "Hint: \"This semester\" already gives you the T. \"Math\" already gives you the S. What can't you actually measure here?",
+        "Hint: 200 words/day is measurable. The goal IS specific. What's missing about WHEN this ends?",
+        "Hint: Look at all five SMART letters carefully. Is anything actually weak in this goal?"
+    ]
+};
+function smartPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, smartFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, smartFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function smartReset() {
+    document.querySelectorAll('#widget-smart .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Shared row feedback renderer ---
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>
+

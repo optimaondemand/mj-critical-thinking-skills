@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 5: Calibrating Degrees of Belief</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div><div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 5</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Calibrating Degrees of Belief</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Data collection begins</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Calibrating Degrees of Belief</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The red-marble method &mdash; pinning down how sure you actually are.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Here we're going to dive a little deeper into how to think about credences as well as how to determine your credence toward specific statements.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> map a binary belief (believe / disbelieve / suspend judgment) onto a credence percentage.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use the red-marble method to estimate my credence in a statement.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use linguistic shorthand for credence ("very sure," "sure," "unsure," etc.) accurately.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document for the paired <em>Assignment 5</em>.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your Excel data log (from the bridge lesson) &mdash; data collection begins TODAY.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for <em>3.5 VR Data Collection Station</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Binary or graded -->
+    <div class="optima-widget" id="widget-bg">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">"My team will win the championship this year." Binary or graded?</div>
+        <div class="widget-options">
+            <button onclick="bgPick(this, 0)">Binary &mdash; either they will or they won't</button>
+            <button onclick="bgPick(this, 1)">Graded &mdash; depends on how good they look</button>
+            <button onclick="bgPick(this, 2)">Both work depending on context</button>
+        </div>
+        <div class="widget-feedback" id="widget-bg-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="bgReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; MAPPING CREDENCES TO BINARY BELIEFS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">We learned in the last lesson that there are two general ways of thinking about beliefs: either binary or on a spectrum.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">Binary beliefs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">We said last time that binary beliefs are like on-off switches: you either believe something is true or you disbelieve that thing is true (that is, you believe the thing is false). But that's not quite the full picture.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">There's actually a middle ground for suspending judgment: "I don't think it's true, I don't think it's false &mdash; I'm unsure what to think about this, so I'm suspending my judgment (usually: until I get more evidence)." For simplicity, three positions: believe, disbelieve, or suspend.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 14px 0 6px 0;">Degreed beliefs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">On top of binary beliefs, we also learned another way to think about beliefs, namely that they come in degrees, aka "credences," aka "confidence levels." You can express a credence in some statement's being true <em>in terms of probabilities:</em></p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>I am 75% confident that I won't draw a Spade from this thoroughly shuffled standard deck of cards right now.</li>
+            <li>I have a credence of 50% that this fair coin will land heads.</li>
+            <li>There's a 0% chance that in the next 3 seconds I'm going to be recruited by Interpol to help catch notorious jewel thieves.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Degreed beliefs go from really strong belief (up to 100%) down to really strong disbelief (down to 0%).</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FINDING YOUR CREDENCE (THE RED-MARBLE METHOD)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Let's try an activity. We're going to use the behavior of betting to track how confident you are in something's being true. (No actual bets are being made here.)</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine a bag with red and blue marbles totaling 100 marbles. You don't know how many of each color are inside. I'll give you some statements, and you need to decide how many red marbles it would take for you to be <strong>indifferent</strong> (equally willing to bet) between the statement being true and drawing a red marble from the bag. This helps you figure out your credence.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Example statement:</strong> "A fair coin lands heads."</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Would you rather bet on the coin landing heads or pulling a red marble when there are <strong>90 red marbles</strong> (and 10 blue)? You'd rather bet on the marble &mdash; 90% beats 50%. So we adjust the number of red marbles DOWN.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Try <strong>30 red marbles</strong>. Now you'd rather bet on the coin &mdash; 50% beats 30%. Adjust UP.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">At <strong>50 red marbles</strong>, you're indifferent. That's your credence: 50%.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">The method, in one paragraph:</h3>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 14px 18px; margin: 8px 0 12px 0; font-size: 16px; color: #1a2340; line-height: 1.65;">Pick a number of red marbles. If you'd rather bet on the marble, adjust the number DOWN. If you'd rather bet on the statement, adjust UP. The number where you're indifferent is your credence.</div>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">Pop quiz &mdash; the mini-deck</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Take the four aces of a standard deck of cards: Spades, Hearts, Clubs, Diamonds. The <em>statement</em>: a random draw from this mini-deck is NOT the Ace of Spades.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">How many red marbles? Three out of four cards are non-Spades &mdash; 75%. So the answer is <strong>75 red marbles</strong>.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">What about real-life statements without statistics?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">You might be thinking: "Coin flips and card draws have objective probabilities. But how do I figure out my credence about whether my mom will let us order pizza tonight?"</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Use your relevant background knowledge. Recall similar nights. Find the patterns. Does she usually say yes on school nights? Was today a hard workday for her? Is there a big family event Saturday that might affect her decision? Then translate the strength of those patterns into a number of red marbles. You're not betting on anything &mdash; you're using marbles as a way to capture how confident you actually are.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; LINGUISTIC SHORTHAND</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">While we can get precise about confidence levels, it can be tedious to talk in terms of probability in everyday conversation. So here's a handy way to think about beliefs:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Very sure something is true</strong> &mdash; credence of 80% or more</li>
+            <li><strong>Sure</strong> &mdash; credence of 60-80%</li>
+            <li><strong>Unsure</strong> ("not sure") &mdash; credence of 40-60%, evidence isn't strong for or against</li>
+            <li><strong>Sure it's not true</strong> &mdash; credence of 20-40%, you don't think it's almost certainly false but you have good reason</li>
+            <li><strong>Very sure it's not true</strong> &mdash; credence of 0-20%, certainly or almost certainly false</li>
+        </ul>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; CALIBRATED AI?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">A "well-calibrated" thinker says "I'm 80% sure" only when they're right about 8 out of 10 such claims. Most AI assistants are NOT well-calibrated: they speak with the same "confident voice" whether they're 95% sure or 30% sure. Ask the AI to give you a credence with a reason, and treat its confidence with the same suspicion you'd apply to a friend who never says "I don't know."</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Red marble practice -->
+    <div class="optima-widget" id="widget-rm">
+        <div class="widget-kicker">&#9889; TRY IT &middot; RED-MARBLE CREDENCE</div>
+        <div class="widget-question">How many red marbles match the credence?</div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">1. "A random draw from a standard 52-card deck is a Heart."</div>
+            <div class="widget-options">
+                <button onclick="rmPick(this, 0, 0)">10 red marbles</button>
+                <button onclick="rmPick(this, 0, 1)">15 red marbles</button>
+                <button onclick="rmPick(this, 0, 2)">25 red marbles</button>
+                <button onclick="rmPick(this, 0, 3)">50 red marbles</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. "A six-sided die rolls a 4."</div>
+            <div class="widget-options">
+                <button onclick="rmPick(this, 1, 0)">10 red marbles</button>
+                <button onclick="rmPick(this, 1, 1)">~17 red marbles</button>
+                <button onclick="rmPick(this, 1, 2)">25 red marbles</button>
+                <button onclick="rmPick(this, 1, 3)">50 red marbles</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">3. "A coin lands heads OR tails (one of the two)."</div>
+            <div class="widget-options">
+                <button onclick="rmPick(this, 2, 0)">50 red marbles</button>
+                <button onclick="rmPick(this, 2, 1)">75 red marbles</button>
+                <button onclick="rmPick(this, 2, 2)">90 red marbles</button>
+                <button onclick="rmPick(this, 2, 3)">100 red marbles (or as close as possible)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="rmReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5: Calibrating Degrees of Belief</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For each of ten statements (from "1 + 1 = 2" to "your current political position is correct"), (A) describe your background knowledge, then (B) use the red-marble method to determine your credence.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.5 VR Assignment &mdash; Data Collection Station <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 5 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Begin daily data collection in your Excel log. In your VR lab, build a Data Collection Station &mdash; a board where you'll post screenshots of your log as the experiment progresses. Today, just set up the empty board and start the daily Excel entries.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The red-marble method gives you a practical way to pin down how sure you actually are about anything &mdash; from card draws to whether your friend will text back. Combined with the linguistic shorthand, you now have a vocabulary for confidence that's more accurate than "I know" or "I don't know." Use it today.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 5 &middot; Calibrating Degrees of Belief</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const bgResponses = [
+    "If you HAVE to pick yes or no, it's binary. But you'll be a more honest thinker if you also give yourself a percentage.",
+    "Right. Real prediction is almost always graded &mdash; "Maybe 40%" is more useful than "they will" or "they won't."",
+    "Yes &mdash; for a sportsbook, they need a binary outcome. For YOUR thinking ahead of time, graded gives you more room."
+];
+function bgPick(btn, idx) {
+    document.querySelectorAll('#widget-bg .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-bg-fb');
+    fb.textContent = bgResponses[idx];
+    fb.style.display = 'block';
+}
+function bgReset() {
+    document.querySelectorAll('#widget-bg .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-bg-fb');
+    fb.textContent = '';
+    fb.style.display = 'none';
+}
+
+const rmFeedback = {
+    correct: [
+        'Right. 13 hearts out of 52 cards = 25%. So 25 red marbles.',
+        'Right. 1 out of 6 = ~16.7%. About 17 red marbles.',
+        'Right. The "either heads or tails" outcome covers everything &mdash; effectively 100%. As close to all red marbles as the bag can hold.'
+    ],
+    hints: [
+        'Hint: 13 hearts in 52 cards. What fraction is that?',
+        'Hint: 1 out of 6 sides. What percentage?',
+        'Hint: with a fair coin, what\'s the chance of landing on EITHER face?'
+    ]
+};
+function rmPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, rmFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, rmFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function rmReset() {
+    document.querySelectorAll('#widget-rm .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

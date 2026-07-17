@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 7: The Question of Evidence</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .strength-bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin: 12px 0; }
+    .strength-cell { padding: 12px 8px; border-radius: 4px; text-align: center; font-size: 12px; color: #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div><div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 7</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Question of Evidence</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Mid-experiment audit</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">How to Evaluate Evidence to Build Better Beliefs</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How much more likely is this evidence if my theory is true than if it's false?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Have you ever been <em>absolutely sure</em> you were right about something &mdash; only to discover you weren't? Maybe you thought you left your keys on the kitchen counter, only to find them in your bag. These moments often happen because we misinterpret the evidence in front of us. This lesson is about a single powerful question that &mdash; once you know how to use it &mdash; lets you gauge the strength of any piece of evidence.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply the Question of Evidence (QoE) to gauge how strongly a piece of evidence supports a theory.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place evidence on the strength scale: strongly supports / weakly supports / neutral / undermines / strongly undermines.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document for <em>Assignment 7: Evaluating Evidence</em> &mdash; you'll apply the QoE to three scenarios.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset and your data log from the Good Life Project &mdash; for <em>3.7 VR Mid-Experiment Audit</em>.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT IS EVIDENCE? (QUICK REVIEW)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Evidence is any information that helps you decide whether an explanation or claim is likely to be true or false. For example:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>You think your favorite soccer team will win their next match because their star player is healthy again. That's evidence supporting your theory.</li>
+            <li>You think you'll do well on your next math test because you studied hard. Again, evidence supporting your theory.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But evidence doesn't prove anything outright. It shifts how confident you should feel about an idea. Evidence operates on a spectrum &mdash; strongly support, weakly support, neutral, or even undermine.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE QUESTION OF EVIDENCE (QoE)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">To make sense of evidence, you need to ask one crucial question:</p>
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 4px; padding: 14px 18px; margin: 8px 0 14px 0;">
+            <div style="font-size: 18px; color: #0E1C42; font-weight: bold;">How much more likely is this evidence if my theory is true than if it's false?</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The idea: <em>whichever theory better predicts the evidence is the theory that gets confirmed when you see the evidence.</em> The bigger the difference between "how likely if true" and "how likely if false," the stronger the evidence.</p>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-qoe">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN &middot; WHAT'S THE QUESTION?</div>
+        <div class="widget-question">When you're trying to decide if evidence supports your theory, what question should you ask?</div>
+        <div class="widget-options">
+            <button onclick="qoePick(this, 0)">"Does the evidence prove my theory?"</button>
+            <button onclick="qoePick(this, 1)">"How much more likely is the evidence if my theory is true vs. false?"</button>
+            <button onclick="qoePick(this, 2)">"Do I want this evidence to be true?"</button>
+            <button onclick="qoePick(this, 3)">"Has anyone else seen this evidence?"</button>
+        </div>
+        <div class="widget-feedback" id="widget-qoe-fb"></div>
+        <button class="widget-reset" onclick="qoeReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE SAT STUDY EXAMPLE (3 STEPS)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine you're preparing for the SAT (scores 400&ndash;1600). You take a practice test and score 1000. You study hard. You take another and score 1100. <strong>Theory:</strong> Studying improves SAT scores. <strong>Evidence:</strong> Your 100-point improvement.</p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 14px 18px; margin: 12px 0; border-radius: 4px;">
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>Step 1.</strong> How likely is this evidence (a 100-point jump) IF studying really helps?</div>
+            <div style="font-size: 15px; color: #1a2340; margin: 0 0 10px 0;">Probably pretty likely. Let's estimate <strong>60%</strong>.</div>
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>Step 2.</strong> How likely is the same evidence IF studying does NOT help?</div>
+            <div style="font-size: 15px; color: #1a2340; margin: 0 0 10px 0;">Possible by chance, but not common. Let's estimate <strong>20%</strong>.</div>
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>Step 3.</strong> Compare.</div>
+            <div style="font-size: 15px; color: #1a2340; margin: 0;">60% &divide; 20% = <strong>3</strong>. The evidence is 3&times; more likely if your theory is true than if it's false. That's decent support &mdash; not iron-clad, but real.</div>
+        </div>
+        <p style="font-size: 15px; color: #555; font-style: italic; margin: 0;">In real life you won't have exact numbers. Your goal is rough estimates: a lot more likely? A little more? About the same? Less likely?</p>
+    </div>
+
+    <!-- Strength of Evidence scale -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128202; THE STRENGTH-OF-EVIDENCE SCALE</div>
+        <div class="strength-bar">
+            <div class="strength-cell" style="background: #C0392B; color: #fff;"><strong>Strongly Undermines</strong><br /><span style="font-size: 11px; opacity: 0.9;">Much less likely if theory true</span></div>
+            <div class="strength-cell" style="background: #E5816B; color: #fff;"><strong>Undermines</strong><br /><span style="font-size: 11px; opacity: 0.9;">Less likely if true</span></div>
+            <div class="strength-cell" style="background: #D0D9E8;"><strong>Neutral</strong><br /><span style="font-size: 11px;">~Equal either way</span></div>
+            <div class="strength-cell" style="background: #99D4A5;"><strong>Weakly Supports</strong><br /><span style="font-size: 11px;">A bit more likely if true</span></div>
+            <div class="strength-cell" style="background: #2A9D5C; color: #fff;"><strong>Strongly Supports</strong><br /><span style="font-size: 11px; opacity: 0.9;">Much more likely if true</span></div>
+        </div>
+        <div style="font-size: 13px; color: #555; margin-top: 12px;"><strong>SAT examples:</strong> 1000&rarr;1400 strongly supports; 1000&rarr;1100 weakly supports; +10/+20 neutral; 1000&rarr;900 undermines; 1000&rarr;800 strongly undermines.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; LUCY'S HOCKEY JERSEY</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Lucy believes her favorite hockey team wins whenever she wears her goalie jersey. She wears it religiously and notices that her team has been winning more often than not. Then, one day, they lose.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Apply the QoE:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If the jersey really "causes" wins, the team losing becomes <strong>unlikely</strong>.</li>
+            <li>If the jersey doesn't affect the outcome, the loss is <strong>no surprise</strong>.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The team's loss is <em>less likely</em> under Lucy's theory than under the alternative. The evidence <strong>undermines</strong> her belief. She should decrease her confidence in the jersey's magical powers. (Instead, she clings to her belief. This is irrational thinking.)</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; FIVE TIPS FOR CLEAR EVIDENCE THINKING</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li style="margin-bottom: 10px;"><strong>Ask the right question.</strong> "How much more likely is this evidence if my theory is true than if it's false?"</li>
+            <li style="margin-bottom: 10px;"><strong>Avoid binary thinking.</strong> Evidence isn't "consistent" or "inconsistent." It's on a spectrum &mdash; how strongly does it support or undermine?</li>
+            <li style="margin-bottom: 10px;"><strong>Consider alternative explanations.</strong> Lucy's team might be winning because of a better coach, not the jersey.</li>
+            <li style="margin-bottom: 10px;"><strong>Be willing to change your mind.</strong> Strong evidence against your belief should shift your confidence. You don't have to abandon the theory; just hold it less strongly.</li>
+            <li><strong>Practice estimating likelihoods.</strong> You won't have exact numbers in real life &mdash; aim for "much more likely," "a bit more likely," or "about the same."</li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND COMPETING EXPLANATIONS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When AI gives you an answer, it usually explains <em>one</em> theory well. The Question of Evidence forces a SECOND step: "How likely would this same evidence be if a DIFFERENT theory were true?" Asking AI "what's the strongest competing explanation?" is one of the most useful prompts you'll ever write.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: place on scale -->
+    <div class="optima-widget" id="widget-scale">
+        <div class="widget-kicker">&#9889; PLACE THE EVIDENCE ON THE SCALE</div>
+        <div class="widget-question">Theory: "Drinking water before tests improves my focus." For each piece of evidence, which spot on the strength scale fits best?</div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">1. You drank water before three tests. You aced two of them.</div>
+            <div class="widget-options">
+                <button onclick="scalePick(this, 0, 0)">Strongly Undermines</button>
+                <button onclick="scalePick(this, 0, 1)">Undermines</button>
+                <button onclick="scalePick(this, 0, 2)">Neutral</button>
+                <button onclick="scalePick(this, 0, 3)">Weakly Supports</button>
+                <button onclick="scalePick(this, 0, 4)">Strongly Supports</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="4">
+            <div class="widget-row-prompt">2. You drank water before every test for a semester. Your scores rose from C average to A&minus; average.</div>
+            <div class="widget-options">
+                <button onclick="scalePick(this, 1, 0)">Strongly Undermines</button>
+                <button onclick="scalePick(this, 1, 1)">Undermines</button>
+                <button onclick="scalePick(this, 1, 2)">Neutral</button>
+                <button onclick="scalePick(this, 1, 3)">Weakly Supports</button>
+                <button onclick="scalePick(this, 1, 4)">Strongly Supports</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">3. You drank water before one test. You scored 1 point better than last time.</div>
+            <div class="widget-options">
+                <button onclick="scalePick(this, 2, 0)">Strongly Undermines</button>
+                <button onclick="scalePick(this, 2, 1)">Undermines</button>
+                <button onclick="scalePick(this, 2, 2)">Neutral</button>
+                <button onclick="scalePick(this, 2, 3)">Weakly Supports</button>
+                <button onclick="scalePick(this, 2, 4)">Strongly Supports</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">4. You drank water before every test for a semester. Your scores dropped from B+ to D average.</div>
+            <div class="widget-options">
+                <button onclick="scalePick(this, 3, 0)">Strongly Undermines</button>
+                <button onclick="scalePick(this, 3, 1)">Undermines</button>
+                <button onclick="scalePick(this, 3, 2)">Neutral</button>
+                <button onclick="scalePick(this, 3, 3)">Weakly Supports</button>
+                <button onclick="scalePick(this, 3, 4)">Strongly Supports</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="scaleReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 7: Evaluating Evidence</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Apply the QoE to three scenarios (exercise &amp; mood, breakfast &amp; focus, pets &amp; stress). For each, do all three steps and conclude how strongly the evidence supports or undermines the theory.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.7 VR Assignment &mdash; Mid-Experiment Audit <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 7 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">In your VR lab, run a mid-experiment audit using the QoE. Look at your data so far and ask: if my hypothesis is true, how likely is what I'm seeing? If my hypothesis is false, how likely is what I'm seeing? Place your evidence on the scale.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Mastering the Question of Evidence isn't just about acing tests &mdash; it's a life skill. It helps you make smarter decisions, avoid being fooled by weak evidence, and stay open-minded enough to revise your opinions when better evidence shows up. The next time you encounter a new piece of evidence, stop and ask: <em>how much more likely is this if my theory is true than if it's false?</em></p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 7 &middot; The Question of Evidence</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const qoeResponses = [
+    "Be careful &mdash; evidence rarely 'proves' a theory outright. The QoE is about HOW MUCH MORE LIKELY the evidence is under your theory than under the alternative.",
+    "Right. That's the Question of Evidence. The bigger the gap between 'if true' and 'if false,' the stronger the evidence.",
+    "Wanting evidence to be true doesn't make it true. The QoE is about likelihoods, not preferences.",
+    "Other people seeing the evidence doesn't change how strong it is. The QoE compares two predictions: under your theory vs. under the alternative."
+];
+function qoePick(btn, idx) {
+    document.querySelectorAll('#widget-qoe .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-qoe-fb');
+    fb.textContent = qoeResponses[idx];
+    fb.classList.add('show');
+}
+function qoeReset() {
+    document.querySelectorAll('#widget-qoe .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-qoe-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const scaleFb = {
+    correct: [
+        'Right. Two out of three tests going well is a real signal &mdash; but small sample, lots of other factors. Weakly supports.',
+        'Right. A full semester of consistent improvement is hard to chalk up to chance. Strongly supports.',
+        'Right. One point on one test is basically noise. Neutral &mdash; the evidence barely shifts the scale.',
+        'Right. Scores got worse with the water habit. If the theory predicted improvement, this evidence strongly undermines it.'
+    ],
+    hints: [
+        'Hint: small sample size, but more wins than expected by chance &mdash; where does that land?',
+        'Hint: a full semester of consistent improvement is too big to ignore. Strong what?',
+        'Hint: a 1-point change is well within random variation. What does that make it?',
+        'Hint: scores dropped significantly. That\'s the opposite of what the theory predicts. Strong what direction?'
+    ]
+};
+function scalePick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFb(row, scaleFb.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFb(row, scaleFb.hints[rowIdx], 'incorrect');
+    }
+}
+function scaleReset() {
+    document.querySelectorAll('#widget-scale .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

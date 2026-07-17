@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Lesson 8: Moral Facts</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Acting like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Moral Facts</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 16px; color: #0e1c42;">Normativity</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Moral Facts</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why Treating All Value Claims as Mere Opinions Leads to Big Problems</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Welcome back to another critical thinking adventure! Today, we're tackling a tough but crucial idea: the dangers of treating all normative, evaluative, moral, and aesthetic claims as "mere opinions."</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">By the end of this lesson, you'll understand what these types of claims are, why they're often mistakenly dismissed as "just opinions," and why this mindset leads to serious problems &mdash; both practical and philosophical. Most importantly, you'll learn how to think critically about these claims and how to navigate disagreements about them.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why moral and value claims are not just "mere opinions."</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name four serious problems that arise when we treat moral claims as merely subjective.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate a moral claim using reasoning and evidence rather than dismiss it.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Check-in -->
+    <div class="optima-widget" id="widget-mor">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">When someone says "Well, that's just your opinion" about a moral claim, what do you usually do?</div>
+        <div class="widget-options">
+            <button onclick="mrPick(this, 0)">&#128528; Drop it &mdash; can't argue with feelings</button>
+            <button onclick="mrPick(this, 1)">&#128556; Push back, but I run out of arguments fast</button>
+            <button onclick="mrPick(this, 2)">&#129488; Try to give actual reasons</button>
+            <button onclick="mrPick(this, 3)">&#129335; I'm the one who usually says it</button>
+        </div>
+        <div class="widget-feedback" id="widget-mor-fb"></div>
+        <button class="widget-reset" onclick="mrReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; THE SETUP &middot; WHAT DO WE MEAN BY "MERE OPINIONS"?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A mere opinion is a personal preference or belief that doesn't have to be backed by reasoning or evidence. Think of statements like:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>"I prefer chocolate ice cream over vanilla."</li>
+            <li>"I think blue is the best color."</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">These are deeply personal and can't really be "right" or "wrong" for anyone except the person making the statement.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Now consider evaluative or moral claims, like:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>"Stealing is wrong."</li>
+            <li>"Bullying is wrong."</li>
+            <li>"The Mona Lisa is a masterpiece."</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">These are not just about personal feelings. They're making a claim about the world that we can discuss, argue about, and even improve our understanding of by thinking critically. That is, we can say that there really are such things as <em>moral facts</em> &mdash; facts about morality, beauty, and value generally. Yet, many people dismiss these as mere opinions, as though they're no different from preferring chocolate over vanilla. This mindset causes big problems.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9888;&#65039; THE FOUR PROBLEMS</div>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 0 0 6px 0;">Problem #1: You Can't Criticize Immoral People</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine someone says, "It's okay for me to steal because I don't think stealing is wrong. That's just my opinion." If morality is "just a matter of opinion," what can you say to someone like this? Not much. You can only respond with your own opinion, and now you're stuck in a standoff: "I think it's wrong" vs. "I think it's fine."</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Critical thinking about morality &mdash; aka "moral reasoning" &mdash; gives us a better way. We can examine why stealing, e.g., undermines trust, harms others, and leads to chaos in society. These aren't just personal feelings &mdash; they're evidence that supports the claim "stealing is wrong."</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">(It's worth noting explicitly that I am not making the claim that something is wrong insofar as it causes harm; I'm just using harm as <em>evidence</em> that something (in this case, stealing) is wrong. What <em>makes</em> stealing wrong <em>might</em> be the harm it causes, <em>or</em> it might be the breaking of some universal rule, <em>or</em> it might be violating some function, feature, or principle that arises for us given the sorts of creatures we are.)</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">When we treat moral claims as mere opinions, we give up the ability to challenge bad behaviors with evidence, logic, or moral reasoning.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 22px 0 6px 0;">Problem #2: You Can't Criticize Immoral Cultures</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Here's a tougher scenario. Suppose someone defends a community that treats cheating outsiders in trade as perfectly normal, by saying, "That's just how their culture works, and we can't judge them."</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">If all moral claims are mere opinions, this argument seems airtight. After all, how can one culture's opinion about morality be "better" than another's? Relatedly, if we can't say that cheating outsiders is wrong, we can't say a community that stopped that practice is any better than it used to be; nor can we say that there's anything <em>wrong</em> with how we do things now, whatever that might be!</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">But this approach ignores moral facts. We can evaluate cultural practices by asking questions like:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Does this practice harm people?</li>
+            <li>Does it undermine human dignity?</li>
+            <li>Does it violate an important aspect of what it is to be human?</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">By treating moral claims as more than just opinions, we can make meaningful judgments about cultures &mdash; including our own &mdash; based on reason and evidence.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 22px 0 6px 0;">Problem #3: You Can't Morally Improve Yourself or Others</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">If morality is just a matter of opinion, then why bother trying to be a better person? Why try to change someone else's mind about their harmful beliefs or actions?</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Imagine someone says, "I used to think lying was bad, but now I think it's fine as long as I benefit." If lying is just a personal preference, there's no reason to challenge them. But if lying undermines trust, damages relationships, harms society, or is just simply bad to do then we can offer real reasons to explain why honesty is better.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Moral improvement requires us to treat moral claims as meaningful, discussable, and &mdash; most importantly &mdash; correctable.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 22px 0 6px 0;">Problem #4: Practical Decisions Become Impossible</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Normative and aesthetic claims also matter in practical ways. Consider these examples:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Funding Art:</strong> Imagine a school must decide which artists to fund with limited resources. If all art is equally valuable because "beauty is in the eye of the beholder," how can they make a decision?</li>
+            <li><strong>Public Policies:</strong> When debating laws or policies, like environmental protections or education reform, normative claims about what's "better" or "fairer" guide these discussions. If we dismiss these claims as mere opinions, how can we decide what's best for society?</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Practical decisions demand critical thinking about evaluative ("value") claims. We must weigh evidence, consider consequences, and make reasoned judgments.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; THE WAY FORWARD &middot; THINKING CRITICALLY ABOUT NORMATIVE CLAIMS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">So, how can we avoid falling into the trap of dismissing everything as "just an opinion"? Here are some steps:</p>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Recognize the Difference Between Mere Opinions and Substantive Opinions:</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Mere opinions are <em>purely</em> personal and subjective (e.g., "I like chocolate").</li>
+                    <li>Substantive opinions make claims about the world that can be supported or undermined by evidence and reasoning (e.g., "Stealing is immoral <em>because</em> it violates principles of justice").</li>
+                </ul>
+            </li>
+            <li><strong>Evaluate Claims with Evidence and Reasoning:</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Ask: What reasons support this claim?</li>
+                    <li>Look for evidence that confirms or disconfirms the claim.</li>
+                </ul>
+            </li>
+            <li><strong>Be Open to Moral and Aesthetic Discussions:</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Don't dismiss disagreements as pointless. Instead, engage in dialogue to understand and evaluate different perspectives.</li>
+                </ul>
+            </li>
+            <li><strong>Seek Moral and Intellectual Growth:</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Challenge your own beliefs. Ask: What are the reasons that back my opinions? Are those <em>good</em> reasons?</li>
+                    <li>Be willing to change your mind when presented with better arguments.</li>
+                </ul>
+            </li>
+            <li><strong>Respect Disagreements Without Avoiding Them:</strong>
+                <ul style="margin: 6px 0 0 18px;">
+                    <li>Disagreeing doesn't mean disrespecting. It means taking others seriously enough to discuss ideas honestly.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND MORAL CLAIMS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI chatbots are often trained to dodge moral claims. Ask one whether something is morally wrong and you'll frequently get "well, it depends on your values" or "different cultures see it differently." That's the "mere opinion" dodge in machine form. You're now equipped to push back: ask the AI for the <em>reasoning</em> on both sides, the <em>evidence</em>, and the <em>consequences</em>. Then make the moral judgment yourself, with reasons.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Which problem? -->
+    <div class="optima-widget" id="widget-prob">
+        <div class="widget-kicker">&#9889; TRY IT &middot; NAME THE PROBLEM</div>
+        <div class="widget-question">For each scenario, which of the four problems is most clearly happening?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. A club's oldest members defend a harsh hazing tradition against new members by saying, "We shouldn't judge how things were always done here."</div>
+            <div class="widget-options">
+                <button onclick="prbPick(this, 0, 0)">Can't criticize immoral people</button>
+                <button onclick="prbPick(this, 0, 1)">Can't criticize immoral cultures</button>
+                <button onclick="prbPick(this, 0, 2)">Can't improve yourself or others</button>
+                <button onclick="prbPick(this, 0, 3)">Practical decisions become impossible</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">2. A school board can't decide between funding a music program and a sports program because "you can't really compare which is more valuable."</div>
+            <div class="widget-options">
+                <button onclick="prbPick(this, 1, 0)">Can't criticize immoral people</button>
+                <button onclick="prbPick(this, 1, 1)">Can't criticize immoral cultures</button>
+                <button onclick="prbPick(this, 1, 2)">Can't improve yourself or others</button>
+                <button onclick="prbPick(this, 1, 3)">Practical decisions become impossible</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">3. A friend who used to be kind has gradually become cruel. When you bring it up, they say "I just don't see the point in being nice. That's just my view."</div>
+            <div class="widget-options">
+                <button onclick="prbPick(this, 2, 0)">Can't criticize immoral people</button>
+                <button onclick="prbPick(this, 2, 1)">Can't criticize immoral cultures</button>
+                <button onclick="prbPick(this, 2, 2)">Can't improve yourself or others</button>
+                <button onclick="prbPick(this, 2, 3)">Practical decisions become impossible</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="prbReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 8: Reflecting on Moral Claims</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Two short written reflections: (1) why people find it easier to dismiss evaluative claims as "just opinions" and what that protects us from, plus a real situation where this thinking led to a bad outcome; (2) how someone would actually evaluate a moral claim like "bullying is wrong" for its truthfulness.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>2.8 VR Assignment &mdash; The Danger Zone</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a VR scene showing someone doing something morally wrong and defending it with "It's just your opinion that this is bad." Then escalate the scene &mdash; how bad does it get when no one can challenge the behavior? Record a video explaining the escalation and offering your own moral reasons to push back.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Treating all moral, aesthetic, and evaluative claims as mere opinions is not just lazy thinking &mdash; it's dangerous. It leaves us powerless to challenge injustice, improve ourselves, or make meaningful decisions.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">By thinking critically about these claims, we can navigate tough questions, make better choices, and create a fairer and more beautiful world.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 2 Lesson 8 &middot; Moral Facts</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const mrResponses = [
+    "That's where most conversations end. By the end of this lesson, you'll have the tools to keep them going.",
+    "Common. The reason you run out is that "I think it's wrong" without reasons is the same kind of move as "I think it's fine." You need the reasons.",
+    "Excellent. The lesson below sharpens what counts as a GOOD reason vs. a weak one.",
+    "Then this lesson is about reflecting carefully on when that phrase is doing real work vs. when it's a dodge. Both happen."
+];
+function mrPick(btn, idx) {
+    document.querySelectorAll('#widget-mor .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-mor-fb');
+    fb.textContent = mrResponses[idx];
+    fb.classList.add('show');
+}
+function mrReset() {
+    document.querySelectorAll('#widget-mor .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-mor-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+const prbFeedback = {
+    correct: [
+        'Right. Refusing to judge a group\'s own long-standing practice is exactly Problem #2. You can recognize the tradition AND still say the practice is wrong.',
+        'Right. This is Problem #4. The school can\'t actually decide because they\'ve refused to evaluate the relative value of the programs.',
+        'Right. Problem #3. Without moral facts to anchor "kindness matters," there\'s no leverage to push your friend toward becoming better.'
+    ],
+    hints: [
+        'Hint: this is about judging a group\'s long-standing shared practice. Which problem is that?',
+        'Hint: a practical decision (which program to fund) can\'t be made because they\'ve refused to weigh value claims. Which problem?',
+        'Hint: this is about a person\'s personal moral trajectory. They\'re sliding into worse behavior with no way to correct it. Which problem?'
+    ]
+};
+function prbPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, prbFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, prbFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function prbReset() {
+    document.querySelectorAll('#widget-prob .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

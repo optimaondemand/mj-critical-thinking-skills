@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 2 Lesson 7: Facts versus Opinions</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Acting like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Facts versus Opinions</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 16px; color: #0e1c42;">Normativity</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Facts versus Opinions</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why the "Fact-Opinion Distinction" is Bogus</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Welcome to today's lesson on critical thinking and academic success. We're diving into a big idea: the so-called "fact-opinion distinction" is a myth. That's right &mdash; the idea that facts and opinions are always two totally separate things is <em>wrong</em>. Let's break this down together and figure out what's really going on.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">By the end of this lesson, you'll not only understand what facts and opinions really are, but also how they overlap, how they differ, and why this matters for thinking critically, making decisions, and succeeding in life.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why a single statement can be both a fact and an opinion.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish a mere opinion from a substantive opinion.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> say how I would test a substantive opinion against evidence.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Sort 4 statements -->
+    <div class="optima-widget" id="widget-sort">
+        <div class="widget-kicker">&#9889; QUICK CATEGORIZATION</div>
+        <div class="widget-question">Before we get into it: how would you categorize each of these statements? (Don't peek at the lesson yet.)</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. "Water is H&#8322;O."</div>
+            <div class="widget-options">
+                <button onclick="srtPick(this, 0, 0)">Fact</button>
+                <button onclick="srtPick(this, 0, 1)">Opinion</button>
+                <button onclick="srtPick(this, 0, 2)">Neither</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">2. "Squares can be circles."</div>
+            <div class="widget-options">
+                <button onclick="srtPick(this, 1, 0)">Fact</button>
+                <button onclick="srtPick(this, 1, 1)">Opinion</button>
+                <button onclick="srtPick(this, 1, 2)">Neither</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. "Ducks are good swimmers."</div>
+            <div class="widget-options">
+                <button onclick="srtPick(this, 2, 0)">Fact</button>
+                <button onclick="srtPick(this, 2, 1)">Opinion</button>
+                <button onclick="srtPick(this, 2, 2)">Neither</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">4. "I like cheese."</div>
+            <div class="widget-options">
+                <button onclick="srtPick(this, 3, 0)">Fact</button>
+                <button onclick="srtPick(this, 3, 1)">Opinion</button>
+                <button onclick="srtPick(this, 3, 2)">Neither</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="srtReset()">Reset</button>
+        <div style="font-size: 13px; color: #555; margin-top: 8px; font-style: italic;">After you've guessed, read the lesson below &mdash; you'll see that the "right answers" here are more complicated than your school career has probably taught you.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT ARE FACTS AND OPINIONS, REALLY?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">If you went through the US public education system, you were probably taught: "Facts are things that are true or can be proven" and "opinions are what you believe or feel."</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Here's the problem: <strong>this distinction between facts and opinions is demonstrably false.</strong></p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Let me show you.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">Facts</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A fact is a true statement, that is, it's simply a statement that truly describes the world. Recall that <em>statements</em> can be <em>true</em> (it matches the real world) or <em>false</em> (it doesn't). For shorthand we call <em>true statements</em> "facts."</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Example of a true statement, i.e. a fact: "George Washington was the first president of the United States."</li>
+            <li>Example of a false statement: "Squares can be circles."</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">A fact is just a correct statement about reality, about the way the world is.</p>
+
+        <h3 style="font-size: 19px; color: #0e1c42; margin: 18px 0 6px 0;">Opinions</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">An opinion is a belief you hold <em>about</em> a statement, whether you <em>think</em> the statement is true ("It is my opinion that this statement is a fact").</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Example of an opinion: "<em>I believe</em> George Washington was the first U.S. president." Said another way: "I believe the statement 'GW was the first US prez' is a fact."</li>
+            <li>Another example of opinion: "<em>I like cheese</em>." Said another way: "<em>I believe</em> the statement 'cheese is tasty' is true."</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">So, opinions are simply statements of belief.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9889; THE KEY INSIGHT &middot; FACTS CAN BE OPINIONS!</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Did you catch that? I already demonstrated to you that facts and opinions are not necessarily distinct things, that is, that something can simultaneously be a fact <em>and</em> an opinion. Let me show that again:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>Fact: George Washington was the first president of the U.S.</li>
+            <li>Opinion: I believe that George Washington was the first president of the U.S. (My belief about the statement 'GW was the first US prez' is that it is a fact)</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">You see: one claim that is both true (a fact) and believed (an opinion). So facts and opinions aren't in conflict. QED.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TWO DIMENSIONS OF STATEMENTS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">To make sense of this, let's think of facts and opinions as two dimensions of any statement:</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>1. Truth.</strong> <em>Does the statement</em> accurately describe the world?</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If yes, it's true. We call true statements "facts."</li>
+            <li>If no, it's false.</li>
+        </ul>
+        <div style="text-align: center; margin: 14px 0;">
+            <img src="../images/facts%20fit%20the%20world%20diagram.png" alt="Truth: does the statement fit the world?" style="max-width: 297px; width: 100%; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">A statement is simply a description of the world (broadly construed); it is true (or false) depending on whether it correctly describes the world (or not). (If this is helpful: truth is a relationship "out there" between the statement and the world.)</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>2. Belief.</strong> <em>Do you believe</em> the statement accurately describes the world?</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If yes, it's your opinion that it does.</li>
+            <li>If no, it's your opinion that it does not (or you are not yet decided).</li>
+        </ul>
+        <div style="text-align: center; margin: 14px 0;">
+            <img src="../images/opinion%20if%20its%20a%20fact%20diagram.png" alt="Opinion: is the statement a fact?" style="max-width: 217px; width: 100%; height: auto; border: 1px solid #D0D9E8; border-radius: 6px;" />
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">An opinion is simply a belief that the statement correctly describes the world (or not). (Opinions are in your head but about the truth relationship "out there" between the statement and the world.)</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127916; SIMILAR TAKE, ANOTHER ANGLE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">To help us understand this better, think about film. We can think about film along at least two lines:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Genre:</strong> Science fiction, romance, action, etc.</li>
+            <li><strong>Runtime:</strong> Short or long.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Would it make sense to say only science fiction can be short, or only romances can be long? Of course not. Film can be any combination of genre and runtime:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>A long sci-fi: The 1984 version of <em>Dune</em> (the long cut was <em>6 hours!!</em>).</li>
+            <li>A short sci-fi: <em><a href="https://www.youtube.com/watch?v=R6ZALERKBPA">They're Made out of Meat</a></em> (an artsy 9-minute adaptation of the Terry Bisson short story).</li>
+            <li>A long romance: <em>Titanic</em> (nearly 3 hours of strong feelings and questionable choices).</li>
+            <li>A short romance: <em><a href="https://www.youtube.com/watch?v=7EHO7Q8FjsM">The Screamers</a></em> (literally 76 seconds including credits).</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Just like genre and runtime can combine in any way, facts and opinions can combine too.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; MERE OPINIONS vs. SUBSTANTIVE OPINIONS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Okay, so what about statements like "Brussels sprouts are tastier than carrots"? This doesn't seem to be a description of the world like other statements are. There's no way for this statement to be an accurate description of the world since it's up to each person's preference whether or not they think Brussels sprouts are tastier than carrots. So what gives?</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Great insight. This is where things get nuanced. There are some opinions &mdash; let's call them <em>mere opinions</em> &mdash; that are totally personal and not based on <em>external</em> evidence; that is, not based on anything but your own, personal sense or preference. In other words, these statements are still about the world &mdash; since each person is a part of the world &mdash; but you only have to look at how well the statement describes <em>your own</em> inner experience to determine whether it is a fact or not.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Compare the above to determining whether your belief that GW was the first US prez is also a fact or not &mdash; to figure out if your opinion is true, you have to look out at the historical facts of the world: Does your opinion match the way the world is? If so, your opinion is a fact. But for the statement "I love Brussels sprouts!" the only part of the world you need to look at is your own experiences with them &mdash; do you tend to really enjoy them or not?</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">No amount of evidence will prove or disprove this to anyone else &mdash; it's just a statement about your personal preference.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">But not all opinions are mere opinions. Some opinions &mdash; let's call them <em>substantive opinions</em> &mdash; can be supported with evidence. For instance: "Fish are good swimmers." If you hold this, then it is a substantive opinion <em>that is also a fact</em> because there's plenty of evidence to support it (like how fish use fins to propel themselves through water quickly and accurately).</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">The difference is this:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Mere opinions</strong> can't be proven right or wrong <em>but by</em> your own experience (e.g., "I like Brussels sprouts").</li>
+            <li><strong>Substantive opinions</strong> about the world can be evaluated <em>with reasoning and evidence</em> (e.g., "Fish are better swimmers than jellyfish").</li>
+        </ul>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9888;&#65039; PART 4 &middot; WHY THIS MATTERS FOR CRITICAL THINKING</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The fact-opinion distinction isn't just wrong &mdash; it's dangerous. Why? Because it encourages people to think that opinions can't be challenged or improved.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">But here's the truth: opinions can and should be evaluated. You want your opinions to match reality as closely as possible. The more true things you believe and the fewer false things you believe, the better decisions you'll make and the more successful you'll be in life.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">For example:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li>If you correctly believe it's a fact that studying regularly improves grades, and you act on that belief, you're more likely to succeed in school.</li>
+            <li>If you mistakenly believe it's a fact that studying doesn't help, you might not work hard and your grades could suffer.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Similarly, if you mistakenly believe that all value statements are mere opinions, all morality (all claims about what's right or wrong) becomes merely a matter of personal preference. To see how dangerous <em>that</em> is, consider:</p>
+        <blockquote style="border-left: 3px solid #C0392B; margin: 0 0 12px 0; padding: 8px 14px; color: #8A1F16; background: #FDECEC; font-size: 16px;">If it's neither true nor false that murder is wrong (because it's a mere opinion), <em>it's literally okay for anyone to murder anyone</em> so long as the murderer doesn't get caught (because it still might be illegal).</blockquote>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">That's a bad result!!</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Murder <em>is</em> wrong. Slavery <em>is</em> wrong. Stealing <em>is</em> wrong.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Feeding the poor <em>is</em> good. Helping one's neighbor <em>is</em> right. Sunsets <em>are</em> beautiful. Fish <em>are</em> good swimmers.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">And now you know it.</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; PRACTICAL STEPS FOR THINKING CRITICALLY</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Question your beliefs.</strong> Ask yourself, "<em>Why</em> do I believe this?" Is there evidence to back it up?</li>
+            <li><strong>Distinguish substantive opinions from mere opinions.</strong> For example, if you believe something about history, science, or math, check the evidence.</li>
+            <li><strong>Value truth.</strong> Remember that the more your opinions align with facts, the better equipped you'll be to navigate the world.</li>
+            <li><strong>Be open to change.</strong> If new evidence comes along that challenges your beliefs, don't ignore it. Being wrong is just part of the process of becoming smarter.</li>
+        </ol>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI HAS OPINIONS TOO</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When an AI assistant tells you something with confidence, that's a <em>statement</em>. The AI <em>believes</em> the statement (or is trained to act as if it does). Is the statement actually <em>true</em>? That's a separate question. AI confidence is not the same as truth. Always ask: is this a substantive claim with evidence behind it, or is it just the AI sounding sure? Your job is the same as with any other source: check whether the statement matches the world.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: Substantive or mere? -->
+    <div class="optima-widget" id="widget-sub">
+        <div class="widget-kicker">&#9889; TRY IT &middot; SUBSTANTIVE OR MERE OPINION?</div>
+        <div class="widget-question">For each statement, decide: substantive (can be tested with evidence) or mere (just personal preference)?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. "Exercising daily improves your mental health."</div>
+            <div class="widget-options">
+                <button onclick="subPick(this, 0, 0)">Substantive (testable)</button>
+                <button onclick="subPick(this, 0, 1)">Mere (preference only)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">2. "Pineapple on pizza is gross."</div>
+            <div class="widget-options">
+                <button onclick="subPick(this, 1, 0)">Substantive (testable)</button>
+                <button onclick="subPick(this, 1, 1)">Mere (preference only)</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">3. "Learning a second language improves brain function."</div>
+            <div class="widget-options">
+                <button onclick="subPick(this, 2, 0)">Substantive (testable)</button>
+                <button onclick="subPick(this, 2, 1)">Mere (preference only)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="subReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 7: Mere Opinion or Substantive?</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For each of 7 statements, decide whether it's a mere opinion or a substantive one. For substantive ones, describe what evidence would test it. For mere opinions, explain why they can't be tested.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>2.7 VR Assignment &mdash; The Fact-Opinion Museum</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Curate a virtual museum of 12 statements. Place each on two axes &mdash; Truth (true &harr; false) and Belief (strongly believe &harr; unsure) &mdash; and tag each as substantive or mere. Record a video tour defending your placements.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Remember: facts and opinions aren't enemies. They work together to help us understand the world. Facts are statements about reality, and opinions are what we believe about those facts. By learning to think critically, evaluate evidence, and challenge your own opinions, you'll set yourself up for success &mdash; not just in school, but in life.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">So, what's your opinion: do you think this lesson was a fact worth learning? &#128522;</p>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#127916; OPTIONAL VISUAL LESSON</div>
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; overflow: hidden; border-radius: 8px;"><iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: 0;" src="https://www.canva.com/design/DAGtpGsKcnY/hKCoVUanhoJn0qjXDaYZ3Q/view?embed" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 2 Lesson 7 &middot; Facts versus Opinions</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const srtFeedback = {
+    correct: [
+        'Right &mdash; AND it\'s ALSO an opinion when you believe it. That\'s the surprise this lesson is about.',
+        'Right. False statements aren\'t facts (they don\'t describe reality) and they\'re only opinions if someone holds the belief. Most people don\'t believe squares can be circles.',
+        'Right. Ducks really are good swimmers (evidence: anatomy, behavior). So this is a fact AND a substantive opinion, not a mere preference.',
+        'Right &mdash; it\'s a mere opinion. The only evidence is your own experience.'
+    ],
+    hints: [
+        'Hint: it\'s a true statement about chemistry. The school answer is "fact." (But it can also be an opinion when you believe it.)',
+        'Hint: this is a FALSE statement (squares cannot be circles). Is a false statement a fact?',
+        'Hint: this is a true claim with evidence (ducks really are good swimmers). The school answer is "opinion," but the lesson will challenge that.',
+        'Hint: this is a preference about cheese with no external test. Which category fits?'
+    ]
+};
+function srtPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, srtFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, srtFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function srtReset() {
+    document.querySelectorAll('#widget-sort .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+const subFeedback = {
+    correct: [
+        'Right. This can be tested with research on exercise, sleep, mood, anxiety, etc. Substantive.',
+        'Right. Pineapple-on-pizza is purely a taste preference. No external evidence settles it. Mere.',
+        'Right. This can be tested with cognitive neuroscience research. Substantive.'
+    ],
+    hints: [
+        'Hint: is there a body of research on exercise and mental health? Could you check?',
+        'Hint: how would you "prove" that pineapple on pizza is gross to someone who likes it? You can\'t. Mere.',
+        'Hint: this is a claim science studies and tests. There\'s evidence either way. Substantive.'
+    ]
+};
+function subPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, subFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, subFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function subReset() {
+    document.querySelectorAll('#widget-sub .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>

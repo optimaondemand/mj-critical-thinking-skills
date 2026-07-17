@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 5 Lesson 2: Evaluating Arguments</title>
+<style>
+body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+.canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+.widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+.widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+.widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+.widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+.widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+.widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+.widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+.widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+.row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+.row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+.row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+.widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+.widget-reset:hover { background: #FDF3E3; }
+.strategy-card { background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 4px; padding: 14px 18px; margin: 10px 0; }
+.strategy-card h4 { margin: 0 0 6px 0; color: #6b4f1d; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div><div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div><div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div></div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 5</div><div style="font-size: 12px; color: #666;">Arguing like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 2</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Evaluating Arguments</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Argument Map (Stage 2)</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Evaluating Arguments</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If you're going to disagree, you need a solid reason &mdash; not just "nope."</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today is a super important skill: evaluating arguments. Just because someone makes an argument doesn't mean you have to agree with it. But if you're going to disagree, you need a real reason. And if their argument is well-supported, you might actually be compelled to believe it &mdash; even if you don't want to. So the question becomes: how do you <em>properly</em> evaluate an argument? How do you spot the cracks and take it down?</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the premises and conclusion of an argument I'm reading.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use three strategies to evaluate (and take down) a weak argument.</div></div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;"><div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div><div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply the same strategies to MY OWN argument and identify its weak spots.</div></div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-eval">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">When someone makes an argument you disagree with, what's your usual move?</div>
+        <div class="widget-options">
+            <button onclick="evalPick(this, 0)">Tell them they're wrong</button>
+            <button onclick="evalPick(this, 1)">Look for a flaw in their reasoning</button>
+            <button onclick="evalPick(this, 2)">Walk away &mdash; not worth it</button>
+            <button onclick="evalPick(this, 3)">Find a counter-fact they didn't mention</button>
+        </div>
+        <div id="widget-eval-fb" style="background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px;"></div>
+        <button class="widget-reset" onclick="evalReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; ARGUMENTS ARE LIKE TABLES</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Think of an argument like a table. The <em>premises</em> are the legs holding it up, and the <em>conclusion</em> is the tabletop. If you want to take down the argument (the table), you have two moves: knock out the legs (the premises), OR show that the legs aren't strong enough to hold up the tabletop.</p>
+        <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; border-radius: 4px; padding: 14px 18px; margin: 10px 0;">
+            <strong>The running example for this lesson:</strong><br />
+            <em>Premise:</em> When she was a kid, several dogs bit her.<br />
+            <em>Conclusion:</em> So, all dogs are dangerous.
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THREE STRATEGIES TO TAKE DOWN AN ARGUMENT</div>
+        <div class="strategy-card">
+            <h4>Strategy 1 &middot; Falsify the Premise (knock out the legs)</h4>
+            <p style="margin: 0; font-size: 16px;">Show that one or more premises is wrong. If a premise is false, the whole argument collapses. <em>Example:</em> Maybe she wasn't bitten by several dogs. Maybe it was just one. Maybe she was never bitten at all. Boom &mdash; leg knocked out.</p>
+        </div>
+        <div class="strategy-card">
+            <h4>Strategy 2 &middot; Show the Support is Bad (wobbly legs)</h4>
+            <p style="margin: 0; font-size: 16px;">Even if the premises are true, they might not provide enough support for the conclusion. <em>Example:</em> Even if several dogs bit her, that doesn't mean ALL dogs are dangerous. The conclusion is way too broad for that evidence. At best you get "some dogs are dangerous."</p>
+        </div>
+        <div class="strategy-card">
+            <h4>Strategy 3 &middot; Add New Information (expose what's missing)</h4>
+            <p style="margin: 0; font-size: 16px;">Agree the premises are true and provide some support &mdash; but show that important info is missing. <em>Example:</em> What if she was bothering the dogs &mdash; pulling tails, poking them? Then the dogs weren't being dangerous, they were defending themselves. New info, conclusion no longer holds.</p>
+        </div>
+    </div>
+
+    <!-- Widget 2 -->
+    <div class="optima-widget" id="widget-strat">
+        <div class="widget-kicker">&#9889; TRY IT &middot; WHICH STRATEGY?</div>
+        <div class="widget-question">Argument: "John got a bad grade on his math test. So, he's just bad at math." Which strategy is each rebuttal using?</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">"Actually, John got a B+ &mdash; that's not a bad grade."</div>
+            <div class="widget-options">
+                <button onclick="stratPick(this, 0, 0)">Falsify the premise</button>
+                <button onclick="stratPick(this, 0, 1)">Show bad support</button>
+                <button onclick="stratPick(this, 0, 2)">Add new information</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">"One bad grade doesn't make someone 'bad at math' &mdash; one test is way too narrow."</div>
+            <div class="widget-options">
+                <button onclick="stratPick(this, 1, 0)">Falsify the premise</button>
+                <button onclick="stratPick(this, 1, 1)">Show bad support</button>
+                <button onclick="stratPick(this, 1, 2)">Add new information</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">"He was sick that day and missed two weeks of class beforehand."</div>
+            <div class="widget-options">
+                <button onclick="stratPick(this, 2, 0)">Falsify the premise</button>
+                <button onclick="stratPick(this, 2, 1)">Show bad support</button>
+                <button onclick="stratPick(this, 2, 2)">Add new information</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="stratReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; APPLYING IT IN REAL LIFE (INCLUDING YOUR OWN ARGUMENT)</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Identify the argument.</strong> What are the premises? What's the conclusion? People don't always lay these out cleanly &mdash; your job is to uncover them.</li>
+            <li><strong>Check the premises.</strong> Are they true? Can you find evidence that contradicts them?</li>
+            <li><strong>Evaluate the support.</strong> Even if premises are true, do they logically lead to the conclusion? Or is the argument stretching too far?</li>
+            <li><strong>Consider what's missing.</strong> Could new information change the conclusion?</li>
+        </ol>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;"><strong>Here's the twist for your Disputatio:</strong> apply these same four steps to YOUR OWN argument. Be your own toughest critic. Anything you don't catch now, an opponent will catch later.</p>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; ASKING AI TO ATTACK YOUR ARGUMENT</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">One of the most useful AI moves you can make: paste your argument and ask, <em>"Give me the strongest counterargument someone could make to this."</em> AI is OK at being a sparring partner this way &mdash; not as good as a serious human critic, but better than nothing. Use this to stress-test your Disputatio thesis before the capstone. Then verify any new info the AI raises against real sources.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.2: Evaluating Arguments</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Take down three short arguments using the three strategies. Practice the moves you'll use on your own disputatio.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>5.2 VR Assignment &mdash; Argument Map + Counterargument Wall <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Disputatio Stage 2 of 3)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">In your arena, use the drawing tool to draw the logic structure of your argument. Then build a Counterargument Wall with the THREE strongest objections you can think of &mdash; the ones a tough critic would actually use.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Just because someone says something confidently doesn't mean it's true. You have the power to evaluate what they're saying &mdash; AND what you're saying. The more you practice, the better you'll get at spotting bad arguments AND building good ones.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65);">Module 5 Lesson 2 &middot; Evaluating Arguments</div>
+</div>
+
+</div>
+<script>
+const evalResp = [
+    "Common &mdash; and usually doesn't change anyone's mind. This lesson gives you sharper tools.",
+    "Excellent. That's the move &mdash; and we'll add specific NAMED strategies to your toolkit.",
+    "Sometimes the right call &mdash; but you lose the chance to actually change a mind (theirs or yours). The strategies in this lesson make the conversation worth having.",
+    "Strong move. 'What's missing?' is one of the three strategies you'll learn today &mdash; we'll add two more."
+];
+function evalPick(btn, idx) {
+    document.querySelectorAll('#widget-eval .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-eval-fb');
+    fb.textContent = evalResp[idx]; fb.style.display = 'block';
+}
+function evalReset() {
+    document.querySelectorAll('#widget-eval .widget-options button').forEach(b => b.classList.remove('selected'));
+    document.getElementById('widget-eval-fb').style.display = 'none';
+}
+const stratFb = {
+    correct: [
+        "Right. The PREMISE itself is wrong &mdash; that's falsifying the premise.",
+        "Right. The premise might be true, but it doesn't support a sweeping conclusion. That's bad support.",
+        "Right. New information (illness + missed class) changes how we should interpret the bad grade. Adding new info."
+    ],
+    hints: [
+        "Hint: is the rebuttal saying the PREMISE is wrong, or that the support is weak?",
+        "Hint: one bad test &rarr; sweeping conclusion. Where's the problem?",
+        "Hint: this isn't attacking the premise OR the support &mdash; it's bringing in something the argument left out."
+    ]
+};
+function stratPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row'); const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) { btn.classList.add('correct'); showRowFb(row, stratFb.correct[rowIdx], 'correct'); }
+    else { btn.classList.add('incorrect'); showRowFb(row, stratFb.hints[rowIdx], 'incorrect'); }
+}
+function stratReset() {
+    document.querySelectorAll('#widget-strat .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback'); if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type; fb.textContent = text;
+}
+</script>
+</body>
+</html>

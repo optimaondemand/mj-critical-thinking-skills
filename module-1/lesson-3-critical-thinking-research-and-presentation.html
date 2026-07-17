@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 3: Critical Thinking, Research &amp; Presentation</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Preparing like an Intellectual</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Critical Thinking, Research &amp; Presentation</div>
+        <div style="font-size: 12px; color: #666;">Course content (this page)</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Preparing like an Intellectual</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Critical Thinking, Research, and Presentation Skills</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Think well, research well, present well</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Welcome once again, students! By the end of this lesson, you will be able to analyze and evaluate information critically, conduct effective research using credible sources, and communicate your findings clearly through well-organized presentations.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> analyze and evaluate information critically, including spotting common logical fallacies.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> find credible sources, take organized research notes, and cite my sources properly.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> organize my findings into a clear written argument and present them to an audience.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook or digital doc for research notes.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Access to a research database &mdash; your school library, JSTOR, or Google Scholar.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A presentation tool (Google Slides, PowerPoint, or similar).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset &mdash; for the paired <em>1.3 VR Assignment</em>.</div>
+        </div>
+    </div>
+
+    <!-- Widget 1: Critical thinking check-in -->
+    <div class="optima-widget" id="widget-trust">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Which of these sources would you trust MOST for a school research paper?</div>
+        <div class="widget-options">
+            <button onclick="trustPick(this, 0)">&#127909; A YouTube video with a million views</button>
+            <button onclick="trustPick(this, 1)">&#128218; A book by a professor on the topic</button>
+            <button onclick="trustPick(this, 2)">&#128241; A TikTok by someone who studied it</button>
+            <button onclick="trustPick(this, 3)">&#127757; Whatever pops up first on Google</button>
+        </div>
+        <div class="widget-feedback" id="widget-trust-fb"></div>
+        <button class="widget-reset" onclick="trustReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 1 â€” Critical Thinking and Problem-Solving -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 1 &middot; CRITICAL THINKING AND PROBLEM-SOLVING</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Analyzing and Evaluating Information</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Critical thinking begins with questioning. When presented with information&mdash;whether in a textbook, article, or online&mdash;you should ask these and other, similar sorts of questions:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Who is the author?</strong> Consider the author's credibility and any potential biases.</li>
+            <li><strong>What is the main argument or idea?</strong> Identify the central thesis or claim.</li>
+            <li><strong>What evidence supports the argument?</strong> Evaluate the quality and relevance of the evidence.</li>
+            <li><strong>Are there counterarguments?</strong> Think about opposing viewpoints and how well the author addresses them.</li>
+            <li><strong>What is the purpose of this information?</strong> Is it to inform, persuade, entertain, or something else?</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Applying Logic and Reasoning</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Logic is the backbone of critical thinking. It's about connecting ideas in a way that makes sense and leads to a reasonable conclusion. I recommend taking an actual Symbolic Logic class, a course on Probability, or&mdash;worst-case&mdash;a Critical Thinking class. In the meantime, to practice critically evaluating content by which someone is trying to convince you to do or believe something:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Identify premises and conclusions:</strong> In any argument, distinguish the basic premises (supporting statements) from the conclusion. For example, in the following argument the first two lines are premises and they work to support the truth of the last line (the conclusion).</li>
+        </ul>
+
+        <!-- Logic structure visual: a GOOD argument -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 22px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#129518; A SOUND ARGUMENT</div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 8px; max-width: 540px; margin: 0 auto;">
+                <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #1a2340;"><strong style="color: #c7922c; font-size: 11px;">PREMISE 1.&nbsp;</strong> Every swan I've seen so far has been white.</div>
+                <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #1a2340;"><strong style="color: #c7922c; font-size: 11px;">PREMISE 2.&nbsp;</strong> The past is a good if imperfect guide to the future.</div>
+                <div style="text-align: center; font-size: 20px; color: #2A9D5C; padding: 4px 0;">&darr;</div>
+                <div style="background: #D8F0DD; border-left: 4px solid #2A9D5C; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #1A6B3D;"><strong style="color: #1A6B3D; font-size: 11px;">CONCLUSION.&nbsp;</strong> So, the next swan I see will likely be white.</div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic; text-align: center;">The premises actually support the conclusion. That's what good reasoning looks like.</div>
+        </div>
+
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 12px 18px;">
+            <li><strong>Check for logical fallacies:</strong> Be on the lookout for common errors in reasoning, such as false cause, hasty generalization, or strawman arguments. For example, in the following argument many things are going wrong, logically. We can try to give the logical errors fancy names, but the short version is that the truth of the premises has very little if any bearing on the truth of the conclusion. So this is a bad argument.</li>
+        </ul>
+
+        <!-- Logic structure visual: a BAD argument -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 16px 22px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#9888;&#65039; A BAD ARGUMENT</div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 8px; max-width: 540px; margin: 0 auto;">
+                <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #1a2340;"><strong style="color: #c7922c; font-size: 11px;">PREMISE 1.&nbsp;</strong> You say Policy X is good.</div>
+                <div style="background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #1a2340;"><strong style="color: #c7922c; font-size: 11px;">PREMISE 2.&nbsp;</strong> But you are a Reprocrat (I'm a Demublican).</div>
+                <div style="text-align: center; font-size: 20px; color: #C0392B; padding: 4px 0;">&darr;</div>
+                <div style="background: #FDECEC; border-left: 4px solid #C0392B; padding: 10px 14px; border-radius: 4px; font-size: 15px; color: #8A1F16;"><strong style="color: #8A1F16; font-size: 11px;">CONCLUSION.&nbsp;</strong> So Policy X must be bad.</div>
+            </div>
+            <div style="font-size: 13px; color: #555; margin-top: 12px; font-style: italic; text-align: center;">The premises attack the speaker, not the policy. The conclusion doesn't actually follow.</div>
+        </div>
+
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 12px 18px;">
+            <li><strong>Develop your argument:</strong> When you present your ideas, ensure they follow logically from your premises and avoid unsupported leaps in reasoning. Key questions to ask of your reasoning include: if my premises were false, would that affect the truth of my conclusion? Do my true premises support other conclusions? Is there a less-strong version of my conclusion that these premises support?</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Reflecting on Learning</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Reflection is essential to growth in critical thinking. After engaging with new ideas or solving a problem:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Ask yourself what you learned:</strong> Consider how your understanding has changed or deepened.</li>
+            <li><strong>Consider your thought process:</strong> What strategies worked? What could you improve?</li>
+            <li><strong>Plan for next time:</strong> Based on your reflection, how will you approach similar tasks in the future?</li>
+        </ul>
+    </div>
+
+    <!-- Widget 2: Spot the fallacy -->
+    <div class="optima-widget" id="widget-fallacy">
+        <div class="widget-kicker">&#9889; TRY IT &middot; SPOT THE LOGIC PROBLEM</div>
+        <div class="widget-question">For each argument, is the reasoning solid &mdash; or what's wrong with it?</div>
+        <div class="widget-row" data-correct="3">
+            <div class="widget-row-prompt">1. "Every swan I've seen has been white. The past is a guide to the future. So the next swan I see will probably be white."</div>
+            <div class="widget-options">
+                <button onclick="fallPick(this, 0, 0)">Attacks the person, not the idea</button>
+                <button onclick="fallPick(this, 0, 1)">Jumps from one example to a huge claim</button>
+                <button onclick="fallPick(this, 0, 2)">Mistakes "happened together" for "caused"</button>
+                <button onclick="fallPick(this, 0, 3)">Solid argument</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. "You think Policy X is good. But you're a Reprocrat. So Policy X must be bad."</div>
+            <div class="widget-options">
+                <button onclick="fallPick(this, 1, 0)">Attacks the person, not the idea</button>
+                <button onclick="fallPick(this, 1, 1)">Jumps from one example to a huge claim</button>
+                <button onclick="fallPick(this, 1, 2)">Mistakes "happened together" for "caused"</button>
+                <button onclick="fallPick(this, 1, 3)">Solid argument</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. "One student tried this energy drink before a test and got an A. So this drink makes you smarter."</div>
+            <div class="widget-options">
+                <button onclick="fallPick(this, 2, 0)">Attacks the person, not the idea</button>
+                <button onclick="fallPick(this, 2, 1)">Jumps from one example to a huge claim</button>
+                <button onclick="fallPick(this, 2, 2)">Mistakes "happened together" for "caused"</button>
+                <button onclick="fallPick(this, 2, 3)">Solid argument</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="fallReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 2 â€” Research Skills -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; PART 2 &middot; RESEARCH SKILLS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Finding Credible Sources</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Not all sources are created equal. When conducting research:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Use academic databases:</strong> Websites like JSTOR, Google Scholar, or your school's library database provide reliable sources.</li>
+            <li><strong>Evaluate the author's credentials:</strong> Look for authors who are experts in the field.</li>
+            <li><strong>Consider the publisher:</strong> Academic journals, universities, and reputable organizations typically produce credible content.</li>
+        </ul>
+
+        <!-- Source Credibility Ladder visual -->
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 22px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 6px;">&#128202; SOURCE CREDIBILITY LADDER</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 16px;">For a school research paper, climb this ladder from the top down.</div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 6px;">
+                <div style="background: #D8F0DD; border-left: 5px solid #2A9D5C; padding: 12px 16px; border-radius: 4px;">
+                    <div style="font-size: 11px; color: #1A6B3D; letter-spacing: 0.5px; margin-bottom: 4px;">&#11088; MOST CREDIBLE</div>
+                    <div style="font-size: 15px; color: #0E1C42;"><strong>Peer-reviewed journals</strong>, books by experts, government data (.gov), university research (.edu)</div>
+                </div>
+                <div style="background: #F4F9D8; border-left: 5px solid #B8A435; padding: 12px 16px; border-radius: 4px;">
+                    <div style="font-size: 11px; color: #6E5F1B; letter-spacing: 0.5px; margin-bottom: 4px;">&#128200; SOLID</div>
+                    <div style="font-size: 15px; color: #0E1C42;"><strong>Major news outlets</strong> (with editors), expert-authored articles, encyclopedias like <em>Britannica</em></div>
+                </div>
+                <div style="background: #FDF3E3; border-left: 5px solid #C7922C; padding: 12px 16px; border-radius: 4px;">
+                    <div style="font-size: 11px; color: #8B5E16; letter-spacing: 0.5px; margin-bottom: 4px;">&#129312; USE CAREFULLY</div>
+                    <div style="font-size: 15px; color: #0E1C42;"><strong>Wikipedia</strong> (good for finding sources, not for citing), well-known blogs, general news</div>
+                </div>
+                <div style="background: #FDECEC; border-left: 5px solid #C0392B; padding: 12px 16px; border-radius: 4px;">
+                    <div style="font-size: 11px; color: #8A1F16; letter-spacing: 0.5px; margin-bottom: 4px;">&#9888;&#65039; AVOID</div>
+                    <div style="font-size: 15px; color: #0E1C42;"><strong>Random TikToks, YouTube comments, anonymous posts, Reddit testimonials</strong> &mdash; not for citing in school work</div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Collect Relevant Information</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Whether you're making a case or investigating a phenomenon, you're going to collect ideas, facts, and examples from those credible sources. As you read, watch, or interview those sources, put to good use the notetaking skills you learned in the previous lesson. This way you both have everything you need in front of you as you make your case or present your findings, and you'll have it in an organized, easily navigated format.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Properly Citing Information</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Citations are crucial in academic work because they give credit to the original authors and allow others to verify your sources. Familiarize yourself with different citation styles (e.g., MLA, APA, Chicago) and use them consistently. Worst-case scenario share the author, title, and page number; or the link to the highlight or the timestamp, if it's digital.</p>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; AI AND RESEARCH</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">AI chatbots can write a research paper for you in seconds. They can also confidently invent fake citations &mdash; book titles, author names, page numbers that don't exist. This is called "hallucinating," and it happens often. If you use AI to help you find sources, you <em>must</em> verify each citation actually exists, find the source yourself, and confirm the quote or fact is really in there. AI is a starting point. It is not a substitute for doing the reading.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Writing Your Research Findings</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Once you have your sources, you need to organize the information logically:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Create an outline:</strong> Start with a thesis statement, then arrange your research points in a coherent order.</li>
+            <li><strong>Use digital tools:</strong> Tools like Evernote, OneNote, or citation managers like Zotero can help keep your research organized.</li>
+            <li><strong>Group related information:</strong> Categorize your findings to support different sections of your paper or presentation.</li>
+        </ul>
+    </div>
+
+    <!-- Widget 3: Pick the most credible source -->
+    <div class="optima-widget" id="widget-credible">
+        <div class="widget-kicker">&#9889; TRY IT &middot; PICK THE MOST CREDIBLE SOURCE</div>
+        <div class="widget-question">For each research topic, which source would you cite in your school paper?</div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">1. You're writing a history paper on the causes of World War II.</div>
+            <div class="widget-options">
+                <button onclick="credPick(this, 0, 0)">A YouTube video titled "WWII Explained in 5 minutes"</button>
+                <button onclick="credPick(this, 0, 1)">A book by a history professor at a university</button>
+                <button onclick="credPick(this, 0, 2)">A blog post by a history fan</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">2. You need actual data on global temperatures over the last century.</div>
+            <div class="widget-options">
+                <button onclick="credPick(this, 1, 0)">A NASA dataset published on nasa.gov</button>
+                <button onclick="credPick(this, 1, 1)">An Instagram infographic from a popular account</button>
+                <button onclick="credPick(this, 1, 2)">Your friend's older sibling who studied science in high school</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">3. You're researching the latest treatment for a medical condition.</div>
+            <div class="widget-options">
+                <button onclick="credPick(this, 2, 0)">A TikTok video by someone claiming to be a doctor</button>
+                <button onclick="credPick(this, 2, 1)">A Reddit thread by someone who recovered</button>
+                <button onclick="credPick(this, 2, 2)">A peer-reviewed article in a medical journal (e.g., JAMA)</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="credReset()">Reset</button>
+    </div>
+
+    <!-- Content card: Part 3 â€” Presentation & Communication Skills -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127908; PART 3 &middot; PRESENTATION &amp; COMMUNICATION SKILLS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Creating and Delivering Presentations</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A great presentation is well-organized, visually appealing, and engaging:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Start with an outline:</strong> Similar to your research paper, structure your presentation with an introduction, body, and conclusion.</li>
+            <li><strong>Use visuals effectively:</strong> Incorporate slides, images, charts, or videos that enhance your message, but don't overcrowd your slides with text.</li>
+            <li><strong>Practice delivery:</strong> Rehearse your presentation multiple times. Pay attention to your pacing, tone, and body language.</li>
+            <li><strong>Dress the part:</strong> Even if your presentation is just for school, treat it like the formal settings you will find in college and in the business world.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Articulating Ideas Clearly in Writing and Speech</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Whether writing or speaking, clarity is key:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Use clear and concise language:</strong> Avoid jargon or overly complex sentences.</li>
+            <li><strong>Support your points with evidence:</strong> Always back up your claims with research or data.</li>
+            <li><strong>Maintain a logical flow:</strong> Ensure that each point naturally leads to the next, both in your writing and speech.</li>
+        </ul>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Engaging the Audience Effectively</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">To captivate your audience:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 18px;">
+            <li><strong>Know your audience:</strong> Tailor your content and delivery style to their interests and knowledge level.</li>
+            <li><strong>Use storytelling techniques:</strong> Weave in anecdotes or examples to make your presentation relatable and memorable.</li>
+            <li><strong>Invite participation:</strong> Ask questions or include interactive elements to keep your audience engaged.</li>
+        </ul>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>1.3 VR Assignment</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Pick something you're already an expert in (a sports team, a video game, baking, whatever it is). Build a short slideshow, spawn it in VR, and record a 3&ndash;5 minute video of yourself presenting on your topic.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 3: Critical Thinking, Research, and Presentation Skills</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Choose a research topic, find three credible sources (and explain why each is credible), write a one-page summary with citations, build a slightly controversial argument from your findings, and present it on video or as a narrated slideshow.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THAT'S A WRAP</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Today's lesson covered the core skills of critical thinking, research, and communication. These abilities are interlinked and crucial for academic success and beyond. As you continue to develop these skills, remember to:</p>
+        <ul style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 22px;">
+            <li><strong>Question and evaluate:</strong> Always think critically about the information you encounter.</li>
+            <li><strong>Research thoroughly:</strong> Use credible sources and organize your findings effectively.</li>
+            <li><strong>Communicate clearly:</strong> Whether writing or speaking, ensure your message is logical and engaging.</li>
+        </ul>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">That's a wrap! Keep practicing these skills, and you'll be well-prepared for any academic challenge.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3 &middot; Critical Thinking, Research, and Presentation Skills</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+// --- Widget 1: Source trust check-in ---
+const trustResponses = [
+    "Million views â‰  credible. A viral video might be entertaining, but it's not what you cite in a research paper. Read Part 2 for what to look for.",
+    "Good instinct. A book by a professor on the topic is a strong source â€” expert author, edited, published by a credible house. See the Source Credibility Ladder below.",
+    "A TikTok by 'someone who studied it' isn't verifiable. You don't know their credentials or what they actually got wrong. Read Part 2 for stronger options.",
+    "That's most people's habit â€” but the top result is often someone paying to be there, not someone who knows the topic. Read Part 2 for better-than-Google strategies."
+];
+function trustPick(btn, idx) {
+    document.querySelectorAll('#widget-trust .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-trust-fb');
+    fb.textContent = trustResponses[idx];
+    fb.classList.add('show');
+}
+function trustReset() {
+    document.querySelectorAll('#widget-trust .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-trust-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+
+// --- Widget 2: Spot the fallacy ---
+const fallFeedback = {
+    correct: [
+        "Right. The premises actually support the conclusion. White swans every time + the past predicts the future â†’ next swan will probably be white. That's solid inductive reasoning.",
+        "Right. This is an ad hominem fallacy â€” attacking the person making the argument (you're a Reprocrat) instead of attacking the actual policy. Bad arguments often do this.",
+        "Right. This is hasty generalization â€” taking ONE example (one student, one A) and jumping to a universal claim about everyone. One data point isn't proof."
+    ],
+    hints: [
+        "Hint: the premises actually do support the conclusion here. Does this argument have anything ACTUALLY wrong with it?",
+        "Hint: the argument never engages with Policy X itself. It just talks about who's saying it. What's that called?",
+        "Hint: one student, one test, one A. Is that enough evidence for a universal claim about \"everyone\"?"
+    ]
+};
+function fallPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, fallFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, fallFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function fallReset() {
+    document.querySelectorAll('#widget-fallacy .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Widget 3: Pick the credible source ---
+const credFeedback = {
+    correct: [
+        "Right. A history professor's book has all three credibility markers: expert author, edited, published by a reputable house. The YouTube and blog don't.",
+        "Right. NASA is the government agency that collects this data. The dataset itself, on nasa.gov, is as primary as it gets.",
+        "Right. A peer-reviewed medical journal means other doctors checked the work before it was published. That's the gold standard for medical claims."
+    ],
+    hints: [
+        "Hint: which of these has an EXPERT author, an EDITOR, and a REPUTABLE publisher all at once?",
+        "Hint: which source actually collects the temperature data, and which ones just talk about it?",
+        "Hint: \"peer-reviewed\" means other experts have checked the work. None of the others has that filter."
+    ]
+};
+function credPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFeedback(row, credFeedback.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFeedback(row, credFeedback.hints[rowIdx], 'incorrect');
+    }
+}
+function credReset() {
+    document.querySelectorAll('#widget-credible .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+
+// --- Shared row feedback renderer ---
+function showRowFeedback(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) {
+        fb = document.createElement('div');
+        fb.className = 'row-feedback';
+        row.appendChild(fb);
+    }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+</script>
+
+</body>
+</html>
+

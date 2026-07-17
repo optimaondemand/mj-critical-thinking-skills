@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Module 3 Lesson 8: Bayesian Updating</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .bayes-step { background: #EEF1F8; border-left: 4px solid #0E1C42; padding: 12px 16px; margin: 10px 0; border-radius: 4px; }
+    .bayes-step h4 { margin: 0 0 6px 0; color: #0E1C42; font-size: 17px; }
+    .bayes-math { font-family: "Consolas", monospace; background: #FFFFFF; border: 1px solid #D0D9E8; padding: 8px 12px; border-radius: 4px; margin: 8px 0; font-size: 15px; color: #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">M/J CRITICAL THINKING</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div><div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 3</div><div style="font-size: 12px; color: #666;">Thinking like an Intellectual</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div><div style="font-size: 17px; color: #0e1c42;">Lesson 8</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div><div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bayesian Updating</div></div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;"><div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Project Tie-in</div><div style="font-size: 16px; color: #0e1c42;">Belief-update timeline</div></div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Bayesian Updating &mdash; Changing Your Mind, Carefully</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Update what you believe by combining what you knew before with what the evidence tells you now.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Welcome, critical thinkers! Today we're combining everything we've learned into one powerful tool for refining your beliefs when new evidence arrives. The tool is called <strong>Bayesian Updating</strong>, named after the 18th-century mathematician Reverend Thomas Bayes. It's the system science, spam filters, and AI use to "learn" from new information &mdash; consistently, logically, and at scale.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the three parts of Bayesian Updating: priors, likelihood ratio, and posteriors.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> walk through one Bayesian update by hand, multiplying priors by a likelihood ratio.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why strong evidence alone isn't enough &mdash; priors matter too.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A document for <em>Assignment 8: Field Biology</em> &mdash; you'll do a full multi-step Bayesian update.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your VR headset and your data log &mdash; for <em>3.8 VR Belief-Update Timeline</em>, which closes out your experiment.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; A LITTLE HISTORY</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Thomas Bayes came up with this rule in the 1700s, but it wasn't well-known during his lifetime. Later, mathematicians dusted it off and realized how powerful it could be. Today it's celebrated as a key to understanding scientific confirmation and solving practical problems:</p>
+        <ul style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li>Scientists use Bayesian methods to weigh how strongly new evidence supports or undermines theories.</li>
+            <li>Email systems use it to filter spam by updating "beliefs" about whether a message looks spammy based on its contents.</li>
+            <li>Artificial intelligence uses Bayesian principles to "learn" from data and make decisions.</li>
+        </ul>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE THREE PIECES</div>
+        <div class="bayes-step">
+            <h4>&#9312; Priors</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">What you believe BEFORE (literally "<em>prior</em> to") any new evidence. Your starting credence. To find priors, you use what you already know &mdash; how common is one explanation vs. another in the world?</p>
+        </div>
+        <div class="bayes-step">
+            <h4>&#9313; Likelihood Ratio</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">How much more likely the evidence is under one explanation than another. This is the Question of Evidence (Lesson 7), written as a ratio.</p>
+        </div>
+        <div class="bayes-step">
+            <h4>&#9314; Posteriors</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">What you believe AFTER updating your priors with the new evidence. Posteriors = Priors &times; Likelihood Ratio.</p>
+        </div>
+    </div>
+
+    <!-- Widget 1 -->
+    <div class="optima-widget" id="widget-parts">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN &middot; NAME THE PART</div>
+        <div class="widget-question">Match each phrase to the part of Bayesian Updating it describes.</div>
+        <div class="widget-row" data-correct="0">
+            <div class="widget-row-prompt">1. "Before I heard anything new, I thought there was a 30% chance it would rain."</div>
+            <div class="widget-options">
+                <button onclick="partPick(this, 0, 0)">Prior</button>
+                <button onclick="partPick(this, 0, 1)">Likelihood Ratio</button>
+                <button onclick="partPick(this, 0, 2)">Posterior</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="2">
+            <div class="widget-row-prompt">2. "After seeing the dark clouds, I now think there's an 80% chance of rain."</div>
+            <div class="widget-options">
+                <button onclick="partPick(this, 1, 0)">Prior</button>
+                <button onclick="partPick(this, 1, 1)">Likelihood Ratio</button>
+                <button onclick="partPick(this, 1, 2)">Posterior</button>
+            </div>
+        </div>
+        <div class="widget-row" data-correct="1">
+            <div class="widget-row-prompt">3. "Dark clouds are about 5 times more likely on a rainy day than a sunny one."</div>
+            <div class="widget-options">
+                <button onclick="partPick(this, 2, 0)">Prior</button>
+                <button onclick="partPick(this, 2, 1)">Likelihood Ratio</button>
+                <button onclick="partPick(this, 2, 2)">Posterior</button>
+            </div>
+        </div>
+        <button class="widget-reset" onclick="partReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TOM, THE MYSTERIOUS STUDENT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">You want to know if Tom is a math PhD student or a business major (it's one of these two). The only thing you know is that Tom is shy. Let's work this through.</p>
+        <div class="bayes-step">
+            <h4>Priors (start with how common each group is)</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">Business majors massively outnumber math PhDs. Say 1,000 business students for every 1 math PhD.</p>
+            <div class="bayes-math">Business : Math = 1,000 : 1</div>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;">Without any evidence, it's 1,000&times; more likely Tom is a business major.</p>
+        </div>
+        <div class="bayes-step">
+            <h4>Likelihood Ratio for "Tom is shy"</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">Math PhDs are stereotypically shy &mdash; let's say 10% are noticeably shy. Business majors are usually more outgoing &mdash; say 1% noticeably shy.</p>
+            <div class="bayes-math">Math : Business = 10 : 1 &nbsp;&nbsp; (so Business : Math = 1 : 10)</div>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;">Shyness is 10&times; more likely under "math PhD" than under "business major."</p>
+        </div>
+        <div class="bayes-step">
+            <h4>Posteriors (multiply)</h4>
+            <div class="bayes-math">Business: 1,000 &times; 1 = 1,000<br />Math:     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 &times; 10 = 10</div>
+            <div class="bayes-math">Posteriors = Business : Math = 1,000 : 10 = <strong>100 : 1</strong></div>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;">After the shyness evidence, it's STILL 100&times; more likely Tom is a business major &mdash; just less overwhelmingly than before. The evidence pushed us toward "math PhD," but not enough to flip the conclusion.</p>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; A SECOND PIECE OF EVIDENCE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Now suppose you see Tom carrying a book on <em>Algebraic Topology</em> &mdash; an advanced field of math far beyond what undergrads (let alone business majors) usually touch.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;"><strong>Key move:</strong> When you get NEW evidence, your <em>old posteriors</em> become your <em>new priors</em>. We don't start over from 1,000:1; we start from 100:1.</p>
+        <div class="bayes-step">
+            <h4>Step 1. New priors (= old posteriors)</h4>
+            <div class="bayes-math">Business : Math = 100 : 1</div>
+        </div>
+        <div class="bayes-step">
+            <h4>Step 2. Likelihood ratio for the Algebraic Topology book</h4>
+            <p style="margin: 0; font-size: 16px; color: #1a2340; line-height: 1.6;">~25% likely for a math PhD; ~5% likely for a business major. So 25:5 = 5:1 in favor of math.</p>
+            <div class="bayes-math">Math : Business = 5 : 1 &nbsp;&nbsp; (so Business : Math = 1 : 5)</div>
+        </div>
+        <div class="bayes-step">
+            <h4>Step 3. New posteriors</h4>
+            <div class="bayes-math">Business: 100 &times; 1 = 100<br />Math:     &nbsp;&nbsp;&nbsp;&nbsp;1 &times; 5 = 5</div>
+            <div class="bayes-math">Posteriors = Business : Math = 100 : 5 = <strong>20 : 1</strong></div>
+            <p style="margin: 6px 0 0 0; font-size: 15px; color: #555; font-style: italic;">Even after TWO pieces of evidence pointing toward math PhD, business major is still 20&times; more likely. That's how powerful the original 1,000:1 prior was. To flip the conclusion you'd need a LOT more evidence.</p>
+        </div>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; WORTH KNOWING &middot; HOW AI ACTUALLY "LEARNS"</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Many AI systems &mdash; including the spam filter on your email and large parts of how machine learning works &mdash; are doing some version of Bayesian updating under the hood. They have priors (what they "expected" before seeing your data) and they update with each new piece of evidence. When AI gets something wrong, often it's because its priors are stuck or its training data was lopsided. Humans have the same bug.</div>
+        </div>
+    </div>
+
+    <!-- Widget 2: simplified update -->
+    <div class="optima-widget" id="widget-update">
+        <div class="widget-kicker">&#9889; TRY ONE UPDATE</div>
+        <div class="widget-question">You think there's a 1:1 chance (50/50) that your friend is at the library vs. the cafeteria. Then you hear someone whisper "shh" &mdash; the library is 3&times; more likely to have shushing than the cafeteria. What are your posteriors (Library : Cafeteria)?</div>
+        <div class="widget-options">
+            <button onclick="upPick(this, 0)">1 : 3</button>
+            <button onclick="upPick(this, 1)">3 : 1</button>
+            <button onclick="upPick(this, 2)">3 : 3</button>
+            <button onclick="upPick(this, 3)">Still 1 : 1</button>
+        </div>
+        <div class="widget-feedback" id="widget-update-fb"></div>
+        <button class="widget-reset" onclick="upReset()">Reset</button>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TAKEAWAYS</div>
+        <ol style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 0 18px;">
+            <li style="margin-bottom: 10px;"><strong>Bayesian Updating</strong> helps you adjust beliefs logically. Start with priors, weigh the evidence, update.</li>
+            <li style="margin-bottom: 10px;"><strong>The Question of Evidence</strong> is how you get a proper likelihood ratio.</li>
+            <li style="margin-bottom: 10px;"><strong>Even very strong evidence isn't enough on its own.</strong> If your priors are extreme, it takes a lot of evidence to flip the conclusion. Priors matter.</li>
+            <li><strong>When new evidence arrives, your old posteriors become your new priors.</strong> That's how you keep updating across many pieces of evidence.</li>
+        </ol>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 8: Field Biology</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Apply Bayesian Updating to identify a newly discovered animal. Start with priors (70% plant-eaters in the region), then update with three pieces of evidence: sharp teeth, plant material in stomach, stalking behavior. Compute the final posteriors.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>3.8 VR Assignment &mdash; Belief-Update Timeline <span style="font-size: 14px; color: #6b7a99; font-weight: normal;">(Good Life Project, Stage 8 of 9)</span></strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Wrap up your data collection. In your VR lab, build a Belief-Update Timeline: your starting credence (Stage 4), the audit (Stage 7), and your final credence now. Show in VR how your belief moved as evidence came in.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE TAKEAWAY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">By using Bayesian thinking, you'll make better decisions and understand the world more clearly. It's a skill that serves you in academics, careers, and everyday life. Keep practicing &mdash; you'll unlock the power of logical reasoning, just like Bayes did.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; M/J CRITICAL THINKING &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Module 3 Lesson 8 &middot; Bayesian Updating</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+const partFb = {
+    correct: [
+        "Right. A belief held BEFORE new evidence comes in is the prior.",
+        "Right. A belief AFTER updating with new evidence is the posterior.",
+        "Right. A statement about how much more likely evidence is under one theory vs. the other is the likelihood ratio."
+    ],
+    hints: [
+        'Hint: this is a belief held BEFORE the evidence. What do we call that?',
+        'Hint: this is a belief AFTER seeing new evidence. What do we call that?',
+        'Hint: this is a comparison of how likely evidence is under different theories. What do we call that?'
+    ]
+};
+function partPick(btn, rowIdx, choice) {
+    const row = btn.closest('.widget-row');
+    const correct = parseInt(row.dataset.correct);
+    row.querySelectorAll('.widget-options button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+    if (choice === correct) {
+        btn.classList.add('correct');
+        showRowFb(row, partFb.correct[rowIdx], 'correct');
+    } else {
+        btn.classList.add('incorrect');
+        showRowFb(row, partFb.hints[rowIdx], 'incorrect');
+    }
+}
+function partReset() {
+    document.querySelectorAll('#widget-parts .widget-row').forEach(row => {
+        row.querySelectorAll('button').forEach(b => b.classList.remove('correct', 'incorrect', 'selected'));
+        const fb = row.querySelector('.row-feedback');
+        if (fb) fb.remove();
+    });
+}
+function showRowFb(row, text, type) {
+    let fb = row.querySelector('.row-feedback');
+    if (!fb) { fb = document.createElement('div'); fb.className = 'row-feedback'; row.appendChild(fb); }
+    fb.className = 'row-feedback ' + type;
+    fb.textContent = text;
+}
+
+const upResponses = [
+    "Not quite &mdash; you flipped the ratio. The 'shh' makes LIBRARY more likely, not less. Try again.",
+    "Right. Priors 1:1, times likelihood ratio 3:1 in favor of library, gives posteriors 3:1 (Library : Cafeteria).",
+    "Close but not simplified. Multiply 1&times;3 = 3 for library, 1&times;3 = 3 for cafeteria? No &mdash; the 'shh' evidence is 3&times; more likely under LIBRARY. Update is 1&times;3 : 1&times;1 = 3 : 1.",
+    "The 'shh' evidence is real information &mdash; it WOULD shift your belief toward library. Don't leave the posterior at 1:1."
+];
+function upPick(btn, idx) {
+    document.querySelectorAll('#widget-update .widget-options button').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    const fb = document.getElementById('widget-update-fb');
+    fb.textContent = upResponses[idx];
+    fb.classList.add('show');
+}
+function upReset() {
+    document.querySelectorAll('#widget-update .widget-options button').forEach(b => b.classList.remove('selected'));
+    const fb = document.getElementById('widget-update-fb');
+    fb.textContent = '';
+    fb.classList.remove('show');
+}
+</script>
+
+</body>
+</html>
